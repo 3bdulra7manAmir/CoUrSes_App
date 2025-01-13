@@ -1,13 +1,13 @@
 import 'package:courses_app/Core/constants.dart';
 import 'package:flutter/material.dart';
 
-class AfterContainerWidget extends StatelessWidget
+class AfContainerBody extends StatelessWidget
 {
   final double leftPercentage;
   final double topPercentage;
   final List<Widget> widgetsList;
 
-  const AfterContainerWidget({super.key, required this.leftPercentage, required this.topPercentage, required this.widgetsList,});
+  const AfContainerBody({super.key, required this.leftPercentage, required this.topPercentage, required this.widgetsList,});
 
   @override
   Widget build(BuildContext context)

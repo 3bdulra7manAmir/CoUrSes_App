@@ -1,4 +1,3 @@
-import 'package:courses_app/Core/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,7 +6,7 @@ abstract class Styles
   static TextStyle textStyle30 = TextStyle(
     fontSize: 30.sp,
     fontWeight: FontWeight.w900,
-    fontFamily: kGtSectraFine,
+    //fontFamily: kGtSectraFine,
   );
 
   static TextStyle textStyle20 = TextStyle(

@@ -18,7 +18,7 @@ class CustomContainerBackGround extends StatelessWidget
       width: containerWidthPercent ?? KMediaQuery(context).width,
     
       decoration: boxDecoration ?? BoxDecoration(
-        color: Color(0xfff0f0f2),
+        color: Colors.red,
         borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
       ),
       child: containerChild,
