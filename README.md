@@ -2,7 +2,7 @@
 
 # Courses App
 
-A FIGMA design for a Courses App
+FIGMA design for a Courses App
 <br>
 
 # FIGMA UI Link...
