@@ -7,9 +7,9 @@ class CustomBlueButton extends StatelessWidget
   const CustomBlueButton({super.key, required this.buttonWidth, this.buttonHeight, required this.buttonText, required this.buttonOnPressed,});
 
   final double buttonWidth;
-  final double? buttonHeight;
   final String buttonText;
-  final void Function()? buttonOnPressed;
+  final void Function() buttonOnPressed;
+  final double? buttonHeight;
 
   @override
   Widget build(BuildContext context)
@@ -25,7 +25,7 @@ class CustomBlueButton extends StatelessWidget
           ),
         ),
       ),
-      onPressed: () {},
+      onPressed: buttonOnPressed,
       child: Center(child: Text(buttonText, style: Styles.textStyle16.copyWith(color: Colors.white),)),
       ),
     );

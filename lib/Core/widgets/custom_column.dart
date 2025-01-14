@@ -3,23 +3,20 @@ import 'package:flutter/material.dart';
 
 class AfContainerBody extends StatelessWidget
 {
-  final double leftPercentage;
-  final double topPercentage;
-  final List<Widget> widgetsList;
 
-  const AfContainerBody({super.key, required this.leftPercentage, required this.topPercentage, required this.widgetsList,});
+  const AfContainerBody({super.key, this.leftPercentage, this.topPercentage, required this.positionedChild,});
+
+  final double? leftPercentage;
+  final double? topPercentage;
+  final Widget positionedChild;
 
   @override
   Widget build(BuildContext context)
   {
     return Positioned(
-      left: KMediaQuery(context).width * leftPercentage,
-      top: KMediaQuery(context).height * topPercentage,
-
-      child: Column(
-        //crossAxisAlignment: CrossAxisAlignment.start,
-        children: widgetsList,
-      ),
+      top: KMediaQuery(context).height * (topPercentage ?? 0),
+      left: KMediaQuery(context).width * (leftPercentage ?? 0),
+      child: positionedChild,
     );
   }
 }
