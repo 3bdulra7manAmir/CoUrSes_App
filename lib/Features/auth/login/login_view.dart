@@ -1,4 +1,5 @@
 import 'package:courses_app/Core/constants.dart';
+import 'package:courses_app/Core/utils/app_router.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Core/widgets/custom_button.dart';
 import 'package:courses_app/Core/widgets/custom_column.dart';
@@ -6,6 +7,8 @@ import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Core/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 
 class LoginView extends StatelessWidget
@@ -65,18 +68,18 @@ class LoginView extends StatelessWidget
                         fieldObscureText: true,
                         fieldSuffixIcon: Icon(Icons.visibility_off),
                         fieldOnSubmitted: (string)
-                        {
-                          print(passwordController.text);
-                        },
+                        {print(passwordController.text);},
                       ),
                   
                       SizedBox(height: 20,),
                   
-                      CustomTextWidget(widgetText: 'Forget Password?', widgetAlignment: Alignment.centerRight, widgetPadding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.045),),
+                      GestureDetector(
+                        onTap: (){print("Forget Password");},
+                        child: CustomTextWidget(widgetText: 'Forget Password?', widgetAlignment: Alignment.centerRight, widgetPadding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.045),)),
                   
                       SizedBox(height: 20,),
                       
-                      CustomBlueButton(buttonText: 'Log In', buttonWidth: 0.9, buttonOnPressed: (){},),
+                      CustomBlueButton(buttonText: 'Log In', buttonWidth: 0.9, buttonOnPressed: (){print('Log In Button Pressed');},),
               
                       SizedBox(height: 30,),
               
@@ -89,9 +92,39 @@ class LoginView extends StatelessWidget
                           SizedBox(width: 5,),
               
                           GestureDetector(
-                            onTap: (){},
+                            onTap: (){GoRouter.of(context).push(AppRouter.kRegisterView); print('WENT TO\tREGISTER_VIEW');},
                             child: Text("Sign up", textAlign: TextAlign.center, style: TextStyle(color: Color.fromRGBO(61, 93, 255, 1)),)
                           )
+                        ],
+                      ),
+
+                      SizedBox(height: 30,),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        
+                        children:
+                        [
+                          Text("______________",),
+                          SizedBox(width: 25,),
+                      
+                          Text("Or login with", style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w400),),
+                      
+                          SizedBox(width: 25,),
+                      
+                          Text("______________"),
+                        ],
+                      ),
+
+                      SizedBox(height: 20,),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,                        
+                        children:
+                        [
+                          SvgPicture.asset('assets/images/svg/Google_Platform.svg'),
+                          SizedBox(width: 50,),
+                          SvgPicture.asset('assets/images/svg/Facebook_Platform.svg'),
                         ],
                       ),
                     ],
@@ -105,35 +138,3 @@ class LoginView extends StatelessWidget
     );
   }
 }
-
-
-
-
-
-// class CustomBlueButton extends StatelessWidget
-// {
-//   const CustomBlueButton({super.key,});
-
-//   final double buttonWidth;
-//   final double buttonHeight;
-
-//   @override
-//   Widget build(BuildContext context)
-//   {
-//     return SizedBox(
-//       width: KMediaQuery(context).width * 0.9,
-//       height: KMediaQuery(context).height * 0.06,
-//       child: ElevatedButton(
-//         style: ButtonStyle(
-//           backgroundColor: WidgetStateProperty.all(Color((0xff3d5cff))),
-//           shape: WidgetStateProperty.all(RoundedRectangleBorder(
-//             borderRadius: BorderRadius.circular(12.0),
-//           ),
-//         ),
-//       ),
-//       onPressed: () {},
-//       child: Center(child: Text('Log in', style: Styles.textStyle16.copyWith(color: Colors.white),)),
-//       ),
-//     );
-//   }
-// }
