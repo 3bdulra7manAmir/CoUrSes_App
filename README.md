@@ -5,7 +5,7 @@
 FIGMA design for a Courses App
 <br>
 
-# FIGMA UI Link...
+# FIGMA UI
 <a href="https://www.figma.com/design/ojEAaOeeXrvFjCB4dIvFJi/Online-Learning-App-Design-(Community)?node-id=0-1&t=ytmQx4QXmkWrrKf6-1">FIGMA Link...</a>
 
 First & Second Screens IN MY design Order!,
