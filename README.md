@@ -6,7 +6,7 @@ A FIGMA design for a Courses App
 <br>
 
 # FIGMA UI Link...
-<a href="https://www.figma.com/design/ojEAaOeeXrvFjCB4dIvFJi/Online-Learning-App-Design-(Community)?node-id=0-1&t=ytmQx4QXmkWrrKf6-1">Courses App</a>
+<a href="https://www.figma.com/design/ojEAaOeeXrvFjCB4dIvFJi/Online-Learning-App-Design-(Community)?node-id=0-1&t=ytmQx4QXmkWrrKf6-1">FIGMA Link...</a>
 
 First and Second Screens IN MY design Order!,
 ![MergedImages](https://github.com/user-attachments/assets/f75ff9fc-a2d7-44bb-a8a9-cc8d96378adb)
