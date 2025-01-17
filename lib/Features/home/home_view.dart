@@ -1,3 +1,4 @@
+import 'package:courses_app/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget
@@ -9,7 +10,7 @@ class HomeView extends StatelessWidget
   {
     return SafeArea(
       child: Scaffold(
-        //body: ,
+        body: Center(child: Text("Man! This is Home View", style: Styles.textStyle18,),),
       ),
     );
   }
