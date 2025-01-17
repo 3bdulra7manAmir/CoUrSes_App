@@ -6,6 +6,7 @@ import 'package:courses_app/Core/widgets/custom_column.dart';
 import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Core/widgets/custom_textfield.dart';
+import 'package:courses_app/Features/auth/firebase_auth/firebase_auth_cubit/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -19,11 +20,12 @@ class RegisterView extends StatefulWidget
   State<RegisterView> createState() => _RegisterViewState();
 }
 
-class _RegisterViewState extends State<RegisterView> {
+class _RegisterViewState extends State<RegisterView>
+{
+
   final TextEditingController emailController = TextEditingController();
-
   final TextEditingController passwordController = TextEditingController();
-
+  bool obscureText = true;
   bool isChecked = false;
 
   @override
@@ -37,15 +39,15 @@ class _RegisterViewState extends State<RegisterView> {
             //BOTTOM Container
             CustomContainerBackGround(
               containerChild: Padding(
-                padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.1, left: KMediaQuery(context).width * 0.05),
+                padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.07, left: KMediaQuery(context).width * 0.05,),
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children:
                     [
-                      Text("Sign Up", style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold)),
-                      Text("Enter your details below & free sign up", style: Styles.textStyle14),
+                      CustomTextWidget(widgetText: 'Sign Up', widgetTextStyle: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),),
+                      CustomTextWidget(widgetText: 'Enter your details below & free sign up', widgetTextStyle: Styles.textStyle14,),
                     ],
                   )
                 ),
@@ -80,15 +82,24 @@ class _RegisterViewState extends State<RegisterView> {
                                     
                       CustomTextfield(
                         fieldController: passwordController,
-                        fieldObscureText: true,
-                        fieldSuffixIcon: Icon(Icons.visibility_off),
+                        fieldObscureText: obscureText,
+                        fieldSuffixIcon: IconButton(icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility,),
+                        onPressed: () {setState(() {obscureText = !obscureText;});},),
                         fieldOnSubmitted: (string)
                         {print(passwordController.text);},
                       ),
                   
                       SizedBox(height: 30,),
                   
-                      CustomBlueButton(buttonText: 'Creat account', buttonWidth: 0.9, buttonOnPressed: (){print('Create Account Button Pressed');},),
+                      CustomBlueButton(buttonText: 'Creat account', buttonWidth: 0.9, buttonOnPressed: () async
+                        {
+                          print('Create Account Button Pressed');
+                          print("${emailController.text} \t ${passwordController.text}");
+
+                          await firebaseRegisterAuth(emailController.text, passwordController.text);
+                          
+                        },
+                      ),
               
                       SizedBox(height: 20,),
               
@@ -100,9 +111,7 @@ class _RegisterViewState extends State<RegisterView> {
                           [
 
                             Checkbox(value: isChecked, onChanged: (bool? value)
-                            {
-                              setState((){isChecked = value!;});
-                            },
+                            {setState((){isChecked = value!;});},
                             activeColor: Colors.blue[800],
                             ),
 
@@ -119,29 +128,19 @@ class _RegisterViewState extends State<RegisterView> {
 
                       SizedBox(height: 40,),
 
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        physics: NeverScrollableScrollPhysics(),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children:
-                          [
-                            Text("Already have an account?", textAlign: TextAlign.center,),
-                
-                            SizedBox(width: 5,),
-                
-                            GestureDetector(
-                              onTap: (){GoRouter.of(context).push(AppRouter.kLoginView); print('WENT TO\tLOGIN_VIEW');},
-                              child: Text("Log in",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(color: Color.fromRGBO(61, 93, 255, 1),
-                              fontWeight: FontWeight.w900,
-                              fontSize: 14.sp,
-                              decoration: TextDecoration.underline),
-                              ),
-                            ),
-                          ],
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children:
+                        [
+                          CustomTextWidget(widgetText: 'Already have an account?', widgetTextStyle: TextStyle(fontSize: 13.sp,),),
+                          
+                          GestureDetector(
+                            onTap: (){GoRouter.of(context).push(AppRouter.kLoginView); print('WENT TO\tLOGIN_VIEW');},
+                            child: CustomTextWidget(widgetText: 'Log in',
+                            widgetTextStyle: TextStyle(fontSize: 14.sp, color:Color.fromRGBO(61, 93, 255, 1), decoration: TextDecoration.underline, fontWeight: FontWeight.w900,
+                            ),),
+                          ),
+                        ],
                       ),
                     ],
                   ),
