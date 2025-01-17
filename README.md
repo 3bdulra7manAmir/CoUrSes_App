@@ -2,13 +2,13 @@
 
 # Courses App
 
-A FIGMA design for a Courses App
+FIGMA design for a Courses App
 <br>
 
-# FIGMA UI Link...
+# FIGMA UI
 <a href="https://www.figma.com/design/ojEAaOeeXrvFjCB4dIvFJi/Online-Learning-App-Design-(Community)?node-id=0-1&t=ytmQx4QXmkWrrKf6-1">FIGMA Link...</a>
 
-First and Second Screens IN MY design Order!,
+First & Second Screens IN MY design Order!,
 ![MergedImages](https://github.com/user-attachments/assets/af482807-1ca9-4fdd-8aa6-8615ebc7894c)
 
 
