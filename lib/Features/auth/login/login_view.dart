@@ -11,12 +11,19 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 
-class LoginView extends StatelessWidget
+class LoginView extends StatefulWidget
 {
-  LoginView({super.key});
+  const LoginView({super.key});
 
+  @override
+  State<LoginView> createState() => _LoginViewState();
+}
+
+class _LoginViewState extends State<LoginView>
+{
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  bool obscureText = true;
 
   @override
   Widget build(BuildContext context)
@@ -29,7 +36,7 @@ class LoginView extends StatelessWidget
             //BOTTOM Container
             CustomContainerBackGround(
               containerChild: Padding(
-                padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.1, left: KMediaQuery(context).width * 0.05),
+                padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.07, left: KMediaQuery(context).width * 0.05),
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: Text("Log In", style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold))
@@ -65,8 +72,9 @@ class LoginView extends StatelessWidget
                                     
                       CustomTextfield(
                         fieldController: passwordController,
-                        fieldObscureText: true,
-                        fieldSuffixIcon: Icon(Icons.visibility_off),
+                        fieldObscureText: obscureText,
+                        fieldSuffixIcon: IconButton(icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility,),
+                        onPressed: () {setState(() {obscureText = !obscureText;});},),
                         fieldOnSubmitted: (string)
                         {print(passwordController.text);},
                       ),
@@ -74,7 +82,7 @@ class LoginView extends StatelessWidget
                       SizedBox(height: 20,),
                   
                       GestureDetector(
-                        onTap: (){print("Forget Password");},
+                        onTap: (){print("Forget Password Pressed");},
                         child: CustomTextWidget(widgetText: 'Forget Password?', widgetAlignment: Alignment.centerRight, widgetPadding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.045),)),
                   
                       SizedBox(height: 20,),
@@ -100,20 +108,24 @@ class LoginView extends StatelessWidget
 
                       SizedBox(height: 30,),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        physics: NeverScrollableScrollPhysics(),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          
+                          children:
+                          [
+                            Text("______________",), //OR DIVIDER
+                            SizedBox(width: 25,),
                         
-                        children:
-                        [
-                          Text("______________",),
-                          SizedBox(width: 25,),
-                      
-                          Text("Or login with", style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w400),),
-                      
-                          SizedBox(width: 25,),
-                      
-                          Text("______________"),
-                        ],
+                            Text("Or login with", style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w400),),
+                        
+                            SizedBox(width: 25,),
+                        
+                            Text("______________"), //OR DIVIDER
+                          ],
+                        ),
                       ),
 
                       SizedBox(height: 20,),
@@ -122,9 +134,15 @@ class LoginView extends StatelessWidget
                         mainAxisAlignment: MainAxisAlignment.center,                        
                         children:
                         [
-                          SvgPicture.asset('assets/images/svg/Google_Platform.svg'),
+                          GestureDetector(
+                            onTap: (){print('Google IMG Pressed');},
+                            child: SvgPicture.asset('assets/images/svg/Google_Platform.svg')),
+
                           SizedBox(width: 50,),
-                          SvgPicture.asset('assets/images/svg/Facebook_Platform.svg'),
+
+                          GestureDetector(
+                            onTap: (){print('Facebook IMG Pressed');},
+                            child: SvgPicture.asset('assets/images/svg/Facebook_Platform.svg')),
                         ],
                       ),
                     ],

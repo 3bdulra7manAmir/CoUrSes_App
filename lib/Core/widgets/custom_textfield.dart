@@ -16,7 +16,8 @@ class CustomTextfield extends StatelessWidget
   this.fieldSuffixIcon,
   this.fieldPrefixIcon,
   this.fieldSuffixIconColor,
-  this.fieldPrefixIconColor
+  this.fieldPrefixIconColor,
+  
   });
 
   final TextEditingController fieldController;
@@ -33,7 +34,7 @@ class CustomTextfield extends StatelessWidget
   final Widget? fieldPrefixIcon;
   final Color? fieldSuffixIconColor;
   final Color? fieldPrefixIconColor;
-
+  
   @override
   Widget build(BuildContext context)
   {
