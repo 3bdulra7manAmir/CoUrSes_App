@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:courses_app/Core/constants.dart';
 import 'package:courses_app/Core/utils/app_router.dart';
 import 'package:courses_app/Core/utils/styles.dart';
@@ -6,6 +8,7 @@ import 'package:courses_app/Core/widgets/custom_column.dart';
 import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Core/widgets/custom_textfield.dart';
+import 'package:courses_app/Features/auth/firebase_auth/firebase_auth_cubit/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -14,7 +17,8 @@ import 'package:go_router/go_router.dart';
 class LoginView extends StatefulWidget
 {
   const LoginView({super.key});
-
+  static bool isUserSigned = false;
+  
   @override
   State<LoginView> createState() => _LoginViewState();
 }
@@ -24,7 +28,7 @@ class _LoginViewState extends State<LoginView>
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   bool obscureText = true;
-
+  
   @override
   Widget build(BuildContext context)
   {
@@ -87,7 +91,20 @@ class _LoginViewState extends State<LoginView>
                   
                       SizedBox(height: 20,),
                       
-                      CustomBlueButton(buttonText: 'Log In', buttonWidth: 0.9, buttonOnPressed: (){print('Log In Button Pressed');},),
+                      CustomBlueButton(buttonText: 'Log In', buttonWidth: 0.9, buttonOnPressed: () async
+                      {
+                        print('Log In Button Pressed');
+                        print("${emailController.text} \t ${passwordController.text}");
+
+                        await firebaseLoginAuth(emailController.text, passwordController.text);
+                        emailController.clear();
+                        passwordController.clear();
+
+                        if(LoginView.isUserSigned)
+                        {
+                          GoRouter.of(context).push(AppRouter.kHomeView);
+                        }                        
+                      },),
               
                       SizedBox(height: 30,),
               
@@ -95,14 +112,14 @@ class _LoginViewState extends State<LoginView>
                         mainAxisAlignment: MainAxisAlignment.center,
                         children:
                         [
-                          Text("Don't have an account?", textAlign: TextAlign.center,),
+                          CustomTextWidget(widgetText: "Don't have an account?",),
               
                           SizedBox(width: 5,),
               
                           GestureDetector(
                             onTap: (){GoRouter.of(context).push(AppRouter.kRegisterView); print('WENT TO\tREGISTER_VIEW');},
-                            child: Text("Sign up", textAlign: TextAlign.center, style: TextStyle(color: Color.fromRGBO(61, 93, 255, 1)),)
-                          )
+                            child: CustomTextWidget(widgetText: "Sign Up", widgetTextStyle: TextStyle(color: Color.fromRGBO(61, 93, 255, 1)),
+                          ),),
                         ],
                       ),
 

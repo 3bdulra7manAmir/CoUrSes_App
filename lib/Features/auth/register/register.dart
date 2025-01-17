@@ -98,6 +98,8 @@ class _RegisterViewState extends State<RegisterView>
 
                           await firebaseRegisterAuth(emailController.text, passwordController.text);
                           
+                          emailController.clear();
+                          passwordController.clear();
                         },
                       ),
               
