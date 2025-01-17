@@ -1,14 +1,14 @@
-// ignore_for_file: unused_import, deprecated_member_use
+// ignore_for_file: deprecated_member_use
 
 import 'package:courses_app/Core/utils/app_router.dart';
-import 'package:courses_app/Features/auth/login/login_view.dart';
-import 'package:courses_app/Features/home/home_view.dart';
+import 'package:courses_app/firebase_options.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main()
+void main() async
 {
   // SystemChrome.setSystemUIOverlayStyle(
   //   const SystemUiOverlayStyle(
@@ -17,6 +17,9 @@ void main()
   //     statusBarBrightness: Brightness.dark, // Adjust brightness for iOS
   //   )
   // );
+  
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
   
   runApp(
     ScreenUtilInit(
