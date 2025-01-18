@@ -1,26 +1,36 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class FirebaseAuthRegisterFailure
+abstract class Failure
 {
-  FirebaseAuthRegisterFailure(FirebaseAuthException e, context)
+  final String errorMessage;
+  const Failure(this.errorMessage);
+}
+
+class FirebaseRegisterFailure extends Failure
+{
+  FirebaseRegisterFailure(super.errorMessage);
+
+  factory FirebaseRegisterFailure.fromFirebaseError(FirebaseAuthException e, BuildContext context)
   {
     switch (e.code)
     {
       case 'weak-password':
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('The password provided is too weak.')));
-        break;
+        return FirebaseRegisterFailure._showError(context, 'The password provided is too weak.');
       case 'email-already-in-use':
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('The account already exists for that email.')));
-        break;
+        return FirebaseRegisterFailure._showError(context, 'The account already exists for that email.');
       case 'invalid-email':
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('The email address is badly formatted.')));
-        break;
+        return FirebaseRegisterFailure._showError(context, 'The email address is badly formatted.');
       case 'operation-not-allowed':
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Email & Password Accounts are not enabled.')));
-        break;
+        return FirebaseRegisterFailure._showError(context, 'Email & Password Accounts are not enabled.');
       default:
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('An error occurred. Please try again later.')));
+        return FirebaseRegisterFailure._showError(context, 'An error occurred. Please try again later.');
     }
+  }
+
+  static FirebaseRegisterFailure _showError(BuildContext context, String message)
+  {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    return FirebaseRegisterFailure(message);
   }
 }
