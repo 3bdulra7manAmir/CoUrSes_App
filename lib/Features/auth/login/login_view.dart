@@ -62,34 +62,31 @@ class _LoginViewState extends State<LoginView>
                   child: Column(
                     children:
                     [
-                      CustomTextWidget(widgetText: 'Your Email',),
+                      const CustomTextWidget(widgetText: 'Your Email',),
                                 
                       CustomTextfield(
                         fieldController: emailController,
                         fieldTextInputType: TextInputType.emailAddress,
-                        fieldOnSubmitted: (string) {print(emailController.text);},
                       ),
                   
                       SizedBox(height: 20,),
                   
-                      CustomTextWidget(widgetText: 'Password',),
+                      const CustomTextWidget(widgetText: 'Password',),
                                     
                       CustomTextfield(
                         fieldController: passwordController,
                         fieldObscureText: obscureText,
                         fieldSuffixIcon: IconButton(icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility,),
                         onPressed: () {setState(() {obscureText = !obscureText;});},),
-                        fieldOnSubmitted: (string)
-                        {print(passwordController.text);},
                       ),
                   
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
                   
                       GestureDetector(
                         onTap: (){print("Forget Password Pressed");},
                         child: CustomTextWidget(widgetText: 'Forget Password?', widgetAlignment: Alignment.centerRight, widgetPadding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.045),)),
                   
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
                       
                       CustomBlueButton(buttonText: 'Log In', buttonWidth: 0.9, buttonOnPressed: () async
                       {
@@ -106,7 +103,7 @@ class _LoginViewState extends State<LoginView>
                         }                        
                       },),
               
-                      SizedBox(height: 30,),
+                      const SizedBox(height: 30,),
               
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -133,19 +130,19 @@ class _LoginViewState extends State<LoginView>
                           
                           children:
                           [
-                            Text("______________",), //OR DIVIDER
-                            SizedBox(width: 25,),
+                            const Text("______________",), //OR DIVIDER
+                            const SizedBox(width: 25,),
                         
                             Text("Or login with", style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w400),),
                         
-                            SizedBox(width: 25,),
+                            const SizedBox(width: 25,),
                         
-                            Text("______________"), //OR DIVIDER
+                            const Text("______________"), //OR DIVIDER
                           ],
                         ),
                       ),
 
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,                        
@@ -155,7 +152,7 @@ class _LoginViewState extends State<LoginView>
                             onTap: (){print('Google IMG Pressed');},
                             child: SvgPicture.asset('assets/images/svg/Google_Platform.svg')),
 
-                          SizedBox(width: 50,),
+                          const SizedBox(width: 50,),
 
                           GestureDetector(
                             onTap: (){print('Facebook IMG Pressed');},
