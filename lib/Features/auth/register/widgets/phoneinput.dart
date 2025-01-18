@@ -53,7 +53,7 @@ class CustomPhoneNumberInputState extends State<CustomPhoneNumberInput>
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                 ),
-                onPressed: () {setState(() {});},
+                onPressed: () {print('Continue Button Pressed');},
                 child: Text('Continue', style: TextStyle(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.bold),
                 ),
               ),

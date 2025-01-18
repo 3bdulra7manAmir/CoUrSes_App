@@ -5,9 +5,9 @@ import 'package:numeric_keyboard/numeric_keyboard.dart';
 
 class CustomNumericKeyboard extends StatefulWidget
 {
-  const CustomNumericKeyboard({super.key, required this.controller});
+  const CustomNumericKeyboard({super.key, required this.numericController});
 
-  final TextEditingController controller;
+  final TextEditingController numericController;
 
   @override
   State<CustomNumericKeyboard> createState() => CustomNumericKeyboardState();
@@ -18,9 +18,10 @@ class CustomNumericKeyboardState extends State<CustomNumericKeyboard>
 
   static String text = '';
   
-  void _onKeyboardTap(String value) {
-    setState(() {widget.controller.text += value;});
-    print('Current input: ${widget.controller.text}');
+  void _onKeyboardTap(String value)
+  {
+    setState(() {widget.numericController.text += value;});
+    print('Current input: ${widget.numericController.text}');
   }
 
   @override
@@ -31,10 +32,15 @@ class CustomNumericKeyboardState extends State<CustomNumericKeyboard>
       onKeyboardTap: _onKeyboardTap,
       textColor: Colors.black,
 
-      rightButtonFn: () {setState(()
-      {if (widget.controller.text.isNotEmpty)
-      {widget.controller.text =widget.controller.text.substring(0, widget.controller.text.length - 1);}
-      });
+      rightButtonFn: ()
+      {setState(()
+      {
+        if (widget.numericController.text.isNotEmpty)
+        {
+          widget.numericController.text =widget.numericController.text.substring(0, widget.numericController.text.length - 1);
+        }
+      }
+        );
       },
       rightIcon: Icon(Icons.backspace, color: Colors.black,),
 

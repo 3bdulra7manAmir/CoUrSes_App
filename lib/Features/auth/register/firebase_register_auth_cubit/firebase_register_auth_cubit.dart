@@ -2,39 +2,94 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 part 'firebase_register_auth_state.dart';
 
-class FirebaseRegisterAuthCubit extends Cubit<FirebaseRegisterAuthStates> 
+class FirebaseRegisterCubit extends Cubit<FirebaseRegisterStates> 
 {
-  FirebaseRegisterAuthCubit() : super(FirebaseRegisterAuthInitialState());
+  FirebaseRegisterCubit() : super(FirebaseRegisterInitialState());
 
-  Future<void> firebaseRegisterAuth(String uEmail, String uPassword) async
+  Future<void> firebaseRegister(String uEmail, String uPassword) async
   {
     try
     {
-      emit(FirebaseRegisterAuthLoading());
+      emit(FirebaseRegisterLoadingState());
       UserCredential uCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: uEmail, password: uPassword);
     }
     on FirebaseAuthException catch (e)
     {
-      if (e.code == 'weak-password')
-      {
-        emit(FirebaseRegisterAuthFailure(errorMessage: 'The Password Provided is Too Weak.'));
-        // print('The Password Provided is Too Weak.');
-      }
-      else if (e.code == 'email-already-in-use')
-      {
-        emit(FirebaseRegisterAuthFailure(errorMessage: 'The Email Address is Already Taken.'));
-        //print('The Account Already Exists For That Email.');
-      }
+      
+      emit(FirebaseRegisterFailureState(errorMessage: e.code));
+      //print(e);
     }
     catch (e)
     {
-      emit(FirebaseRegisterAuthFailure(errorMessage: e.toString()));
+      emit(FirebaseRegisterFailureState(errorMessage: e.toString()));
       //print(e);
     }
   }
 
-
 }
+
+class Validation
+{
+  String? validateEmail(String? value)
+  {
+    if (value == null || value.isEmpty)
+    {
+      return 'Email is required';
+    }
+    final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
+    if (!emailRegex.hasMatch(value))
+    {
+      return 'Enter a valid email';
+    }
+    return null;
+  }
+
+  String? validatePassword(String? value)
+  {
+    if (value == null || value.isEmpty)
+    {
+      return 'Password is required';
+    }
+    if (value.length < 6)
+    {
+      return 'Password must be at least 6 characters long';
+    }
+    return null;
+  }
+
+  void submitForm(GlobalKey<FormState> formKey, bool isChecked, context)
+  {
+    if (formKey.currentState!.validate() && isChecked)
+    {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Account Created Successfully!')),
+      );
+    }
+    else if (!isChecked)
+    {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('You Must Accept The Terms & Conditions')),
+      );
+    }
+  }
+}
+
+
+
+
+
+// class RegisterCheckboxCubit extends Cubit<bool>
+// {
+//   RegisterCheckboxCubit() : super(false);
+
+//   bool isCheckedCheckBox = false;
+  
+//   void toggleCheckbox(bool value)
+//   {
+//     emit(value);
+//   }
+// }

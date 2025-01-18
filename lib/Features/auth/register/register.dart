@@ -46,11 +46,11 @@ class RegisterViewState extends State<RegisterView>
   Widget build(BuildContext context)
   {
     return BlocProvider(
-      create: (context) => FirebaseRegisterAuthCubit(),
-      child: BlocBuilder<FirebaseRegisterAuthCubit, FirebaseRegisterAuthStates>(
+      create: (context) => FirebaseRegisterCubit(),
+      child: BlocBuilder<FirebaseRegisterCubit, FirebaseRegisterStates>(
         builder: (context, state)
         {
-          var firebaseRCubit = BlocProvider.of<FirebaseRegisterAuthCubit>(context);
+          var firebaseRCubit = BlocProvider.of<FirebaseRegisterCubit>(context);
           return SafeArea(
             child: Scaffold(
               body: Form(
@@ -108,7 +108,7 @@ class RegisterViewState extends State<RegisterView>
                                 print('Create Account Button Pressed');
                                 print("${emailController.text} \t ${passwordController.text}");
                 
-                                await firebaseRCubit.firebaseRegisterAuth(emailController.text, passwordController.text);
+                                await firebaseRCubit.firebaseRegister(emailController.text, passwordController.text);
                 
                                 emailController.clear();
                                 passwordController.clear();

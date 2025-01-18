@@ -1,20 +1,15 @@
 part of 'firebase_register_auth_cubit.dart';
 
-abstract class FirebaseRegisterAuthStates {}
+abstract class FirebaseRegisterStates {}
 
-final class FirebaseRegisterAuthInitialState extends FirebaseRegisterAuthStates {}
-final class FirebaseRegisterAuthLoading extends FirebaseRegisterAuthStates {}
-final class FirebaseRegisterAuthSuccess extends FirebaseRegisterAuthStates
-{
-  FirebaseRegisterAuthSuccess({required this.uCredential });
-  final UserCredential uCredential;
+final class FirebaseRegisterInitialState extends FirebaseRegisterStates {}
+final class FirebaseRegisterLoadingState extends FirebaseRegisterStates {}
+final class FirebaseRegisterSuccessState extends FirebaseRegisterStates{}
 
-}
-
-final class FirebaseRegisterAuthFailure extends FirebaseRegisterAuthStates
+final class FirebaseRegisterFailureState extends FirebaseRegisterStates
 {
   final String errorMessage;
-
-  FirebaseRegisterAuthFailure({required this.errorMessage });
+  FirebaseRegisterFailureState({required this.errorMessage});
 }
+  
 
