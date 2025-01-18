@@ -73,7 +73,7 @@ class ContinueWithPhone extends StatelessWidget
                     CustomPhoneNumberInput(),
 
                     SingleChildScrollView(
-                      child: CustomNumericKeyboard(),
+                      child: CustomNumericKeyboard(controller: CustomPhoneNumberInputState.phoneController,),
                     ),
                   ],
                 ),

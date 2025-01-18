@@ -2,9 +2,17 @@ import 'package:courses_app/Core/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomPhoneNumberInput extends StatelessWidget
+class CustomPhoneNumberInput extends StatefulWidget
 {
   const CustomPhoneNumberInput({super.key});
+
+  @override
+  State<CustomPhoneNumberInput> createState() => CustomPhoneNumberInputState();
+}
+
+class CustomPhoneNumberInputState extends State<CustomPhoneNumberInput>
+{
+  static final TextEditingController phoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context)
@@ -22,6 +30,9 @@ class CustomPhoneNumberInput extends StatelessWidget
           [
             Expanded(
               child: TextField(
+                readOnly: true,
+                enableInteractiveSelection: false,
+                controller: phoneController,
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   border: InputBorder.none,
@@ -42,7 +53,7 @@ class CustomPhoneNumberInput extends StatelessWidget
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {setState(() {});},
                 child: Text('Continue', style: TextStyle(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.bold),
                 ),
               ),
