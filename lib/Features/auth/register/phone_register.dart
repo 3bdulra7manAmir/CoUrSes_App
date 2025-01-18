@@ -3,6 +3,8 @@ import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Core/widgets/custom_column.dart';
 import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
+import 'package:courses_app/Features/auth/register/widgets/numeric_keyboard.dart';
+import 'package:courses_app/Features/auth/register/widgets/phoneinput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -29,14 +31,12 @@ class ContinueWithPhone extends StatelessWidget
                     child: Row(
                       children:
                       [
-                        IconButton(onPressed: (){print('Eye Icon Has Been Pressed');}, icon: Icon(Icons.report_off_outlined)),
+                        IconButton(onPressed: (){print('Eye Icon Has Been Pressed');}, icon: SvgPicture.asset('assets/images/svg/Eye.svg')),
                               
-                        Padding(
-                          padding: EdgeInsets.only(left: KMediaQuery(context).width * 0.1),
-                          child: CustomTextWidget(widgetText: 'Continue with Phone',
-                          widgetTextStyle: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
-                          widgetAlignment: Alignment.center,
-                          ),
+                        CustomTextWidget(widgetText: 'Continue with Phone',
+                        widgetTextStyle: Styles.textStyle16.copyWith(fontWeight: FontWeight.w900),
+                        widgetAlignment: Alignment.center,
+                        widgetPadding: EdgeInsets.only(left: KMediaQuery(context).width * 0.13),
                         ),
                       ],
                     ),
@@ -63,13 +63,18 @@ class ContinueWithPhone extends StatelessWidget
                 containerChild: Column(
                   children:
                   [
-                    CustomTextWidget(widgetText: 'Enter Your Phone Number',),
-                              
-                    // CustomTextfield(
-                    //   fieldController: emailController,
-                    //   fieldTextInputType: TextInputType.emailAddress,
-                    //   fieldOnSubmitted: (string) {print(emailController.text);},
-                    // ),
+                    CustomTextWidget(widgetText: 'Enter Your Phone Number', 
+                    widgetAlignment: Alignment.center,
+                    widgetPadding: EdgeInsets.only(top: KMediaQuery(context).height * 0.03),
+                    ),
+
+                    SizedBox(height: 30),
+
+                    CustomPhoneNumberInput(),
+
+                    SingleChildScrollView(
+                      child: CustomNumericKeyboard(),
+                    ),
                   ],
                 ),
               ),

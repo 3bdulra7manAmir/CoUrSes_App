@@ -8,7 +8,7 @@ import 'package:courses_app/Core/widgets/custom_column.dart';
 import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Core/widgets/custom_textfield.dart';
-import 'package:courses_app/Features/auth/firebase_auth/firebase_auth_cubit/firebase_auth.dart';
+import 'package:courses_app/Features/auth/register/firebase_register_auth_cubit/firebase_register_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';

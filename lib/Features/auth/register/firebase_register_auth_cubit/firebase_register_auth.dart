@@ -1,30 +1,5 @@
-// ignore_for_file: unused_local_variable
 import 'package:courses_app/Features/auth/login/login_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
-
-Future<void> firebaseRegisterAuth(String uEmail, String uPassword) async
-{
-  try
-  {
-    UserCredential uCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: uEmail, password: uPassword);
-  }
-  on FirebaseAuthException catch (e)
-  {
-    if (e.code == 'weak-password')
-    {
-      print('The Password Provided is Too Weak.');
-    }
-    else if (e.code == 'email-already-in-use')
-    {
-      print('The Account Already Exists For That Email.');
-    }
-  }
-  catch (e)
-  {
-    print(e);
-  }
-}
 
 Future<void> firebaseLoginAuth(String uEmail, String uPassword) async
 {
@@ -48,4 +23,3 @@ Future<void> firebaseLoginAuth(String uEmail, String uPassword) async
     }
   }
 }
-

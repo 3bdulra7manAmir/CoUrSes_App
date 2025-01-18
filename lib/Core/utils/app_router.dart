@@ -31,12 +31,12 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: kContinueWithPhoneView,
+          path: '/',
           builder: (context, state) => const ContinueWithPhone(),
         ),
 
         GoRoute(
-          path: '/',
+          path: kRegisterView,
           builder: (context, state) => const RegisterView(),
         ),
         

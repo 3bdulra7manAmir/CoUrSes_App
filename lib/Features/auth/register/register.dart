@@ -6,7 +6,7 @@ import 'package:courses_app/Core/widgets/custom_column.dart';
 import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Core/widgets/custom_textfield.dart';
-import 'package:courses_app/Features/auth/firebase_auth/firebase_auth_cubit/firebase_auth.dart';
+import 'package:courses_app/Features/auth/login/firebase_login_auth_cubit/firebase_login_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';

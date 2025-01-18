@@ -12,3 +12,4 @@ class KMediaQuery
 }
 
 const String kGtSectraFine = 'GT Sectra Fine';
+const Color kButtonsBlueColor = Color.fromRGBO(61, 93, 255, 1);
