@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:courses_app/Core/constants.dart';
 import 'package:courses_app/Core/utils/app_router.dart';
 import 'package:courses_app/firebase_options.dart';
 import 'package:device_preview/device_preview.dart';
@@ -38,7 +39,7 @@ class CoursesApp extends StatelessWidget
   {
     return DevicePreview(
       enabled: true,
-      builder: (context) =>  MaterialApp.router(
+      builder: (context) => MaterialApp.router(
         useInheritedMediaQuery: true, // deprecated_member_use
 
         builder: DevicePreview.appBuilder,
@@ -46,7 +47,13 @@ class CoursesApp extends StatelessWidget
         routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,
 
-        theme: ThemeData.light().copyWith(textTheme: GoogleFonts.montserratAlternatesTextTheme(),),
+        theme: ThemeData.light().copyWith(textTheme: GoogleFonts.montserratAlternatesTextTheme(),
+        textSelectionTheme: const TextSelectionThemeData(
+          cursorColor:  kButtonsBlueColor,
+          selectionColor: kButtonsBlueColor,
+          selectionHandleColor: kButtonsBlueColor
+          ),
+        ),
 
         // theme: ThemeData.dark().copyWith(
         //   textTheme: GoogleFonts.montserratAlternatesTextTheme(
