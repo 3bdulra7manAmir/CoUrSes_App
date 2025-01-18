@@ -5,7 +5,7 @@ class CustomTextfield extends StatelessWidget
 {
   const CustomTextfield({super.key,
   required this.fieldController,
-  required this.fieldOnSubmitted,
+  //required this.fieldOnSubmitted,
 
   this.fieldObscureText,
   this.fieldTextAlign,
@@ -17,11 +17,13 @@ class CustomTextfield extends StatelessWidget
   this.fieldPrefixIcon,
   this.fieldSuffixIconColor,
   this.fieldPrefixIconColor,
+  this.fieldVaidator,
   
   });
 
   final TextEditingController fieldController;
-  final void Function(String) fieldOnSubmitted;
+  final String? Function(String?)? fieldVaidator;
+  //final void Function(String) fieldOnSubmitted;
 
   final TextInputType? fieldTextInputType;
   final bool? fieldObscureText;
@@ -40,10 +42,12 @@ class CustomTextfield extends StatelessWidget
   {
     return SizedBox(
       width: KMediaQuery(context).width * 0.9,
-      child: TextField(
+      child: TextFormField(
         controller: fieldController,
-        onSubmitted: fieldOnSubmitted,
+        //onSubmitted: fieldOnSubmitted,
+        validator: fieldVaidator,
         obscureText: fieldObscureText ?? false,
+        
         textAlign: fieldTextAlign ?? TextAlign.start,
         textDirection: fieldTextDirection ?? TextDirection.ltr,
         keyboardType: fieldTextInputType ?? TextInputType.none,
