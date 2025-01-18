@@ -68,12 +68,12 @@ class ContinueWithPhone extends StatelessWidget
                     widgetPadding: EdgeInsets.only(top: KMediaQuery(context).height * 0.03),
                     ),
 
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
 
-                    CustomPhoneNumberInput(),
+                    const CustomPhoneNumberInput(),
 
                     SingleChildScrollView(
-                      child: CustomNumericKeyboard(controller: CustomPhoneNumberInputState.phoneController,),
+                      child: CustomNumericKeyboard(numericController: CustomPhoneNumberInputState.phoneController,),
                     ),
                   ],
                 ),
