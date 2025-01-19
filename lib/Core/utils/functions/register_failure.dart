@@ -7,30 +7,30 @@ abstract class Failure
   const Failure(this.errorMessage);
 }
 
-class FirebaseRegisterFailure extends Failure
+class FirebaseRegistionFailure extends Failure
 {
-  FirebaseRegisterFailure(super.errorMessage);
+  FirebaseRegistionFailure(super.errorMessage);
 
-  factory FirebaseRegisterFailure.fromFirebaseError(FirebaseAuthException e, BuildContext context)
+  factory FirebaseRegistionFailure.fromFirebaseError(FirebaseAuthException e, BuildContext context)
   {
     switch (e.code)
     {
       case 'weak-password':
-        return FirebaseRegisterFailure._showError(context, 'The password provided is too weak.');
+        return FirebaseRegistionFailure.showError(context, 'The password provided is too weak.');
       case 'email-already-in-use':
-        return FirebaseRegisterFailure._showError(context, 'The account already exists for that email.');
+        return FirebaseRegistionFailure.showError(context, 'The account already exists for that email.');
       case 'invalid-email':
-        return FirebaseRegisterFailure._showError(context, 'The email address is badly formatted.');
+        return FirebaseRegistionFailure.showError(context, 'The email address is badly formatted.');
       case 'operation-not-allowed':
-        return FirebaseRegisterFailure._showError(context, 'Email & Password Accounts are not enabled.');
+        return FirebaseRegistionFailure.showError(context, 'Email & Password Accounts are not enabled.');
       default:
-        return FirebaseRegisterFailure._showError(context, 'An error occurred. Please try again later.');
+        return FirebaseRegistionFailure.showError(context, 'An error occurred. Please try again later.');
     }
   }
 
-  static FirebaseRegisterFailure _showError(BuildContext context, String message)
+  static FirebaseRegistionFailure showError(BuildContext context, String message)
   {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
-    return FirebaseRegisterFailure(message);
+    return FirebaseRegistionFailure(message);
   }
 }
