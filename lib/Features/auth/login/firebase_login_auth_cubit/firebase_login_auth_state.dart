@@ -1,20 +1,21 @@
 part of 'firebase_login_auth_cubit.dart';
 
-abstract class FirebaseLoginAuthStates {}
+abstract class LoginStates {}
 
-final class FirebaseLoginAuthInitialState extends FirebaseLoginAuthStates {}
-final class FirebaseLoginAuthLoading extends FirebaseLoginAuthStates {}
+final class LoginInitialState extends LoginStates {}
 
-final class FirebaseLoginAuthSuccess extends FirebaseLoginAuthStates
+final class LoginLoadingState extends LoginStates {}
+
+final class LoginSuccessState extends LoginStates
 {
-  FirebaseLoginAuthSuccess({required this.uCredential });
-  final UserCredential uCredential;
+  LoginSuccessState({required this.uData });
+  final UserCredential uData;
 }
 
-final class FirebaseLoginAuthFailure extends FirebaseLoginAuthStates
+final class LoginFailureState extends LoginStates
 {
   final String errorMessage;
 
-  FirebaseLoginAuthFailure({required this.errorMessage });
+  LoginFailureState({required this.errorMessage });
 }
 
