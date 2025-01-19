@@ -1,38 +1,43 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:bloc/bloc.dart';
+import 'package:courses_app/Core/utils/styles.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-part 'firebase_register_auth_state.dart';
+part 'firebase_register_state.dart';
 
-class FirebaseRegisterCubit extends Cubit<FirebaseRegisterStates> 
+class FirebaseRegisterCubit extends Cubit<RegisterStates> 
 {
-  FirebaseRegisterCubit() : super(FirebaseRegisterInitialState());
+  FirebaseRegisterCubit() : super(RegisterInitialState());
 
-  Future<void> firebaseRegister(String uEmail, String uPassword) async
+  Future<void> firebaseRegister(String uEmail, String uPassword, context) async
   {
     try
     {
-      emit(FirebaseRegisterLoadingState());
+      emit(RegisterLoadingState());
+
       UserCredential uCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: uEmail, password: uPassword);
-    }
-    on FirebaseAuthException catch (e)
-    {
+
+      if (uCredential.user != null)
+      {
+        emit(RegisterSuccessState(userData: uCredential.user!));
+      }
+      else
+      {
+        emit(RegisterFailureState(errorMessage: 'User registration succeeded but user details are unavailable.'));
+      }
       
-      emit(FirebaseRegisterFailureState(errorMessage: e.code));
-      //print(e);
     }
-    catch (e)
+    on Exception catch (e)
     {
-      emit(FirebaseRegisterFailureState(errorMessage: e.toString()));
-      //print(e);
+      emit(RegisterFailureState(errorMessage: e.toString()));
     }
-  }
+}
 
 }
 
-class Validation
+class SignUpValidator
 {
   String? validateEmail(String? value)
   {
@@ -65,31 +70,11 @@ class Validation
   {
     if (formKey.currentState!.validate() && isChecked)
     {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Account Created Successfully!')),
-      );
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Account Created Successfully!', style: Styles.textStyle16,)),);
     }
     else if (!isChecked)
     {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('You Must Accept The Terms & Conditions')),
-      );
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('You Must Accept The Terms & Conditions', style: Styles.textStyle16,)),);
     }
   }
 }
-
-
-
-
-
-// class RegisterCheckboxCubit extends Cubit<bool>
-// {
-//   RegisterCheckboxCubit() : super(false);
-
-//   bool isCheckedCheckBox = false;
-  
-//   void toggleCheckbox(bool value)
-//   {
-//     emit(value);
-//   }
-// }

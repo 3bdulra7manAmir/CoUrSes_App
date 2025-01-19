@@ -8,7 +8,7 @@ import 'package:courses_app/Core/widgets/custom_column.dart';
 import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Core/widgets/custom_textfield.dart';
-import 'package:courses_app/Features/auth/register/firebase_register_auth_cubit/firebase_register_auth_cubit.dart';
+import 'package:courses_app/Features/auth/register/firebase_register_auth_cubit/firebase_register_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +24,7 @@ class RegisterView extends StatefulWidget
 
 class RegisterViewState extends State<RegisterView>
 {
-  final formKey = GlobalKey<FormState>();
+  final registerFormKey = GlobalKey<FormState>();
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -47,14 +47,14 @@ class RegisterViewState extends State<RegisterView>
   {
     return BlocProvider(
       create: (context) => FirebaseRegisterCubit(),
-      child: BlocBuilder<FirebaseRegisterCubit, FirebaseRegisterStates>(
+      child: BlocBuilder<FirebaseRegisterCubit, RegisterStates>(
         builder: (context, state)
         {
           var firebaseRCubit = BlocProvider.of<FirebaseRegisterCubit>(context);
           return SafeArea(
             child: Scaffold(
               body: Form(
-                key: formKey,
+                key: registerFormKey,
                 child: Stack(
                   children:
                   [
@@ -87,13 +87,13 @@ class RegisterViewState extends State<RegisterView>
                             [
                               const CustomTextWidget(widgetText: 'Your Email',),
                               CustomTextfield(fieldController: emailController, fieldTextInputType: TextInputType.emailAddress,
-                              fieldVaidator: Validation().validateEmail,
+                              fieldVaidator: SignUpValidator().validateEmail,
                               ),
                               SizedBox(height: 20,),
                 
                               const CustomTextWidget(widgetText: 'Password',),
                               CustomTextfield(fieldController: passwordController, fieldObscureText: obscureText,
-                                fieldVaidator: Validation().validatePassword,
+                                fieldVaidator: SignUpValidator().validatePassword,
                                 fieldSuffixIcon: IconButton(icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility,),
                                   onPressed: () {setState(() {obscureText = !obscureText;});},
                                 ),
@@ -103,12 +103,12 @@ class RegisterViewState extends State<RegisterView>
                 
                               CustomBlueButton(buttonText: 'Creat account', buttonWidth: 0.9, buttonOnPressed: () async
                               {
-                                Validation().submitForm(formKey, isChecked, context);
-
                                 print('Create Account Button Pressed');
                                 print("${emailController.text} \t ${passwordController.text}");
+
+                                SignUpValidator().submitForm(registerFormKey, isChecked, context);
                 
-                                await firebaseRCubit.firebaseRegister(emailController.text, passwordController.text);
+                                await firebaseRCubit.firebaseRegister(emailController.text, passwordController.text, context);
                 
                                 emailController.clear();
                                 passwordController.clear();
