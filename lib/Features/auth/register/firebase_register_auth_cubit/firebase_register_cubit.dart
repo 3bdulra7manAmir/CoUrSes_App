@@ -1,5 +1,4 @@
 // ignore_for_file: unused_local_variable
-
 import 'package:bloc/bloc.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,18 +15,16 @@ class FirebaseRegisterCubit extends Cubit<RegisterStates>
     try
     {
       emit(RegisterLoadingState());
-
       UserCredential uCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: uEmail, password: uPassword);
-
-      if (uCredential.user != null)
-      {
-        emit(RegisterSuccessState(userData: uCredential.user!));
-      }
-      else
-      {
-        emit(RegisterFailureState(errorMessage: 'User registration succeeded but user details are unavailable.'));
-      }
-      
+      emit(RegisterSuccessState(userData: uCredential.user!));
+      // if (uCredential.user != null)
+      // {
+      //   emit(RegisterSuccessState(userData: uCredential.user!)); //
+      // }
+      // else
+      // {
+      //   emit(RegisterFailureState(errorMessage: 'User registration succeeded but user details are unavailable.'));
+      // }
     }
     on Exception catch (e)
     {
@@ -72,9 +69,17 @@ class SignUpValidator
     {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Account Created Successfully!', style: Styles.textStyle16,)),);
     }
-    else if (!isChecked)
+    else if (formKey.currentState!.validate() && !isChecked)
     {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('You Must Accept The Terms & Conditions', style: Styles.textStyle16,)),);
+    }
+    else if (!(formKey.currentState!.validate()) && isChecked)
+    {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Wrong Email Or Password!', style: Styles.textStyle16,)),);
+    }
+    else if (!(formKey.currentState!.validate()) && !isChecked)
+    {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Fill The Fields Correctly Please!', style: Styles.textStyle16,)),);
     }
   }
 }

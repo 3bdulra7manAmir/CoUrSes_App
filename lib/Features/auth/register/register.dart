@@ -28,7 +28,7 @@ class RegisterViewState extends State<RegisterView>
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
+  
   bool isChecked = false;
   bool obscureText = true;
 
@@ -47,7 +47,7 @@ class RegisterViewState extends State<RegisterView>
   {
     return BlocProvider(
       create: (context) => FirebaseRegisterCubit(),
-      child: BlocBuilder<FirebaseRegisterCubit, RegisterStates>(
+      child: BlocConsumer<FirebaseRegisterCubit, RegisterStates>(
         builder: (context, state)
         {
           var firebaseRCubit = BlocProvider.of<FirebaseRegisterCubit>(context);
@@ -89,7 +89,8 @@ class RegisterViewState extends State<RegisterView>
                               CustomTextfield(fieldController: emailController, fieldTextInputType: TextInputType.emailAddress,
                               fieldVaidator: SignUpValidator().validateEmail,
                               ),
-                              SizedBox(height: 20,),
+
+                              const SizedBox(height: 20,),
                 
                               const CustomTextWidget(widgetText: 'Password',),
                               CustomTextfield(fieldController: passwordController, fieldObscureText: obscureText,
@@ -103,20 +104,17 @@ class RegisterViewState extends State<RegisterView>
                 
                               CustomBlueButton(buttonText: 'Creat account', buttonWidth: 0.9, buttonOnPressed: () async
                               {
-                                print('Create Account Button Pressed');
-                                print("${emailController.text} \t ${passwordController.text}");
-
+                                // print('Create Account Button Pressed');
+                                // print("${emailController.text} \t ${passwordController.text}");
                                 SignUpValidator().submitForm(registerFormKey, isChecked, context);
-                
-                                await firebaseRCubit.firebaseRegister(emailController.text, passwordController.text, context);
-                
-                                emailController.clear();
-                                passwordController.clear();
 
-                                setState(() => isChecked = false);
-
-                                Future.delayed(Duration(seconds: 1), () => GoRouter.of(context).go(AppRouter.kLoginView));
-                                },
+                                if ((registerFormKey.currentState?.validate()) != false && isChecked != false)
+                                {
+                                  await firebaseRCubit.firebaseRegister(emailController.text, passwordController.text, context);
+                                }
+                                
+                                
+                              },
                               ),
                 
                               const SizedBox(height: 20,),
@@ -177,6 +175,17 @@ class RegisterViewState extends State<RegisterView>
               ),
             ),
           );
+        },
+        listener: (context, state)
+        {
+          if (state is RegisterSuccessState)
+          {
+            emailController.clear();
+            passwordController.clear();
+            obscureText = true;
+            setState(() {isChecked = false;});
+            Future.delayed(Duration(seconds: 1), () => GoRouter.of(context).go(AppRouter.kLoginView));
+          }
         },
       ),
     );

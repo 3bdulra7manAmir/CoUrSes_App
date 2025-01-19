@@ -22,18 +22,30 @@ class LoginView extends StatefulWidget {
   State<LoginView> createState() => LoginViewState();
 }
 
-class LoginViewState extends State<LoginView> {
+class LoginViewState extends State<LoginView>
+{
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final loginFormKey = GlobalKey<FormState>();
   bool obscureText = true;
+ 
+  //TO PREVENT Memory leak //Tharwat Samy...
+  @override
+  void dispose()
+  {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return BlocProvider(
       create: (context) => FirebaseLoginCubit(),
       child: BlocBuilder<FirebaseLoginCubit, LoginStates>(
-        builder: (context, state) {
+        builder: (context, state)
+        {
           var firebaseLCubit = BlocProvider.of<FirebaseLoginCubit>(context);
           return SafeArea(
             child: Scaffold(
@@ -100,18 +112,23 @@ class LoginViewState extends State<LoginView> {
 
                                 LoginValidator().submitForm(loginFormKey, context);
 
-                                if (FormState().validate())
+                                if (loginFormKey.currentState?.validate() ?? false)
                                 {
                                   await firebaseLCubit.firebaseLogin(emailController.text,passwordController.text);
+                                  if (state is LoginSuccessState)
+                                  {
+                                    emailController.clear();
+                                    passwordController.clear();
+                                    GoRouter.of(context).push(AppRouter.kHomeView);
+                                    print('WENT TO\tHOME_VIEW');
+                                  }
                                 }
 
-                                emailController.clear();
-                                passwordController.clear();
+                                
 
-                                // if (LoginView.isUserSigned)
-                                // {
-                                //   GoRouter.of(context).push(AppRouter.kHomeView);
-                                // }
+
+
+                                
                               },
                               ),
 
