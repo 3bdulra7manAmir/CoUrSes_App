@@ -8,7 +8,7 @@ import 'package:courses_app/Core/widgets/custom_column.dart';
 import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Core/widgets/custom_textfield.dart';
-import 'package:courses_app/Features/auth/login/firebase_login_auth_cubit/firebase_login_auth_cubit.dart';
+import 'package:courses_app/Features/auth/login/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -99,7 +99,7 @@ class LoginViewState extends State<LoginView>
                               const SizedBox(height: 20,),
 
                               GestureDetector(
-                                  onTap: () {print("Forget Password Pressed");},
+                                  onTap: () {print("Forget Password Pressed"); GoRouter.of(context).push(AppRouter.kContinueWithPhoneView);},
                                   child: CustomTextWidget(widgetText: 'Forget Password?', widgetAlignment: Alignment.centerRight,
                                     widgetPadding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.045),)),
 
@@ -194,6 +194,10 @@ class LoginViewState extends State<LoginView>
             passwordController.clear();
             GoRouter.of(context).push(AppRouter.kHomeView);
             print('WENT TO\tHOME_VIEW');
+          }
+          if (state is LoginFailureState)
+          {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Wrong Email Or Password', style: Styles.textStyle16,)),);
           }
         },
       ),

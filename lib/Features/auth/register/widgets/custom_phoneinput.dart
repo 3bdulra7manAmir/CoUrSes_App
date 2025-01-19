@@ -2,15 +2,15 @@ import 'package:courses_app/Core/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomPhoneNumberInput extends StatefulWidget
+class CustomPhoneNumberInputField extends StatefulWidget
 {
-  const CustomPhoneNumberInput({super.key});
+  const CustomPhoneNumberInputField({super.key});
 
   @override
-  State<CustomPhoneNumberInput> createState() => CustomPhoneNumberInputState();
+  State<CustomPhoneNumberInputField> createState() => CustomPhoneNumberInputFieldState();
 }
 
-class CustomPhoneNumberInputState extends State<CustomPhoneNumberInput>
+class CustomPhoneNumberInputFieldState extends State<CustomPhoneNumberInputField>
 {
   static final TextEditingController phoneController = TextEditingController();
 

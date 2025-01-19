@@ -1,4 +1,4 @@
-part of 'firebase_login_auth_cubit.dart';
+part of 'login_cubit.dart';
 
 abstract class LoginStates {}
 

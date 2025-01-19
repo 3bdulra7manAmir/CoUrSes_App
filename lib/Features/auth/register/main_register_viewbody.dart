@@ -8,7 +8,7 @@ import 'package:courses_app/Core/widgets/custom_column.dart';
 import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Core/widgets/custom_textfield.dart';
-import 'package:courses_app/Features/auth/register/firebase_register_auth_cubit/firebase_register_cubit.dart';
+import 'package:courses_app/Features/auth/register/register_cubit/register_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -94,6 +94,7 @@ class RegisterViewState extends State<RegisterView>
                 
                               const CustomTextWidget(widgetText: 'Password',),
                               CustomTextfield(fieldController: passwordController, fieldObscureText: obscureText,
+                                fieldTextInputType: TextInputType.text,
                                 fieldVaidator: SignUpValidator().validatePassword,
                                 fieldSuffixIcon: IconButton(icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility,),
                                   onPressed: () {setState(() {obscureText = !obscureText;});},
@@ -185,6 +186,10 @@ class RegisterViewState extends State<RegisterView>
             obscureText = true;
             setState(() {isChecked = false;});
             Future.delayed(Duration(seconds: 1), () => GoRouter.of(context).go(AppRouter.kLoginView));
+          }
+          if (state is RegisterFailureState)
+          {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('An unexpected error Please Try Again Later!', style: Styles.textStyle16,)),);
           }
         },
       ),

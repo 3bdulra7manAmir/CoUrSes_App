@@ -5,7 +5,7 @@ import 'package:courses_app/Core/utils/styles.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-part 'firebase_login_auth_state.dart';
+part 'login_state.dart';
 
 class FirebaseLoginCubit extends Cubit<LoginStates> 
 {
@@ -27,9 +27,13 @@ class FirebaseLoginCubit extends Cubit<LoginStates>
         emit(LoginFailureState(errorMessage: 'User Login Succeeded but User Details are Unavailable.'));
       }
     }
-    on Exception catch (e)
+    on FirebaseAuthException catch (e)
     {
       emit(LoginFailureState(errorMessage: e.toString()));
+    }
+    catch (e)
+    {
+      emit(LoginFailureState(errorMessage: 'An error occurred: ${e.toString()}'));
     }
   }
 }

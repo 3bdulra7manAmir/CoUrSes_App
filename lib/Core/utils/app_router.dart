@@ -1,6 +1,7 @@
-import 'package:courses_app/Features/auth/login/login_view.dart';
-import 'package:courses_app/Features/auth/register/phone_register.dart';
-import 'package:courses_app/Features/auth/register/register.dart';
+import 'package:courses_app/Features/auth/login/login_viewbody.dart';
+import 'package:courses_app/Features/auth/register/ph_otp_viewbody.dart';
+import 'package:courses_app/Features/auth/register/ph_register_viewbody.dart';
+import 'package:courses_app/Features/auth/register/main_register_viewbody.dart';
 import 'package:courses_app/Features/home/home_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,6 +12,7 @@ abstract class AppRouter
   static const kLoginView = '/loginView';
   static const kRegisterView = '/registerView';
   static const kContinueWithPhoneView = '/continueWithPhoneView';
+  static const kPhoneOTPView = '/phoneOTPView';
 
   static final router = GoRouter(
       routes:
@@ -32,12 +34,13 @@ abstract class AppRouter
 
         GoRoute(
           path: kContinueWithPhoneView,
-          builder: (context, state) => const ContinueWithPhone(),
+          builder: (context, state) => const ContinueWithPhoneView(),
         ),
+
 
         GoRoute(
           path: '/',
-          builder: (context, state) => const RegisterView(),
+          builder: (context, state) => PhoneOTPView(),
         ),
         
       ],

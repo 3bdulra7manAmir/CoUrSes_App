@@ -3,14 +3,14 @@ import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Core/widgets/custom_column.dart';
 import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
-import 'package:courses_app/Features/auth/register/widgets/numeric_keyboard.dart';
-import 'package:courses_app/Features/auth/register/widgets/phoneinput.dart';
+import 'package:courses_app/Features/auth/register/widgets/custom_num_register_kb.dart';
+import 'package:courses_app/Features/auth/register/widgets/custom_phoneinput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ContinueWithPhone extends StatelessWidget
+class ContinueWithPhoneView extends StatelessWidget
 {
-  const ContinueWithPhone({super.key});
+  const ContinueWithPhoneView({super.key});
 
   @override
   Widget build(BuildContext context)
@@ -70,10 +70,10 @@ class ContinueWithPhone extends StatelessWidget
 
                     const SizedBox(height: 30),
 
-                    const CustomPhoneNumberInput(),
+                    const CustomPhoneNumberInputField(),
 
                     SingleChildScrollView(
-                      child: CustomNumericKeyboard(numericController: CustomPhoneNumberInputState.phoneController,),
+                      child: CustomNumRegisterKeyboard(phoneRegisterController: CustomPhoneNumberInputFieldState.phoneController,),
                     ),
                   ],
                 ),

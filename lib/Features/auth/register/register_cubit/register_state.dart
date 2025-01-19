@@ -1,4 +1,4 @@
-part of 'firebase_register_cubit.dart';
+part of 'register_cubit.dart';
 
 abstract class RegisterStates {}
 

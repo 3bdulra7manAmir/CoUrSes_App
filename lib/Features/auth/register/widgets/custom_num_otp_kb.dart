@@ -2,26 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 
 
-
-class CustomNumericKeyboard extends StatefulWidget
+class CustomNumOTPKeyboard extends StatefulWidget
 {
-  const CustomNumericKeyboard({super.key, required this.numericController});
+  const CustomNumOTPKeyboard({super.key, required this.otpController});
 
-  final TextEditingController numericController;
+  final TextEditingController otpController;
 
   @override
-  State<CustomNumericKeyboard> createState() => CustomNumericKeyboardState();
+  State<CustomNumOTPKeyboard> createState() => CustomNumOTPKeyboardState();
 }
 
-class CustomNumericKeyboardState extends State<CustomNumericKeyboard>
+class CustomNumOTPKeyboardState extends State<CustomNumOTPKeyboard>
 {
 
   static String text = '';
   
   void _onKeyboardTap(String value)
   {
-    setState(() {widget.numericController.text += value;});
-    print('Current input: ${widget.numericController.text}');
+    setState(() {widget.otpController.text += value;});
+    print('Current input: ${widget.otpController.text}');
   }
 
   @override
@@ -35,9 +34,9 @@ class CustomNumericKeyboardState extends State<CustomNumericKeyboard>
       rightButtonFn: ()
       {setState(()
       {
-        if (widget.numericController.text.isNotEmpty)
+        if (widget.otpController.text.isNotEmpty)
         {
-          widget.numericController.text =widget.numericController.text.substring(0, widget.numericController.text.length - 1);
+          widget.otpController.text =widget.otpController.text.substring(0, widget.otpController.text.length - 1);
         }
       }
         );

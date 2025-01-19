@@ -4,7 +4,7 @@ import 'package:courses_app/Core/utils/styles.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-part 'firebase_register_state.dart';
+part 'register_state.dart';
 
 class FirebaseRegisterCubit extends Cubit<RegisterStates> 
 {
@@ -16,19 +16,22 @@ class FirebaseRegisterCubit extends Cubit<RegisterStates>
     {
       emit(RegisterLoadingState());
       UserCredential uCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: uEmail, password: uPassword);
-      emit(RegisterSuccessState(userData: uCredential.user!));
-      // if (uCredential.user != null)
-      // {
-      //   emit(RegisterSuccessState(userData: uCredential.user!)); //
-      // }
-      // else
-      // {
-      //   emit(RegisterFailureState(errorMessage: 'User registration succeeded but user details are unavailable.'));
-      // }
+      if (uCredential.user != null)
+      {
+        emit(RegisterSuccessState(userData: uCredential.user!));
+      }
+      else
+      {
+        emit(RegisterFailureState(errorMessage: 'User registration succeeded but user details are unavailable.'));
+      }
     }
-    on Exception catch (e)
+    on FirebaseAuthException catch (e)
     {
       emit(RegisterFailureState(errorMessage: e.toString()));
+    }
+    catch (e)
+    {
+      emit(RegisterFailureState(errorMessage: 'An unexpected error occurred during registration.'));
     }
 }
 
@@ -38,14 +41,16 @@ class SignUpValidator
 {
   String? validateEmail(String? value)
   {
-    if (value == null || value.isEmpty)
+    if (value == null || value.trim().isEmpty)
     {
       return 'Email is required';
     }
-    final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
+    // Updated regex for stricter email validation
+    final emailRegex = RegExp(
+        r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
     if (!emailRegex.hasMatch(value))
     {
-      return 'Enter a valid email';
+      return 'Enter a valid email address';
     }
     return null;
   }
@@ -56,9 +61,17 @@ class SignUpValidator
     {
       return 'Password is required';
     }
-    if (value.length < 6)
+    if (value.length < 8)
     {
-      return 'Password must be at least 6 characters long';
+      return 'at least 8 characters';
+    }
+    // Add criteria for stronger password validation
+    final passwordRegex = RegExp(
+        r'^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$&*~]).{8,}$');
+    if (!passwordRegex.hasMatch(value))
+    {
+      return 'at least one uppercase letter,\n '
+      'one lowercase letter, one number\nand one special character';
     }
     return null;
   }
@@ -82,5 +95,5 @@ class SignUpValidator
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Fill The Fields Correctly Please!', style: Styles.textStyle16,)),);
     }
   }
-  
+
 }

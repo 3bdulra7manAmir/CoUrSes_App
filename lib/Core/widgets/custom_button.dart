@@ -26,7 +26,7 @@ class CustomBlueButton extends StatelessWidget
         ),
       ),
       onPressed: buttonOnPressed,
-      child: Center(child: Text(buttonText, style: Styles.textStyle16.copyWith(color: Colors.white),)),
+      child: Center(child: Text(buttonText, style: Styles.textStyle16.copyWith(color: Colors.white, fontWeight: FontWeight.bold),)),
       ),
     );
   }

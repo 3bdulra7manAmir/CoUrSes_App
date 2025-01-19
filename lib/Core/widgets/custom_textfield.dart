@@ -50,7 +50,7 @@ class CustomTextfield extends StatelessWidget
         
         textAlign: fieldTextAlign ?? TextAlign.start,
         textDirection: fieldTextDirection ?? TextDirection.ltr,
-        keyboardType: fieldTextInputType ?? TextInputType.none,
+        keyboardType: fieldTextInputType ?? TextInputType.name,
         cursorColor: fieldCursorColor ?? Colors.black,
         cursorHeight: fieldCursorHeight,
 
