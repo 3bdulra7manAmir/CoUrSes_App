@@ -43,7 +43,7 @@ class LoginViewState extends State<LoginView>
   {
     return BlocProvider(
       create: (context) => FirebaseLoginCubit(),
-      child: BlocBuilder<FirebaseLoginCubit, LoginStates>(
+      child: BlocConsumer<FirebaseLoginCubit, LoginStates>(
         builder: (context, state)
         {
           var firebaseLCubit = BlocProvider.of<FirebaseLoginCubit>(context);
@@ -107,28 +107,15 @@ class LoginViewState extends State<LoginView>
 
                               CustomBlueButton(buttonText: 'Log In', buttonWidth: 0.9, buttonOnPressed: () async
                               {
-                                print('Log In Button Pressed');
-                                print("${emailController.text} \t ${passwordController.text}");
+                                // print('Log In Button Pressed');
+                                // print("${emailController.text} \t ${passwordController.text}");
 
                                 LoginValidator().submitForm(loginFormKey, context);
 
-                                if (loginFormKey.currentState?.validate() ?? false)
+                                if ((loginFormKey.currentState?.validate()) != false)
                                 {
                                   await firebaseLCubit.firebaseLogin(emailController.text,passwordController.text);
-                                  if (state is LoginSuccessState)
-                                  {
-                                    emailController.clear();
-                                    passwordController.clear();
-                                    GoRouter.of(context).push(AppRouter.kHomeView);
-                                    print('WENT TO\tHOME_VIEW');
-                                  }
                                 }
-
-                                
-
-
-
-                                
                               },
                               ),
 
@@ -198,6 +185,16 @@ class LoginViewState extends State<LoginView>
               ),
             ),
           );
+        },
+        listener: (context, state)
+        {
+          if (state is LoginSuccessState)
+          {
+            emailController.clear();
+            passwordController.clear();
+            GoRouter.of(context).push(AppRouter.kHomeView);
+            print('WENT TO\tHOME_VIEW');
+          }
         },
       ),
     );

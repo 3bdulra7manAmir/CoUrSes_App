@@ -82,4 +82,5 @@ class SignUpValidator
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Fill The Fields Correctly Please!', style: Styles.textStyle16,)),);
     }
   }
+  
 }
