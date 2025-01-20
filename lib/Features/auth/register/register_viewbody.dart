@@ -113,8 +113,6 @@ class RegisterViewState extends State<RegisterView>
                                 {
                                   await firebaseRCubit.firebaseRegister(emailController.text, passwordController.text, context);
                                 }
-                                
-                                
                               },
                               ),
                 

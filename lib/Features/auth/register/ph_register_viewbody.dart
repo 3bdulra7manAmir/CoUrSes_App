@@ -8,9 +8,9 @@ import 'package:courses_app/Features/auth/register/widgets/custom_phoneinput.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ContinueWithPhoneView extends StatelessWidget
+class ConWPhoneView extends StatelessWidget
 {
-  const ContinueWithPhoneView({super.key});
+  const ConWPhoneView({super.key});
 
   @override
   Widget build(BuildContext context)
