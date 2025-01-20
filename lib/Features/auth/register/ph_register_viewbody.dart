@@ -70,14 +70,19 @@ class ContinueWithPhoneView extends StatelessWidget
 
                     const SizedBox(height: 30),
 
-                    const CustomPhoneNumberInputField(),
-
-                    SingleChildScrollView(
-                      child: CustomNumRegisterKeyboard(phoneRegisterController: CustomPhoneNumberInputFieldState.phoneController,),
-                    ),
+                    PhoneNumberTextFieldAndButton(),
                   ],
                 ),
               ),
+            ),
+
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children:
+              [
+                NumRegisterKeyboard(phoneRegisterController: PhoneNumberTextFieldAndButtonState.phoneController,
+                ),
+              ],
             ),
           ],
         ),
