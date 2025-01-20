@@ -20,13 +20,13 @@ class _PhoneOTPViewState extends State<PhoneOTPView>
 {
   final TextEditingController otpController = TextEditingController();
 
-  //TO PREVENT Memory leak //Tharwat Samy...
-  @override
-  void dispose()
-  {
-    otpController.dispose();
-    super.dispose();
-  }
+  // //TO PREVENT Memory leak //Tharwat Samy...
+  // @override
+  // void dispose()
+  // {
+  //   otpController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context)
@@ -46,22 +46,22 @@ class _PhoneOTPViewState extends State<PhoneOTPView>
                 )
               ],
             ),
-
+        
             const SizedBox(height: 70),
-
+        
             Text('Code is Sent to 283 835 2999', style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w900)),
-
+        
             const SizedBox(height: 15),
-
+        
             CustomOTPInputField(onCompleted: (string) {}),
-
+        
             const SizedBox(height: 70),
-
-            CustomBlueButton(buttonWidth: 0.7, buttonText: 'Verify and Create Account', buttonOnPressed: (){GoRouter.of(context).push(AppRouter.kLoginView);}),
-            //HERE STOPPED - STILL TO BE CONTINUED
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: CustomNumOTPKeyboard(otpController: otpController))
+        
+            CustomBlueButton(buttonWidth: 0.8, buttonText: 'Verify and Create Account', buttonOnPressed: (){GoRouter.of(context).push(AppRouter.kLoginView);}),
+            
+            const Spacer(),
+        
+            CustomNumOTPKeyboard(otpController: otpController),
           ],
         ),
       ),

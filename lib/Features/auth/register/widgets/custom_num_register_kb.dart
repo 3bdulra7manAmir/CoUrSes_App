@@ -2,41 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 
 
-class CustomNumRegisterKeyboard extends StatefulWidget
+class NumRegisterKeyboard extends StatefulWidget
 {
-  const CustomNumRegisterKeyboard({super.key, required this.phoneRegisterController});
+  const NumRegisterKeyboard({super.key, required this.phoneRegisterController});
 
   final TextEditingController phoneRegisterController;
   
   @override
-  State<CustomNumRegisterKeyboard> createState() => CustomNumRegisterKeyboardState();
+  State<NumRegisterKeyboard> createState() => NumRegisterKeyboardState();
 }
 
-class CustomNumRegisterKeyboardState extends State<CustomNumRegisterKeyboard>
+class NumRegisterKeyboardState extends State<NumRegisterKeyboard>
 {
 
   static String text = '';
   
-  void _onKeyboardTap(String value)
+  void onKeyboardTap(String value)
   {
     setState(() {widget.phoneRegisterController.text += value;});
     print('Current input: ${widget.phoneRegisterController.text}');
-  }
-
-  //TO PREVENT Memory leak //Tharwat Samy...
-  @override
-  void dispose()
-  {
-    widget.phoneRegisterController.dispose();
-    super.dispose();
   }
 
   @override
   Widget build(BuildContext context)
   {
     return NumericKeyboard(
+      
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      onKeyboardTap: _onKeyboardTap,
+      onKeyboardTap: onKeyboardTap,
       textColor: Colors.black,
 
       rightButtonFn: ()
@@ -54,6 +47,14 @@ class CustomNumRegisterKeyboardState extends State<CustomNumRegisterKeyboard>
       leftButtonFn: () {print('left button clicked');},
       leftIcon: Icon(Icons.check, color: Colors.black,),
     );
+  }
+
+  //TO PREVENT Memory leak //Tharwat Samy...
+  @override
+  void dispose()
+  {
+    widget.phoneRegisterController.dispose();
+    super.dispose();
   }
 }
 
