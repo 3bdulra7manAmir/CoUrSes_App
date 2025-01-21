@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 
 
-class NumRegisterKeyboard extends StatefulWidget
+class CustomNumRegisterKeyboard extends StatefulWidget
 {
-  const NumRegisterKeyboard({super.key, required this.phoneRegisterController});
+  const CustomNumRegisterKeyboard({super.key, required this.phoneRegisterController});
 
   final TextEditingController phoneRegisterController;
   
   @override
-  State<NumRegisterKeyboard> createState() => NumRegisterKeyboardState();
+  State<CustomNumRegisterKeyboard> createState() => CustomNumRegisterKeyboardState();
 }
 
-class NumRegisterKeyboardState extends State<NumRegisterKeyboard>
+class CustomNumRegisterKeyboardState extends State<CustomNumRegisterKeyboard>
 {
 
   static String text = '';

@@ -99,7 +99,7 @@ class LoginViewState extends State<LoginView>
                               const SizedBox(height: 20,),
 
                               GestureDetector(
-                                  onTap: () {print("Forget Password Pressed"); GoRouter.of(context).push(AppRouter.kSuccessPopUp);},
+                                  onTap: () {print("Forget Password Pressed");},
                                   child: CustomTextWidget(widgetText: 'Forget Password?', widgetAlignment: Alignment.centerRight,
                                     widgetPadding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.045),)),
 

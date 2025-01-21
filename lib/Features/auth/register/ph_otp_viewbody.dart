@@ -1,12 +1,10 @@
 import 'package:courses_app/Core/constants.dart';
-import 'package:courses_app/Core/utils/app_router.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Core/widgets/custom_button.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Features/auth/register/widgets/custom_num_otp_kb.dart';
-import 'package:courses_app/Features/auth/register/widgets/custom_otp.dart';
+import 'package:courses_app/Features/auth/register/widgets/custom_otp_inputfield.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class PhoneOTPView extends StatefulWidget
 {
@@ -20,13 +18,13 @@ class _PhoneOTPViewState extends State<PhoneOTPView>
 {
   final TextEditingController otpController = TextEditingController();
 
-  // //TO PREVENT Memory leak //Tharwat Samy...
-  // @override
-  // void dispose()
-  // {
-  //   otpController.dispose();
-  //   super.dispose();
-  // }
+  //TO PREVENT Memory leak //Tharwat Samy...
+  @override
+  void dispose()
+  {
+    otpController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context)
@@ -57,7 +55,7 @@ class _PhoneOTPViewState extends State<PhoneOTPView>
         
             const SizedBox(height: 70),
         
-            CustomBlueButton(buttonWidth: 0.8, buttonText: 'Verify and Create Account', buttonOnPressed: (){GoRouter.of(context).push(AppRouter.kLoginView);}),
+            CustomBlueButton(buttonWidth: 0.8, buttonText: 'Verify and Create Account', buttonOnPressed: (){}),
             
             const Spacer(),
         

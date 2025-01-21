@@ -4,7 +4,7 @@ import 'package:courses_app/Core/widgets/custom_column.dart';
 import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Features/auth/register/widgets/custom_num_register_kb.dart';
-import 'package:courses_app/Features/auth/register/widgets/custom_phoneinput.dart';
+import 'package:courses_app/Features/auth/register/widgets/custom_phone_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -80,7 +80,7 @@ class ConWPhoneView extends StatelessWidget
               mainAxisAlignment: MainAxisAlignment.end,
               children:
               [
-                NumRegisterKeyboard(phoneRegisterController: PhoneNumberTextFieldAndButtonState.phoneController,
+                CustomNumRegisterKeyboard(phoneRegisterController: PhoneNumberTextFieldAndButtonState.phoneController,
                 ),
               ],
             ),

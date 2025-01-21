@@ -17,7 +17,7 @@ class CustomNumOTPKeyboardState extends State<CustomNumOTPKeyboard>
 
   static String text = '';
   
-  void _onKeyboardTap(String value)
+  void onKeyboardTap(String value)
   {
     setState(() {widget.otpController.text += value;});
     print('Current input: ${widget.otpController.text}');
@@ -28,7 +28,7 @@ class CustomNumOTPKeyboardState extends State<CustomNumOTPKeyboard>
   {
     return NumericKeyboard(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      onKeyboardTap: _onKeyboardTap,
+      onKeyboardTap: onKeyboardTap,
       textColor: Colors.black,
 
       rightButtonFn: ()
