@@ -9,6 +9,7 @@ import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Core/widgets/custom_textfield.dart';
 import 'package:courses_app/Features/auth/login/login_cubit/login_cubit.dart';
+import 'package:courses_app/Features/auth/login/widgets/custom_upper_login_part.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -55,13 +56,7 @@ class LoginViewState extends State<LoginView>
                   children:
                   [
                     //BOTTOM Container
-                    CustomContainerBackGround(
-                      containerChild: Padding(
-                        padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.07, left: KMediaQuery(context).width * 0.05),
-                        child: Align(alignment: Alignment.topLeft,
-                          child: Text("Log In", style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold))),
-                        ),
-                      ),
+                    CustomWordLoginPart(),
 
                     //TOP Container
                     AfContainerBody(
@@ -188,19 +183,28 @@ class LoginViewState extends State<LoginView>
         },
         listener: (context, state)
         {
-          if (state is LoginSuccessState)
-          {
-            emailController.clear();
-            passwordController.clear();
-            GoRouter.of(context).push(AppRouter.kHomeView);
-            print('WENT TO\tHOME_VIEW');
-          }
-          if (state is LoginFailureState)
-          {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Wrong Email Or Password', style: Styles.textStyle16,)),);
-          }
+          loginButtonOnPressed(state, context);
         },
       ),
     );
   }
+
+  
+  void loginButtonOnPressed(LoginStates state, BuildContext context) {
+    if (state is LoginSuccessState)
+    {
+      emailController.clear();
+      passwordController.clear();
+      GoRouter.of(context).push(AppRouter.kHomeView);
+      print('WENT TO\tHOME_VIEW');
+    }
+    if (state is LoginFailureState)
+    {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Wrong Email Or Password', style: Styles.textStyle16,)),);
+    }
+  }
+
+
 }
+
+

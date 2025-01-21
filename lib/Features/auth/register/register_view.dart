@@ -9,6 +9,7 @@ import 'package:courses_app/Core/widgets/custom_container.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:courses_app/Core/widgets/custom_textfield.dart';
 import 'package:courses_app/Features/auth/register/register_cubit/register_cubit.dart';
+import 'package:courses_app/Features/auth/register/widgets/custom_sginup_upper_part.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -59,21 +60,7 @@ class RegisterViewState extends State<RegisterView>
                   children:
                   [
                     //BOTTOM Container
-                    CustomContainerBackGround(
-                      containerChild: Padding(
-                        padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.07, left: KMediaQuery(context).width * 0.05,),
-                        child: Align(
-                            alignment: Alignment.topLeft,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children:
-                              [
-                                CustomTextWidget(widgetText: 'Sign Up', widgetTextStyle: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),),
-                                CustomTextWidget(widgetText: 'Enter your details below & free sign up', widgetTextStyle: Styles.textStyle14,),
-                              ],
-                            )),
-                      ),
-                    ),
+                    CustomSignUpPart(),
                 
                     //TOP Container
                     AfContainerBody(topPercentage: 0.2,
@@ -177,20 +164,26 @@ class RegisterViewState extends State<RegisterView>
         },
         listener: (context, state)
         {
-          if (state is RegisterSuccessState)
-          {
-            emailController.clear();
-            passwordController.clear();
-            obscureText = true;
-            setState(() {isChecked = false;});
-            Future.delayed(Duration(seconds: 1), () => GoRouter.of(context).go(AppRouter.kLoginView));
-          }
-          if (state is RegisterFailureState)
-          {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('An unexpected error Please Try Again Later!', style: Styles.textStyle16,)),);
-          }
+          signupButtonOnPressed(state, context);
         },
       ),
     );
   }
+
+  void signupButtonOnPressed(RegisterStates state, BuildContext context) {
+    if (state is RegisterSuccessState)
+    {
+      emailController.clear();
+      passwordController.clear();
+      obscureText = true;
+      setState(() {isChecked = false;});
+      Future.delayed(Duration(seconds: 1), () => GoRouter.of(context).go(AppRouter.kLoginView));
+    }
+    if (state is RegisterFailureState)
+    {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('An unexpected error Please Try Again Later!', style: Styles.textStyle16,)),);
+    }
+  }
 }
+
+

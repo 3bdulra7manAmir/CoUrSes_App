@@ -31,7 +31,7 @@ class NoVideosView extends StatelessWidget
               child: Column(
                 children:
                 [
-                  SvgPicture.asset('assets/images/svg/NO_Videos.svg'),
+                  SvgPicture.asset('assets/images/svg/No_Videos.svg'),
                   const SizedBox(height: 10,),
                   Text('No videos!', style: Styles.textStyle18.copyWith(fontWeight: FontWeight.bold), ),
                   const SizedBox(height: 10,),
