@@ -8,6 +8,8 @@ import 'package:courses_app/Features/media/products/no_products_view.dart';
 import 'package:courses_app/Features/media/videos/no_videos_view.dart';
 import 'package:courses_app/Features/network_conn/no_network_conn_view.dart';
 import 'package:courses_app/Features/notifictations/no_notifictations_view.dart';
+import 'package:courses_app/Features/user_account/user_account_view.dart';
+import 'package:courses_app/Features/user_courses/courses_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter
@@ -23,6 +25,8 @@ abstract class AppRouter
   static const kNoNetworkConnectionView = '/noNetworkConnectionView';
   static const kNoVideosView = '/noVideosView';
   static const kNoProductsView = '/noProductsView';
+  static const kUserAccountView = '/userAccountView';
+  static const kUserCoursesView = '/userCoursesView';
 
   static final router = GoRouter(
       routes:
@@ -73,8 +77,18 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: '/',
+          path: kNoProductsView,
           builder: (context, state) => NoProductsView(),
+        ),
+
+        GoRoute(
+          path: kUserAccountView,
+          builder: (context, state) => UserAccountView(),
+        ),
+
+        GoRoute(
+          path: '/',
+          builder: (context, state) => UserCoursesView(),
         ),
         
       ],
