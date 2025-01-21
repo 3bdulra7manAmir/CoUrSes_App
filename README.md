@@ -30,4 +30,4 @@ Register Success
 
 <br>
 
-# You will be able to View The Rest of Em in a folder called APP_IMGs in The Project.
+You will be able to View The Rest of Em in a folder called APP_IMGs in The Project.
