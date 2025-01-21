@@ -27,4 +27,7 @@ Register Success
 
 <br>
 # Will be Uploading Every Other Screen As Soon As i Finish Coding it.
+
+<br>
+
 # You will be able to View The Rest of Em in a folder called APP_IMGs in The Project.
