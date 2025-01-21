@@ -1,10 +1,11 @@
-import 'package:courses_app/Features/auth/login/login_viewbody.dart';
-import 'package:courses_app/Features/auth/register/ph_otp_viewbody.dart';
-import 'package:courses_app/Features/auth/register/ph_register_viewbody.dart';
+import 'package:courses_app/Features/auth/login/login_view.dart';
+import 'package:courses_app/Features/auth/register/ph_otp_view.dart';
+import 'package:courses_app/Features/auth/register/ph_register_view.dart';
 import 'package:courses_app/Features/auth/register/register_success_view.dart';
-import 'package:courses_app/Features/auth/register/register_viewbody.dart';
+import 'package:courses_app/Features/auth/register/register_view.dart';
 import 'package:courses_app/Features/home/home_view.dart';
-import 'package:courses_app/Features/notifictations/notifictations.dart';
+import 'package:courses_app/Features/network_conn/network_conn_view.dart';
+import 'package:courses_app/Features/notifictations/notifictations_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter
@@ -16,7 +17,8 @@ abstract class AppRouter
   static const kConWPhoneView = '/conWPhoneView';
   static const kPhoneOTPView = '/phoneOTPView';
   static const kSuccessPopUpView = '/successPopUpView';
-  static const kNotifictationsView = '/successPopUpView';
+  static const kNotifictationsView = '/notifictationsView';
+  static const kNetworkConnectionView = '/networkConnectionView';
 
   static final router = GoRouter(
       routes:
@@ -53,8 +55,13 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: '/',
+          path: kNotifictationsView,
           builder: (context, state) => NotifictationsView(),
+        ),
+
+        GoRoute(
+          path: '/',
+          builder: (context, state) => NetworkConnectionView(),
         ),
         
       ],
