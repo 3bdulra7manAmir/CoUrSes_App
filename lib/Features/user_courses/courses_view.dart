@@ -19,15 +19,15 @@ class UserCoursesView extends StatelessWidget
             crossAxisAlignment: CrossAxisAlignment.start,
             children:
             [
-              CustomCoursesHeader(),
+              const CustomCoursesHeader(),
           
-              const SizedBox(height: 50,),
+              const SizedBox(height: 30,),
           
-              CustomProgressCard(),
+              const CustomProgressCard(),
           
               const SizedBox(height: 20,),
           
-              Expanded(child: CustomCardsGridViewBuilder()),
+              const Expanded(child: CustomCardsGridViewBuilder()),
             ],
           ),
         ),
