@@ -47,7 +47,6 @@ abstract class AppRouter
           builder: (context, state) => const ConWPhoneView(),
         ),
 
-
         GoRoute(
           path: kPhoneOTPView,
           builder: (context, state) => PhoneOTPView(),
