@@ -4,8 +4,10 @@ import 'package:courses_app/Features/auth/register/ph_register_view.dart';
 import 'package:courses_app/Features/auth/register/register_success_view.dart';
 import 'package:courses_app/Features/auth/register/register_view.dart';
 import 'package:courses_app/Features/home/home_view.dart';
-import 'package:courses_app/Features/network_conn/network_conn_view.dart';
-import 'package:courses_app/Features/notifictations/notifictations_view.dart';
+import 'package:courses_app/Features/media/products/no_products_view.dart';
+import 'package:courses_app/Features/media/videos/no_videos_view.dart';
+import 'package:courses_app/Features/network_conn/no_network_conn_view.dart';
+import 'package:courses_app/Features/notifictations/no_notifictations_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter
@@ -17,8 +19,10 @@ abstract class AppRouter
   static const kConWPhoneView = '/conWPhoneView';
   static const kPhoneOTPView = '/phoneOTPView';
   static const kSuccessPopUpView = '/successPopUpView';
-  static const kNotifictationsView = '/notifictationsView';
-  static const kNetworkConnectionView = '/networkConnectionView';
+  static const kNoNotifictationsView = '/noNotifictationsView';
+  static const kNoNetworkConnectionView = '/noNetworkConnectionView';
+  static const kNoVideosView = '/noVideosView';
+  static const kNoProductsView = '/noProductsView';
 
   static final router = GoRouter(
       routes:
@@ -55,13 +59,23 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: kNotifictationsView,
-          builder: (context, state) => NotifictationsView(),
+          path: kNoNotifictationsView,
+          builder: (context, state) => NoNotifictationsView(),
+        ),
+
+        GoRoute(
+          path: kNoNetworkConnectionView,
+          builder: (context, state) => NoNetworkConnectionView(),
+        ),
+
+        GoRoute(
+          path: kNoVideosView,
+          builder: (context, state) => NoVideosView(),
         ),
 
         GoRoute(
           path: '/',
-          builder: (context, state) => NetworkConnectionView(),
+          builder: (context, state) => NoProductsView(),
         ),
         
       ],
