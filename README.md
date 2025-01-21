@@ -8,7 +8,10 @@ FIGMA design for a Courses App
 # FIGMA UI
 <a href="https://www.figma.com/design/ojEAaOeeXrvFjCB4dIvFJi/Online-Learning-App-Design-(Community)?node-id=0-1&t=ytmQx4QXmkWrrKf6-1">FIGMA Link...</a>
 
-First Term "Auth" Screens IN MY design Order!,<br>
+First Term "Auth" Screens IN MY design Order!,
+
+<br>
+
 LogIn & SignUp
 ![MergedImages](https://github.com/user-attachments/assets/af482807-1ca9-4fdd-8aa6-8615ebc7894c)
 
@@ -23,4 +26,8 @@ Register Success
 ![MergedImages (1)](https://github.com/user-attachments/assets/ef764f44-069d-4ac3-8ba4-dd430579dd36)
 
 <br>
-# Will be Uploading Every Other Screen As Soon As i Finish Coding it.
+# Will be Uploading All of the Other Screens As Soon As i Finish Coding it.
+
+<br>
+
+You will be able to View The Rest of Em in a folder called APP_IMGs in The Project.
