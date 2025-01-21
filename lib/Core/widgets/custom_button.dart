@@ -1,6 +1,7 @@
 import 'package:courses_app/Core/constants.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomBlueButton extends StatelessWidget
 {
@@ -21,7 +22,7 @@ class CustomBlueButton extends StatelessWidget
         style: ButtonStyle(
           backgroundColor: WidgetStateProperty.all(Color((0xff3d5cff))),
           shape: WidgetStateProperty.all(RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.0),
+            borderRadius: BorderRadius.circular(12.0.r),
           ),
         ),
       ),

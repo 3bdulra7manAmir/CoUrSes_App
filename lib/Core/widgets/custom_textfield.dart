@@ -1,5 +1,6 @@
 import 'package:courses_app/Core/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextfield extends StatelessWidget
 {
@@ -61,11 +62,11 @@ class CustomTextfield extends StatelessWidget
           prefixIconColor: fieldPrefixIconColor,
 
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
           ),
           
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius: BorderRadius.all(Radius.circular(10.r)),
             borderSide: BorderSide(color: Colors.grey),
           ),
         ),

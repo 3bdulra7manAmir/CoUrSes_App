@@ -1,5 +1,6 @@
 import 'package:courses_app/Core/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomContainerBackGround extends StatelessWidget
 {
@@ -19,7 +20,7 @@ class CustomContainerBackGround extends StatelessWidget
     
       decoration: containerDecoration ?? BoxDecoration(
         color: const Color(0xfff0f0f2),
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(15.r), topRight: Radius.circular(15.r)),
       ),
       child: containerChild,
     );
