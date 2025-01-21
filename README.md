@@ -26,7 +26,7 @@ Register Success
 ![MergedImages (1)](https://github.com/user-attachments/assets/ef764f44-069d-4ac3-8ba4-dd430579dd36)
 
 <br>
-# Will be Uploading Every Other Screen As Soon As i Finish Coding it.
+# Will be Uploading All of the Other Screens As Soon As i Finish Coding it.
 
 <br>
 
