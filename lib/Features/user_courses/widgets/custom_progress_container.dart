@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:courses_app/Core/constants.dart';
-import 'package:courses_app/Core/widgets/custom_linear_Indicator.dart';
+import 'package:courses_app/Core/widgets/custom_linear_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
