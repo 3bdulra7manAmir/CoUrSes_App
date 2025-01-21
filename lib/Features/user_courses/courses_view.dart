@@ -1,5 +1,5 @@
 import 'package:courses_app/Core/constants.dart';
-import 'package:courses_app/Features/user_courses/widgets/custom_course_card.dart';
+import 'package:courses_app/Features/user_courses/widgets/custom_gridview_builder.dart';
 import 'package:courses_app/Features/user_courses/widgets/custom_page_header.dart';
 import 'package:courses_app/Features/user_courses/widgets/custom_progress_container.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ class UserCoursesView extends StatelessWidget
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.only(left: KMediaQuery(context).width * 0.05),
+          padding: EdgeInsets.only(left: KMediaQuery(context).width * 0.05, right: KMediaQuery(context).width * 0.03),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children:
@@ -27,7 +27,7 @@ class UserCoursesView extends StatelessWidget
           
               const SizedBox(height: 20,),
           
-              CustomCourseCard(),
+              Expanded(child: CustomCardsGridViewBuilder()),
             ],
           ),
         ),
