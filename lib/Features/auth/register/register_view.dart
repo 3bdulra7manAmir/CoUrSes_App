@@ -185,5 +185,3 @@ class RegisterViewState extends State<RegisterView>
     }
   }
 }
-
-

@@ -19,11 +19,11 @@ class SuccessPurchaseView extends StatelessWidget
             [
               SvgPicture.asset('assets/images/svg/Success2.svg'),
 
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
 
               Text('Successful purchase', style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700),),
 
-              SizedBox(height: 30,),
+              const SizedBox(height: 30,),
 
               CustomBlueButton(buttonWidth: 0.8, buttonText: 'Start Learning', buttonOnPressed: (){print('Start Learning Button has been Pressed');}),
             ],

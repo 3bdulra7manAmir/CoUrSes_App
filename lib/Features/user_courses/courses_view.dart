@@ -15,19 +15,19 @@ class UserCoursesView extends StatelessWidget
       child: Scaffold(
         body: Padding(
           padding: EdgeInsets.only(left: KMediaQuery(context).width * 0.05, right: KMediaQuery(context).width * 0.03),
-          child: Column(
+          child: const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children:
             [
-              const CustomCoursesHeader(),
+              CustomCoursesHeader(),
           
-              const SizedBox(height: 30,),
+              SizedBox(height: 30,),
           
-              const CustomProgressCard(),
+              CustomProgressCard(),
           
-              const SizedBox(height: 20,),
+              SizedBox(height: 20,),
           
-              const Expanded(child: CustomCardsGridViewBuilder()),
+              Expanded(child: CustomCardsGridViewBuilder()),
             ],
           ),
         ),

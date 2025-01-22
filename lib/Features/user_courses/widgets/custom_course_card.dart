@@ -54,7 +54,7 @@ class CustomCourseCard extends StatelessWidget
               
                   CircleAvatar(
                     backgroundColor: result.values.first,
-                    child: IconButton(onPressed: () {},
+                    child: IconButton(onPressed: () {print('Play Button Has been Pressed');},
                       icon: const Icon(Icons.play_arrow_rounded),
                       color: Colors.white,
                     ),

@@ -33,7 +33,7 @@ class UserAccountView extends StatelessWidget
 
             const SizedBox(height: 30,),
             
-            CustomUserDetailsList(),
+            const CustomUserDetailsList(),
           ],
         ),
       ),

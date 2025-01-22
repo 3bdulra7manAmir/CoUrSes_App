@@ -38,8 +38,7 @@ class NoNotifictationsView extends StatelessWidget
               
                 ],
               ),
-            )
-            
+            ),
           ],
         ),
       ),
