@@ -10,6 +10,9 @@ import 'package:courses_app/Features/media/videos/no_videos_view.dart';
 import 'package:courses_app/Features/network_conn/no_network_conn_view.dart';
 import 'package:courses_app/Features/notifictations/no_notifictations_view.dart';
 import 'package:courses_app/Features/success_purchase/success_purchase_view.dart';
+import 'package:courses_app/Features/trial_courses/easy_learn_view.dart';
+import 'package:courses_app/Features/trial_courses/study_plan_view.dart';
+import 'package:courses_app/Features/trial_courses/trial_courses_view.dart';
 import 'package:courses_app/Features/user_account/user_account_view.dart';
 import 'package:courses_app/Features/user_courses/courses_view.dart';
 import 'package:go_router/go_router.dart';
@@ -31,6 +34,9 @@ abstract class AppRouter
   static const kUserCoursesView = '/userCoursesView';
   static const kSuccessPurchaseView = '/successPurchaseView';
   static const kClockingInView = '/clockingInView';
+  static const kTrialCoursesView = '/trialCoursesView';
+  static const kQuickAndEasyLearnView = '/quickAndEasyLearnView';
+  static const kStudyPlanView = '/studyPlanView';
 
   static final router = GoRouter(
       routes:
@@ -101,8 +107,23 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: '/',
+          path: kClockingInView,
           builder: (context, state) => const ClockingInView(),
+        ),
+
+        GoRoute(
+          path: kTrialCoursesView,
+          builder: (context, state) => const TrialCoursesView(),
+        ),
+
+        GoRoute(
+          path: kQuickAndEasyLearnView,
+          builder: (context, state) => const QuickAndEasyLearnView(),
+        ),
+
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const StudyPlanView(),
         ),
       ],
     );
