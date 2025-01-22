@@ -4,6 +4,7 @@ import 'package:courses_app/Features/auth/register/ph_register_view.dart';
 import 'package:courses_app/Features/auth/register/register_success_view.dart';
 import 'package:courses_app/Features/auth/register/register_view.dart';
 import 'package:courses_app/Features/clocking_in/clocking_in.dart';
+import 'package:courses_app/Features/course_search_filter/tester.dart';
 import 'package:courses_app/Features/home/home_view.dart';
 import 'package:courses_app/Features/media/products/no_products_view.dart';
 import 'package:courses_app/Features/media/videos/no_videos_view.dart';
@@ -122,8 +123,13 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: '/',
+          path: kStudyPlanView,
           builder: (context, state) => const StudyPlanView(),
+        ),
+
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const HomeScreen(),
         ),
       ],
     );
