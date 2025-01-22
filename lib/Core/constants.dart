@@ -16,11 +16,11 @@ const Color kButtonsBlueColor = Color.fromRGBO(61, 93, 255, 1);
 
 
 
-const Color kCardColorPinkContainer = Color(0xffFFE7EE);
-const Color kCardColorPinkLine = Color(0xffEC7B9C);
+const Color kCardColorPinkCardContainer = Color(0xffFFE7EE);
+const Color kCardColorPinkLinearLine = Color(0xffEC7B9C);
 
-const Color kCardColorBlueContainer = Color(0xffBAD6FF);
-const Color kCardColorBlueLine = Color(0xff3D5CFF);
+const Color kCardColorBlueCardContainer = Color(0xffBAD6FF);
+const Color kCardColorBlueLinearLine = Color(0xff3D5CFF);
 
-const Color kCardColorGreenContainer = Color(0xffBAE0DB);
-const Color kCardColorGreenLine = Color(0xff398A80);
+const Color kCardColorGreenCardContainer = Color(0xffBAE0DB);
+const Color kCardColorGreenLinearLine = Color(0xff398A80);
