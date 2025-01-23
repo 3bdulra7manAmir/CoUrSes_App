@@ -34,13 +34,14 @@ abstract class AppRouter
   static const kSuccessPurchaseView = '/successPurchaseView';
   static const kClockingInView = '/clockingInView';
   static const kThe3Screens = '/the3Screens';
+  static const kHomeScreen = '/homeScreen';
 
   static final router = GoRouter(
       routes:
       [
         GoRoute(
           path: kHomeView,
-          builder: (context, state) => const HomeView(),
+          builder: (context, state) => HomeView(),
         ),
 
         GoRoute(
@@ -114,8 +115,13 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: '/',
+          path: kHomeScreen,
           builder: (context, state) => const HomeScreen(),
+        ),
+
+        GoRoute(
+          path: '/',
+          builder: (context, state) => HomeView(),
         ),
       ],
     );

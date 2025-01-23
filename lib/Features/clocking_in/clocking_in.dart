@@ -1,6 +1,6 @@
 import 'package:courses_app/Core/constants.dart';
 import 'package:courses_app/Core/widgets/custom_button.dart';
-import 'package:courses_app/Features/clocking_in/widgets/clocking_week_days.dart';
+import 'package:courses_app/Features/clocking_in/widgets/custom_clocking_week_days.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

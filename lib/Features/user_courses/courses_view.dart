@@ -23,7 +23,7 @@ class UserCoursesView extends StatelessWidget
           
               SizedBox(height: 30,),
           
-              CustomProgressCard(),
+              CustomCoursesProgressCard(),
           
               SizedBox(height: 20,),
           
