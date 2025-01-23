@@ -1,6 +1,7 @@
 import 'package:courses_app/Core/constants.dart';
-import 'package:courses_app/Features/course_search_filter/widgets/categories.dart';
-import 'package:courses_app/Features/course_search_filter/widgets/header.dart';
+import 'package:courses_app/Features/course_search_filter/widgets/modal_sheet_categories.dart';
+import 'package:courses_app/Features/course_search_filter/widgets/modal_sheet_header.dart';
+import 'package:courses_app/Features/course_search_filter/widgets/modal_sheet_price.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,16 +34,20 @@ class BottomModalSheetViewState extends State<BottomModalSheetView>
   {
     return Padding(
       padding: EdgeInsets.only(top: KMediaQuery(context).height * 0.01, left: KMediaQuery(context).width * 0.05,),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min, // Ensures the bottom sheet takes only required space
         children:
         [
-          const ModalBottomSheetHeader(),
+          ModalBottomSheetHeader(),
 
-          SizedBox(height: 30.h),
+          SizedBox(height: 30),
 
-          const ModalBottomSheetCategories(),
+          ModalBottomSheetCategories(),
+
+          SizedBox(height: 30),
+
+          ModalBottomSheetPrice(),
         ],
       ),
     );

@@ -3,6 +3,7 @@ import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class ModalBottomSheetHeader extends StatelessWidget
 {
@@ -15,7 +16,7 @@ class ModalBottomSheetHeader extends StatelessWidget
       [
         IconButton(onPressed: ()
         {
-          //GoRouter.of(context).pop();
+          GoRouter.of(context).pop();
         }
         , icon: Icon(Icons.close),
         ),
