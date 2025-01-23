@@ -10,13 +10,8 @@ class CustomMiddleCard extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return Container(
-      width: KMediaQuery(context).width * 0.9,
-      height: 140.h,
-      decoration: BoxDecoration(
-        color: Color(0xffCEECFE),
-        borderRadius: BorderRadius.circular(10.r),
-        ),
+    return Container(width: KMediaQuery(context).width * 0.9, height: 140.h,
+      decoration: BoxDecoration(color: Color(0xffCEECFE), borderRadius: BorderRadius.circular(15.r),),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Stack(
@@ -29,12 +24,10 @@ class CustomMiddleCard extends StatelessWidget
             Text('What do you want to learn today?', style: TextStyle(color: Colors.black, fontSize: 16.sp, fontWeight: FontWeight.bold),),
     
             Padding(
-              padding: EdgeInsets.only(bottom: KMediaQuery(context).height * 0.02),
+              padding: EdgeInsets.only(bottom: KMediaQuery(context).height * 0.01),
               child: Align(
                 alignment: Alignment.bottomLeft,
-                child: SizedBox(
-                  height: 45.h,
-                  width: KMediaQuery(context).width * 0.4,
+                child: SizedBox(height: 45.h, width: KMediaQuery(context).width * 0.42,
                   child: ElevatedButton(
                     style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all(Color((0xffFF6905))),

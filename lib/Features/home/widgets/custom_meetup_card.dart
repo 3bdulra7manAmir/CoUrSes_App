@@ -14,12 +14,8 @@ class CustomMeetupCard extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Container(
-      width: KMediaQuery(context).width * 0.9,
-      height: 140.h,
-      decoration: BoxDecoration(
-        color: Color(0xffEFE0FF),
-        borderRadius: BorderRadius.circular(10.r),
-        ),
+      width: KMediaQuery(context).width * 0.9, height: 140.h,
+      decoration: BoxDecoration(color: Color(0xffEFE0FF), borderRadius: BorderRadius.circular(10.r),),
       child: Stack(
         children:
         [
