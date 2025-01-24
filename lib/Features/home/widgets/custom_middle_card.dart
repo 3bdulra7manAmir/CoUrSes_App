@@ -39,13 +39,9 @@ class CustomMiddleCard extends StatelessWidget
                 ),
               ),
             ),
-            
           ],
         ),
       ),
-    
-      
-      
     );
   }
 }

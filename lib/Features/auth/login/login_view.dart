@@ -72,7 +72,7 @@ class LoginViewState extends State<LoginView>
                             [
                               const CustomTextWidget(widgetText: 'Your Email',),
 
-                              CustomTextfield(
+                              CustomTextFormfield(
                                 fieldVaidator: LoginValidator().validateEmail,
                                 fieldController: emailController,
                                 fieldTextInputType: TextInputType.emailAddress,
@@ -82,7 +82,7 @@ class LoginViewState extends State<LoginView>
 
                               const CustomTextWidget(widgetText: 'Password',),
 
-                              CustomTextfield(
+                              CustomTextFormfield(
                                 fieldVaidator: LoginValidator().validatePassword,
                                 fieldController: passwordController,
                                 fieldObscureText: obscureText,

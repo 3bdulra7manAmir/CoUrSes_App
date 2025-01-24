@@ -5,6 +5,7 @@ import 'package:courses_app/Features/auth/register/register_success_view.dart';
 import 'package:courses_app/Features/auth/register/register_view.dart';
 import 'package:courses_app/Features/clocking_in/clocking_in.dart';
 import 'package:courses_app/Features/course_search_filter/tester.dart';
+import 'package:courses_app/Features/courses/courses_view.dart';
 import 'package:courses_app/Features/home/home_view.dart';
 import 'package:courses_app/Features/media/products/no_products_view.dart';
 import 'package:courses_app/Features/media/videos/no_videos_view.dart';
@@ -34,14 +35,15 @@ abstract class AppRouter
   static const kSuccessPurchaseView = '/successPurchaseView';
   static const kClockingInView = '/clockingInView';
   static const kThe3Screens = '/the3Screens';
-  static const kHomeScreen = '/homeScreen';
+  static const kBottomModalSheet = '/bottomModalSheet';
+  static const kCoursesView = '/coursesView';
 
   static final router = GoRouter(
       routes:
       [
         GoRoute(
           path: kHomeView,
-          builder: (context, state) => HomeView(),
+          builder: (context, state) => const HomeView(),
         ),
 
         GoRoute(
@@ -115,13 +117,13 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: kHomeScreen,
+          path: kBottomModalSheet,
           builder: (context, state) => const HomeScreen(),
         ),
 
         GoRoute(
           path: '/',
-          builder: (context, state) => HomeView(),
+          builder: (context, state) => CoursesView(),
         ),
       ],
     );

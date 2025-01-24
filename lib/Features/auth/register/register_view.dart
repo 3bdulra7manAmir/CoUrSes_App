@@ -73,14 +73,14 @@ class RegisterViewState extends State<RegisterView>
                             children:
                             [
                               const CustomTextWidget(widgetText: 'Your Email',),
-                              CustomTextfield(fieldController: emailController, fieldTextInputType: TextInputType.emailAddress,
+                              CustomTextFormfield(fieldController: emailController, fieldTextInputType: TextInputType.emailAddress,
                               fieldVaidator: SignUpValidator().validateEmail,
                               ),
 
                               const SizedBox(height: 20,),
                 
                               const CustomTextWidget(widgetText: 'Password',),
-                              CustomTextfield(fieldController: passwordController, fieldObscureText: obscureText,
+                              CustomTextFormfield(fieldController: passwordController, fieldObscureText: obscureText,
                                 fieldTextInputType: TextInputType.text,
                                 fieldVaidator: SignUpValidator().validatePassword,
                                 fieldSuffixIcon: IconButton(icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility,),
