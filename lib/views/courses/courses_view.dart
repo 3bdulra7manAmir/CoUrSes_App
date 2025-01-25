@@ -5,7 +5,7 @@ import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/views/courses/widgets/custom_courses_card.dart';
 import 'package:courses_app/views/courses/widgets/custom_header.dart';
 import 'package:courses_app/views/courses/widgets/custom_search_field.dart';
-import 'package:courses_app/views/courses/widgets/tabBar_widgets/tabbar_itself.dart';
+import 'package:courses_app/views/courses/widgets/tabBar_widgets/custom_tabbar_itself.dart';
 import 'package:flutter/material.dart';
 
 class CoursesView extends StatefulWidget
