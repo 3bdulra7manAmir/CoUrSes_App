@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:courses_app/Core/constants.dart';
-import 'package:courses_app/Core/utils/app_router.dart';
+import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/firebase_options.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
