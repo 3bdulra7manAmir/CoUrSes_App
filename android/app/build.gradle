@@ -10,12 +10,15 @@ plugins {
 
 android {
     namespace = "com.example.courses_app"
-    compileSdk = flutter.compileSdkVersion
+    //compileSdk = flutter.compileSdkVersion //ORIGINAL AND WORKS FINE //But Results in XML Warning
+    compileSdkVersion 34 //Works //But Results in source and target value 8 is obsolete and will be removed in a future release Warning
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        //sourceCompatibility = JavaVersion.VERSION_1_8 //Results in source and target value 8 is obsolete and will be removed in a future release Warning
+        //targetCompatibility = JavaVersion.VERSION_1_8 //Results in target and target value 8 is obsolete and will be removed in a future release Warning
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     kotlinOptions {
@@ -27,10 +30,17 @@ android {
         applicationId = "com.example.courses_app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
+
         //minSdk = flutter.minSdkVersion
         //targetSdk = flutter.targetSdkVersion
-        minSdk = 26 //flutter.minSdkVersion //here
-        targetSdk = 34 //flutter.targetSdkVersion //here
+
+        // minSdk = 26 //flutter.minSdkVersion //here //Working //But Results in XML Warning
+        // targetSdk = 34 //flutter.targetSdkVersion //here //Working //But Results in XML Warning
+
+        
+        minSdkVersion 26     //Works //But Results in source and target value 8 is obsolete and will be removed in a future release Warning
+        targetSdkVersion 34  //Works //But Results in source and target value 8 is obsolete and will be removed in a future release Warning
+
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
