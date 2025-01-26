@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use,
 
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,8 @@ class WholeTabBar extends StatefulWidget
   this.labelColor,
   this.indicatorColor,
   this.tabBarContainerWidth,
-  this.tabBarContainerHeight,});
+  this.tabBarContainerHeight, 
+  this.dividerColor,});
 
   final int tabBarControllerLength;
   final List<Widget> tabBarWidgets;
@@ -26,6 +27,7 @@ class WholeTabBar extends StatefulWidget
   final Color? unselectedLabelColor;
   final Color? labelColor;
   final Color? indicatorColor;
+  final Color? dividerColor;
 
   final double? tabBarContainerWidth;
   final double? tabBarContainerHeight;
@@ -69,6 +71,7 @@ class WholeTabBarState extends State<WholeTabBar> with SingleTickerProviderState
           ),
 
           child: TabBar(
+            dividerColor: widget.dividerColor,
             controller: tabBarController,
             indicatorColor: widget.indicatorColor ?? Colors.white,                          // Color of the selected tab indicator
             labelColor: widget.labelColor ?? Colors.white,                             // Color of the selected tab text

@@ -3,7 +3,7 @@ import 'package:courses_app/views/auth/register/ph_otp_view.dart';
 import 'package:courses_app/views/auth/register/ph_register_view.dart';
 import 'package:courses_app/views/auth/register/register_success_view.dart';
 import 'package:courses_app/views/auth/register/register_view.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/main_notifictations_view.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/notifictations_view.dart';
 import 'package:courses_app/views/clocking_in/clocking_in_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/search_filter/caller.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
@@ -124,12 +124,12 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: '/',
+          path: kCoursesView,
           builder: (context, state) => const CoursesView(),
         ),
 
         GoRoute(
-          path: kMainNotifictationsView,
+          path: '/',
           builder: (context, state) => const MainNotifictationsView(),
         ),
       ],

@@ -41,34 +41,35 @@ class CoursesView extends StatelessWidget
           
               const SizedBox(height: 20,),
           
-              const Expanded(child: WholeTabBar(
-                tabBarWidgets:
-                [
-                  Text('All'),
-                  Text('Popular'),
-                  Text('New'),
-                ],
+              const Expanded(
+                child: WholeTabBar(
+                  tabBarWidgets:
+                  [
+                    Text('All'),
+                    Text('Popular'),
+                    Text('New'),
+                  ],
 
-                tabBarControllerLength: 3,
-                tabBarViewWidgets:
-                [
-                  MessagesListViewBuilder(
-                    returnedWidget: CustomAllTabCard(),
-                    returneditemCount: 6,
-                    separatorBuilderWidget: SizedBox(height: 15,),
-                  ),
-                  MessagesListViewBuilder(
-                    returnedWidget: CustomAllTabCard(),
-                    returneditemCount: 6,
-                    separatorBuilderWidget: SizedBox(height: 15,),
-                  ),
-                  MessagesListViewBuilder(
-                    returnedWidget: CustomAllTabCard(),
-                    returneditemCount: 6,
-                    separatorBuilderWidget: SizedBox(height: 15,),
-                  ),
-                ],
-              ),
+                  tabBarControllerLength: 3,
+                  tabBarViewWidgets:
+                  [
+                    MessagesListViewBuilder(
+                      returnedWidget: CustomAllTabCard(),
+                      returneditemCount: 6,
+                      separatorBuilderWidget: SizedBox(height: 15,),
+                    ),
+                    MessagesListViewBuilder(
+                      returnedWidget: CustomAllTabCard(),
+                      returneditemCount: 6,
+                      separatorBuilderWidget: SizedBox(height: 15,),
+                    ),
+                    MessagesListViewBuilder(
+                      returnedWidget: CustomAllTabCard(),
+                      returneditemCount: 6,
+                      separatorBuilderWidget: SizedBox(height: 15,),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
