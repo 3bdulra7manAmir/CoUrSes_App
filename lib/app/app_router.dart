@@ -8,6 +8,7 @@ import 'package:courses_app/views/clocking_in/clocking_in_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/search_filter/caller.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/home/home_view.dart';
+import 'package:courses_app/views/course_preview/course_preview_view.dart';
 import 'package:courses_app/views/no_views/no_products/no_products_view.dart';
 import 'package:courses_app/views/no_views/no_videos/no_videos_view.dart';
 import 'package:courses_app/views/no_views/no_network_conn/no_network_conn_view.dart';
@@ -129,8 +130,13 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: '/',
+          path: kMainNotifictationsView,
           builder: (context, state) => const MainNotifictationsView(),
+        ),
+
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const CoursePreviewView(),
         ),
       ],
     );

@@ -8,7 +8,8 @@ class CustomWordLoginPart extends StatelessWidget
   const CustomWordLoginPart({super.key,});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return CustomContainerBackGround(
       containerChild: Padding(
         padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.07, left: KMediaQuery(context).width * 0.05),
