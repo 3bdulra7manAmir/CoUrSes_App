@@ -1,6 +1,6 @@
-import 'package:courses_app/views/trial_courses/easy_learn_view.dart';
-import 'package:courses_app/views/trial_courses/study_plan_view.dart';
-import 'package:courses_app/views/trial_courses/trial_courses_view.dart';
+import 'package:courses_app/views/intro_views/easy_learn_view.dart';
+import 'package:courses_app/views/intro_views/study_plan_view.dart';
+import 'package:courses_app/views/intro_views/trial_courses_view.dart';
 import 'package:flutter/material.dart';
 
 class The3Screens extends StatelessWidget

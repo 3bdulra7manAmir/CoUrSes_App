@@ -1,4 +1,4 @@
-import 'package:courses_app/views/trial_courses/widget/custom_stamp.dart';
+import 'package:courses_app/views/intro_views/widget/custom_stamp.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

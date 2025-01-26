@@ -3,17 +3,18 @@ import 'package:courses_app/views/auth/register/ph_otp_view.dart';
 import 'package:courses_app/views/auth/register/ph_register_view.dart';
 import 'package:courses_app/views/auth/register/register_success_view.dart';
 import 'package:courses_app/views/auth/register/register_view.dart';
-import 'package:courses_app/views/clocking_in/clocking_in.dart';
-import 'package:courses_app/views/course_search_filter/tester.dart';
-import 'package:courses_app/views/courses/courses_view.dart';
-import 'package:courses_app/views/home/home_view.dart';
-import 'package:courses_app/views/media/products/no_products_view.dart';
-import 'package:courses_app/views/media/videos/no_videos_view.dart';
-import 'package:courses_app/views/network_conn/no_network_conn_view.dart';
-import 'package:courses_app/views/notifictations/no_notifictations_view.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/main_notifictations_view.dart';
+import 'package:courses_app/views/clocking_in/clocking_in_view.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/search_filter/caller.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/home/home_view.dart';
+import 'package:courses_app/views/no_views/no_products/no_products_view.dart';
+import 'package:courses_app/views/no_views/no_videos/no_videos_view.dart';
+import 'package:courses_app/views/no_views/no_network_conn/no_network_conn_view.dart';
+import 'package:courses_app/views/no_views/no_notifictations/no_notifictations_view.dart';
 import 'package:courses_app/views/success_purchase/success_purchase_view.dart';
-import 'package:courses_app/views/trial_courses/widget/custom_screen_indicator.dart';
-import 'package:courses_app/views/user_account/user_account_view.dart';
+import 'package:courses_app/views/intro_views/widget/custom_screen_indicator.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/user_account/user_account_view.dart';
 import 'package:courses_app/views/user_courses/courses_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -37,6 +38,7 @@ abstract class AppRouter
   static const kThe3Screens = '/the3Screens';
   static const kBottomModalSheet = '/bottomModalSheet';
   static const kCoursesView = '/coursesView';
+  static const kMainNotifictationsView = '/mainNotifictationsView';
 
   static final router = GoRouter(
       routes:
@@ -123,7 +125,12 @@ abstract class AppRouter
 
         GoRoute(
           path: '/',
-          builder: (context, state) => CoursesView(),
+          builder: (context, state) => const CoursesView(),
+        ),
+
+        GoRoute(
+          path: kMainNotifictationsView,
+          builder: (context, state) => const MainNotifictationsView(),
         ),
       ],
     );

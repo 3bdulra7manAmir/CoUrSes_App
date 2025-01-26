@@ -1,7 +1,7 @@
 import 'package:courses_app/Core/utils/constants.dart';
-import 'package:courses_app/views/course_search_filter/widgets/modal_sheet_categories.dart';
-import 'package:courses_app/views/course_search_filter/widgets/modal_sheet_header.dart';
-import 'package:courses_app/views/course_search_filter/widgets/modal_sheet_price.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/search_filter/widgets/modal_sheet_categories.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/search_filter/widgets/modal_sheet_header.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/search_filter/widgets/modal_sheet_price.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

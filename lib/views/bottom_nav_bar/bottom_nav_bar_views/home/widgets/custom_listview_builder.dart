@@ -1,4 +1,4 @@
-import 'package:courses_app/views/home/widgets/custom_middle_card.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/home/widgets/custom_middle_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
