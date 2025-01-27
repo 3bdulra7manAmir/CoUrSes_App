@@ -1,6 +1,6 @@
-import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/views/course_preview/widgets/lower_part_column.dart';
+import 'package:courses_app/views/course_preview/widgets/upper_part_stack.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class CoursePreviewView extends StatelessWidget
 {
@@ -11,21 +11,22 @@ class CoursePreviewView extends StatelessWidget
   {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children:
-          [
-            Stack(
-              children:
-              [
-                Positioned(
-                  left: KMediaQuery(context).width * 0.05,
-                  child: SvgPicture.asset('assets/images/svg/Eye.svg')
-                ),
-              ],
-            )
-          ],
+        backgroundColor: Colors.white,
+        body: const SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children:
+            [
+              UpperPartStack(),
+          
+              LowerPartColumn(),
+            ],
+          ),
         ),
       )
     );
   }
 }
+
+
+
