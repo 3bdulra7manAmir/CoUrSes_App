@@ -195,7 +195,7 @@ class LoginViewState extends State<LoginView>
     {
       emailController.clear();
       passwordController.clear();
-      GoRouter.of(context).push(AppRouter.kHomeView);
+      GoRouter.of(context).push(AppRouter.kBottomNavBar);
       print('WENT TO\tHOME_VIEW');
     }
     if (state is LoginFailureState)

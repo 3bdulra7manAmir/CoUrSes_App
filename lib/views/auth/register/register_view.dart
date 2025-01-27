@@ -151,6 +151,31 @@ class RegisterViewState extends State<RegisterView>
                                   ),
                                 ],
                               ),
+
+                              //FOR TEST //HERE //TO BE Deleted 
+                              const SizedBox(height: 50,),
+
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children:
+                                [
+                                  Text('Just For Show And Test', style: Styles.textStyle16,),
+
+                                  const SizedBox(width: 20),
+
+                                  GestureDetector(
+                                    onTap: () {GoRouter.of(context).push(AppRouter.kConWPhoneView);},
+                                    child: Icon(Icons.import_export_sharp)),
+                                  
+                                  const SizedBox(width: 30,),
+
+                                  GestureDetector(
+                                    onTap: () {GoRouter.of(context).push(AppRouter.kPhoneOTPView);},
+                                    child: Icon(Icons.import_export_sharp)),
+                                ],
+                              ),
+                              //FOR TEST //HERE //TO BE Deleted 
+
                             ],
                           ),
                         ),

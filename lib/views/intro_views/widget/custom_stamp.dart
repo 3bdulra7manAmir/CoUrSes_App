@@ -1,8 +1,10 @@
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Core/shared/custom_text.dart';
+import 'package:courses_app/app/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class TheConnected3Stamp extends StatelessWidget
 {
@@ -21,7 +23,9 @@ class TheConnected3Stamp extends StatelessWidget
       crossAxisAlignment: CrossAxisAlignment.center,
       children:
       [
-        CustomTextWidget(widgetText: skipText ?? '', widgetAlignment: Alignment.centerRight, widgetPadding: EdgeInsets.only(top: KMediaQuery(context).height * 0.03, right: KMediaQuery(context).width * 0.05),),
+        GestureDetector(
+          onTap: (){GoRouter.of(context).push(AppRouter.kRegisterView);},
+          child: CustomTextWidget(widgetText: skipText ?? '', widgetAlignment: Alignment.centerRight, widgetPadding: EdgeInsets.only(top: KMediaQuery(context).height * 0.03, right: KMediaQuery(context).width * 0.05),)),
     
         const SizedBox(height: 20,),
     
