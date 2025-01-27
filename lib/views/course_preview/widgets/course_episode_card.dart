@@ -5,10 +5,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CourseEpisodeCard extends StatelessWidget
 {
-  const CourseEpisodeCard({super.key, required this.isLockedAndisBlueCorrectIcon, required this.isEpisodeOpenedYetOrLocked, });
+  const CourseEpisodeCard({super.key, required this.isLockedAndisBlueCorrectIcon, required this.isEpisodeOpenedAndLocked, });
 
   final bool isLockedAndisBlueCorrectIcon;
-  final bool isEpisodeOpenedYetOrLocked;
+  final bool isEpisodeOpenedAndLocked;
 
   @override
   Widget build(BuildContext context)
@@ -33,9 +33,9 @@ class CourseEpisodeCard extends StatelessWidget
               children:
               [
                 Text('6:10 mins', style: TextStyle(
-                  color: isEpisodeOpenedYetOrLocked ? Colors.grey : kButtonsBlueColor, fontSize: 14.sp, fontWeight: FontWeight.bold),),
+                  color: isEpisodeOpenedAndLocked ? Colors.grey : kButtonsBlueColor, fontSize: 14.sp, fontWeight: FontWeight.bold),),
                 const SizedBox(width: 4,),
-                isEpisodeOpenedYetOrLocked ? SizedBox.shrink() : SvgPicture.asset('assets/images/svg/Correct_Icon.svg'),
+                isEpisodeOpenedAndLocked ? SizedBox.shrink() : SvgPicture.asset('assets/images/svg/Correct_Icon.svg'),
               ],
             ),
           ],

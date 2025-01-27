@@ -1,5 +1,6 @@
+import 'package:courses_app/Core/shared/custom_listviewbuilder.dart';
 import 'package:courses_app/Core/utils/constants.dart';
-import 'package:courses_app/views/course_preview/widgets/bottom_listviewbuilder.dart';
+import 'package:courses_app/views/course_preview/widgets/course_episode_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -44,15 +45,23 @@ class LowerPartColumn extends StatelessWidget
           alignment: Alignment.center,
           child: GestureDetector(
             onTap: (){print('Down Arrow Button Has been Pressed');},
-            child: SvgPicture.asset('assets/images/svg/down_arrow.svg', width: 30.w,),
+            child: SvgPicture.asset('assets/images/svg/down_arrow.svg', width: 25.w,),
           ),
         ),
 
-        const SizedBox(height: 15,),
+        const SizedBox(height: 25,),
 
         SizedBox(
-          height: 400.h, // Example height
-          child: BottomCoursesListViewBuilder()),
+          height: 200.h,
+          child: const MessagesListViewBuilder(
+            returnedWidget: CourseEpisodeCard(
+              isEpisodeOpenedAndLocked: false,
+              isLockedAndisBlueCorrectIcon: false,
+            ),
+            returneditemCount: 4,
+            separatorBuilderWidget: SizedBox(height: 10,),
+          ),
+        ),
       ],
     ),
     );
