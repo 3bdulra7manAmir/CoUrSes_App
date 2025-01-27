@@ -43,17 +43,18 @@ abstract class AppRouter
   static const kMainNotifictationsView = '/mainNotifictationsView';
   static const kCoursePreviewView = '/coursePreviewView';
   static const kBottomNavBar = '/bottomNavBar';
+  static const kSplashView = '/splashView';
 
   static final router = GoRouter(
       routes:
       [
-        // GoRoute(
-        //   path: kHomeView,
-        //   builder: (context, state) => const HomeView(),
-        // ),
-
         GoRoute(
           path: '/',
+          builder: (context, state) => const CoursePreviewView(),
+        ),
+
+        GoRoute(
+          path: kSplashView,
           builder: (context, state) => const SplashView(),
         ),
 
