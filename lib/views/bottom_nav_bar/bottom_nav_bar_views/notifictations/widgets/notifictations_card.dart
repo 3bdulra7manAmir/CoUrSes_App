@@ -3,6 +3,7 @@
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/notifictation_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomNotifictations extends StatelessWidget
 {
@@ -26,13 +27,33 @@ class CustomNotifictations extends StatelessWidget
 
       child: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
           children:
           [
             const UserNotifictationContainer(),
 
-            
+            const SizedBox(width: 10,),
+
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children:
+              [
+                Text('Successful Purchase!', style:  TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12.sp),),
+
+                const SizedBox(height: 5,),
+
+                Row(
+                  children:
+                  [
+                    SvgPicture.asset('assets/images/svg/Clock.svg'),
+
+                    const SizedBox(width: 5,),
+
+                    Text('Just now', style:  TextStyle(fontSize: 10.sp),),
+                  ],
+                ),
+              ],
+            ),
           ],
         )
       ),

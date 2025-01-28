@@ -13,13 +13,10 @@ class UserNotifictationContainer extends StatelessWidget
     return ClipRRect(
       borderRadius: BorderRadius.circular(10.r),
       child: SizedBox(
-        height: 55.h,
-        width: KMediaQuery(context).width * 0.15,
-        //Container will be Replaced with a SvgPicture.assets or Image.assets
+        height: 45.h,
+        width: KMediaQuery(context).width * 0.12,
         child: Container(color: Color(0xffFFEBF0),
-        child: Center(
-          child: SvgPicture.asset('assets/images/png/clock.png'),
-        ),
+        child: Center(child: SvgPicture.asset('assets/images/svg/Visa.svg'),),
         ),
       ),
     );
