@@ -1,4 +1,6 @@
+import 'package:courses_app/Core/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchView extends StatelessWidget
@@ -14,7 +16,10 @@ class SearchView extends StatelessWidget
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
           [
-            SvgPicture.asset('/assets/images/svg/Eye.svg'),
+            Padding(
+              padding:  EdgeInsets.only(left: KMediaQuery(context).width * 0.05, top: 35.h),
+              child: SvgPicture.asset('assets/images/svg/Eye.svg'),
+            ),
           ],
         ),
       ),
