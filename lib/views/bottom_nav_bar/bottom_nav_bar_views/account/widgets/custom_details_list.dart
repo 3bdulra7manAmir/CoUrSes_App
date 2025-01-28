@@ -1,5 +1,5 @@
 import 'package:courses_app/Core/utils/constants.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/user_account/widgets/custom_row.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/account/widgets/custom_row.dart';
 import 'package:flutter/material.dart';
 
 class CustomUserDetailsList extends StatelessWidget

@@ -2,7 +2,7 @@ import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/home/home_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/notifictations_view.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/user_account/user_account_view.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/account/user_account_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

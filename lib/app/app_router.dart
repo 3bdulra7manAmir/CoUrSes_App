@@ -5,6 +5,7 @@ import 'package:courses_app/views/auth/register/register_success_view.dart';
 import 'package:courses_app/views/auth/register/register_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/notifictations_view.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_view.dart';
 import 'package:courses_app/views/clocking_in/clocking_in_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/search_filter/caller.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
@@ -16,7 +17,7 @@ import 'package:courses_app/views/no_views/no_notifictations/no_notifictations_v
 import 'package:courses_app/views/splash/splash_view_body.dart';
 import 'package:courses_app/views/success_purchase/success_purchase_view.dart';
 import 'package:courses_app/views/intro_views/widget/custom_screen_indicator.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/user_account/user_account_view.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/account/user_account_view.dart';
 import 'package:courses_app/views/user_courses/courses_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -144,8 +145,13 @@ abstract class AppRouter
        ),
 
         GoRoute(
-          path: '/',
+          path: kBottomNavBar,
           builder: (context, state) => const BottomNavBarView(),
+       ),
+
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const SearchView(),
         ),
       ],
     );
