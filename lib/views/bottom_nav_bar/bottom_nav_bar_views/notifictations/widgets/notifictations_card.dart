@@ -61,5 +61,3 @@ class CustomNotifictations extends StatelessWidget
   }
 }
 
-
-

@@ -134,7 +134,7 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: '/',
+          path: kMainNotifictationsView,
           builder: (context, state) => const MainNotifictationsView(),
         ),
 
@@ -144,7 +144,7 @@ abstract class AppRouter
        ),
 
         GoRoute(
-          path: kBottomNavBar,
+          path: '/',
           builder: (context, state) => const BottomNavBarView(),
         ),
       ],
