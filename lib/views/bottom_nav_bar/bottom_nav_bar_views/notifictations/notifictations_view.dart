@@ -2,7 +2,8 @@ import 'package:courses_app/Core/shared/custom_listviewbuilder.dart';
 import 'package:courses_app/Core/shared/custom_tabbar_itself.dart';
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/core/utils/styles.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/messages_tabbar.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/messages_card.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/notifictations_card.dart';
 import 'package:flutter/material.dart';
 
 class MainNotifictationsView extends StatelessWidget
@@ -53,16 +54,13 @@ class MainNotifictationsView extends StatelessWidget
                   tabBarViewWidgets:
                   [
                     MessagesListViewBuilder(
-                      returnedWidget: CustomMessageCard(
-                        withImageMessage: false,
-                      ),
+                      returnedWidget: CustomMessageCard(withImageMessage: false,),
                       returneditemCount: 9,
                       separatorBuilderWidget: SizedBox(height: 10,),
                     ),
+                    
                     MessagesListViewBuilder(
-                      returnedWidget: CustomMessageCard(
-                        withImageMessage: true,
-                      ),
+                      returnedWidget: CustomNotifictations(withImageMessage: true,),
                       returneditemCount: 7,
                       separatorBuilderWidget: SizedBox(height: 10,),
                     ),

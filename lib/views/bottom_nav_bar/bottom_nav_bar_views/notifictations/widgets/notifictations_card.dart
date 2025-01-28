@@ -1,12 +1,12 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/user_status_and_mess_time.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/mess_status_time.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomMessageCard extends StatelessWidget
+class CustomNotifictations extends StatelessWidget
 {
-  const CustomMessageCard({super.key, required this.withImageMessage, this.imageItself});
+  const CustomNotifictations({super.key, required this.withImageMessage, this.imageItself});
 
   final bool withImageMessage;
   final Image? imageItself;
