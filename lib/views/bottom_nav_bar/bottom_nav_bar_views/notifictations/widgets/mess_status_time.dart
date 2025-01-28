@@ -1,4 +1,4 @@
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/user_image_container.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/image_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

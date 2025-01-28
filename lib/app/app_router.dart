@@ -23,7 +23,6 @@ import 'package:go_router/go_router.dart';
 abstract class AppRouter
 {
 
-  //static const kHomeView = '/homeView';
   static const kLoginView = '/loginView';
   static const kRegisterView = '/registerView';
   static const kConWPhoneView = '/conWPhoneView';
@@ -48,10 +47,6 @@ abstract class AppRouter
   static final router = GoRouter(
       routes:
       [
-        GoRoute(
-          path: '/',
-          builder: (context, state) => const CoursePreviewView(),
-        ),
 
         GoRoute(
           path: kSplashView,
@@ -139,7 +134,7 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: kMainNotifictationsView,
+          path: '/',
           builder: (context, state) => const MainNotifictationsView(),
         ),
 

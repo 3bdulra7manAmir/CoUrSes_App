@@ -58,9 +58,9 @@ class MainNotifictationsView extends StatelessWidget
                       returneditemCount: 9,
                       separatorBuilderWidget: SizedBox(height: 10,),
                     ),
-                    
+
                     MessagesListViewBuilder(
-                      returnedWidget: CustomNotifictations(withImageMessage: true,),
+                      returnedWidget: CustomNotifictations(),
                       returneditemCount: 7,
                       separatorBuilderWidget: SizedBox(height: 10,),
                     ),

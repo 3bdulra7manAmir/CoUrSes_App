@@ -1,15 +1,12 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/mess_status_time.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/notifictation_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomNotifictations extends StatelessWidget
 {
-  const CustomNotifictations({super.key, required this.withImageMessage, this.imageItself});
-
-  final bool withImageMessage;
-  final Image? imageItself;
+  const CustomNotifictations({super.key,});
 
   @override
   Widget build(BuildContext context)
@@ -33,24 +30,9 @@ class CustomNotifictations extends StatelessWidget
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
           [
-            const UserStatusAndMessageTime(),
+            const UserNotifictationContainer(),
 
-            const SizedBox(height: 5,),
-
-            Text('Congratulations on completing the first lesson, keep up the good work!',),
-
-            SizedBox(height: 10,),
-
-            withImageMessage ?
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15.r),
-              child: Container(
-                height: 145.h,
-                width: double.infinity,
-                color: Color(0xffFFE7EE),
-              ),
-            )
-            : SizedBox.shrink()
+            
           ],
         )
       ),
