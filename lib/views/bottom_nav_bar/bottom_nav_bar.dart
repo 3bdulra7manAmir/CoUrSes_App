@@ -43,8 +43,8 @@ class _BottomNavBarViewState extends State<BottomNavBarView>
     ),
 
     BottomNavigationBarItem(
-      icon: SvgPicture.asset('assets/images/svg/Search_nav_bar.svg'),
-      activeIcon: SvgPicture.asset('assets/images/svg/Search_nav_bar.svg'),
+      icon: SvgPicture.asset('assets/images/svg/Search_off.svg'),
+      activeIcon: SvgPicture.asset('assets/images/svg/Search_on.svg'),
       label: 'Search',
     ),
 
