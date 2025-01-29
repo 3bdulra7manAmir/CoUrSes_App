@@ -53,7 +53,7 @@ class LowerPartColumn extends StatelessWidget
 
         SizedBox(
           height: 200.h,
-          child: const MessagesListViewBuilder(
+          child: const SeparatorListViewBuilder(
             returnedWidget: CourseEpisodeCard(
               isEpisodeOpenedAndLocked: false,
               isLockedAndisBlueCorrectIcon: false,

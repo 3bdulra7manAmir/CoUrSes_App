@@ -7,7 +7,7 @@ import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/notifictations_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_view.dart';
 import 'package:courses_app/views/clocking_in/clocking_in_view.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/search_filter/caller.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/caller.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
 import 'package:courses_app/views/course_preview/course_preview_view.dart';
 import 'package:courses_app/views/no_views/no_products/no_products_view.dart';

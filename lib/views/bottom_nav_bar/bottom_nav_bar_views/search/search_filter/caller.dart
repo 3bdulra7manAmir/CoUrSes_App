@@ -1,4 +1,4 @@
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/search_filter/bottom_modal_sheet_view.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/bottom_modal_sheet_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget

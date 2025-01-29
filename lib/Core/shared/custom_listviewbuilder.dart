@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class MessagesListViewBuilder extends StatelessWidget
+class SeparatorListViewBuilder extends StatelessWidget
 {
-  const MessagesListViewBuilder({super.key, required this.returnedWidget, required this.separatorBuilderWidget, required this.returneditemCount});
+  const SeparatorListViewBuilder({super.key, required this.returnedWidget, required this.separatorBuilderWidget, required this.returneditemCount});
 
   final Widget returnedWidget;
   final Widget separatorBuilderWidget;

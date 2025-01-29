@@ -53,13 +53,13 @@ class MainNotifictationsView extends StatelessWidget
                   ],
                   tabBarViewWidgets:
                   [
-                    MessagesListViewBuilder(
+                    SeparatorListViewBuilder(
                       returnedWidget: CustomMessageCard(withImageMessage: false,),
                       returneditemCount: 9,
                       separatorBuilderWidget: SizedBox(height: 10,),
                     ),
 
-                    MessagesListViewBuilder(
+                    SeparatorListViewBuilder(
                       returnedWidget: CustomNotifictations(),
                       returneditemCount: 7,
                       separatorBuilderWidget: SizedBox(height: 10,),

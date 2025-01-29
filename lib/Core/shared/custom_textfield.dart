@@ -121,7 +121,7 @@ class CustomTextfield extends StatelessWidget
   final Color? fieldPrefixIconColor;
   final Color? fieldfFillColor;
 
-  final bool fieldBoolFilled;
+  final bool? fieldBoolFilled;
 
   @override
   Widget build(BuildContext context)
@@ -154,8 +154,8 @@ class CustomTextfield extends StatelessWidget
           ),
           
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10.r)),
-            borderSide: BorderSide(color: Colors.grey),
+            borderRadius: BorderRadius.all(Radius.circular(12.r)),
+            borderSide: BorderSide(color: Colors.grey, style: BorderStyle.solid),
           ),
         ),
       ),

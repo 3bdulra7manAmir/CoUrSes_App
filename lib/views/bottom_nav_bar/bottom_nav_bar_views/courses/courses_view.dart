@@ -53,17 +53,17 @@ class CoursesView extends StatelessWidget
                   tabBarControllerLength: 3,
                   tabBarViewWidgets:
                   [
-                    MessagesListViewBuilder(
+                    SeparatorListViewBuilder(
                       returnedWidget: CustomAllTabCard(),
                       returneditemCount: 6,
                       separatorBuilderWidget: SizedBox(height: 15,),
                     ),
-                    MessagesListViewBuilder(
+                    SeparatorListViewBuilder(
                       returnedWidget: CustomAllTabCard(),
                       returneditemCount: 6,
                       separatorBuilderWidget: SizedBox(height: 15,),
                     ),
-                    MessagesListViewBuilder(
+                    SeparatorListViewBuilder(
                       returnedWidget: CustomAllTabCard(),
                       returneditemCount: 6,
                       separatorBuilderWidget: SizedBox(height: 15,),
