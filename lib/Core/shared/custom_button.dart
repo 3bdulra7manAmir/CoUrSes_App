@@ -35,12 +35,13 @@ class CustomBlueButton extends StatelessWidget
 
 class CustomReversedButton extends StatelessWidget
 {
-  const CustomReversedButton({super.key, required this.buttonWidth, this.buttonHeight, required this.buttonText, required this.buttonOnPressed,});
+  const CustomReversedButton({super.key, required this.buttonWidth, this.buttonHeight, required this.buttonText, required this.buttonOnPressed, this.outerBorderColor,});
 
   final double buttonWidth;
   final String buttonText;
   final void Function() buttonOnPressed;
   final double? buttonHeight;
+  final BorderSide? outerBorderColor;
 
   @override
   Widget build(BuildContext context)
@@ -53,6 +54,7 @@ class CustomReversedButton extends StatelessWidget
           backgroundColor: WidgetStateProperty.all(Colors.white),
           shape: WidgetStateProperty.all(RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0.r),
+            side: outerBorderColor ?? BorderSide.none,
           ),
         ),
       ),

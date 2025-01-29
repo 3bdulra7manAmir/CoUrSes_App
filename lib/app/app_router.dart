@@ -159,20 +159,11 @@ abstract class AppRouter
           builder: (context, state) => const PayNowView(),
         ),
 
-        // GoRoute(
-        //   path: kBottomModalSheet,
-        //   builder: (context, state) => const BMSFilterView(),
-        // ),
-
-        // GoRoute(
-        //   path: '/',
-        //   builder: (context, state) => const BMSPayMentView(),
-        // ),
-
         GoRoute(
           path: '/',
-          builder: (context, state) => const PayNowView(),
+          builder: (context, state) => const BMSFilterView(),
         ),
+
       ],
     );
 }

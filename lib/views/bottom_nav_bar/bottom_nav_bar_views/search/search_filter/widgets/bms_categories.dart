@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ModalBottomSheetCategories extends StatefulWidget
+class BMSCategories extends StatefulWidget
 {
-  const ModalBottomSheetCategories({super.key,});
+  const BMSCategories({super.key,});
 
   @override
-  State<ModalBottomSheetCategories> createState() => ModalBottomSheetCategoriesState();
+  State<BMSCategories> createState() => BMSCategoriesState();
 }
 
-class ModalBottomSheetCategoriesState extends State<ModalBottomSheetCategories>
+class BMSCategoriesState extends State<BMSCategories>
 {
   // List to manage selected state of each chip
   List<bool> isSelectedList = [false, false, false, false, false, false];
@@ -21,7 +21,7 @@ class ModalBottomSheetCategoriesState extends State<ModalBottomSheetCategories>
       crossAxisAlignment: CrossAxisAlignment.start,
       children:
       [
-        Text("Categories", style: TextStyle(fontSize: 16.sp)),
+        Text("Categories", style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold)),
 
         const SizedBox(height: 10),
 

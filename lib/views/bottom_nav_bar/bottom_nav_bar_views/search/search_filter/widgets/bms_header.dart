@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-class ModalBottomSheetHeader extends StatelessWidget
+class BMSHeader extends StatelessWidget
 {
-  const ModalBottomSheetHeader({super.key,});
+  const BMSHeader({super.key,});
 
   @override
   Widget build(BuildContext context) {
