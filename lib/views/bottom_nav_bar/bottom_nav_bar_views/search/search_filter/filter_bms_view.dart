@@ -5,12 +5,12 @@ import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/sea
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class BottomModalSheetView extends StatefulWidget
+class BMSFilterItself extends StatefulWidget
 {
-  const BottomModalSheetView({super.key});
+  const BMSFilterItself({super.key});
 
   @override
-  State<BottomModalSheetView> createState() => BottomModalSheetViewState();
+  State<BMSFilterItself> createState() => BMSFilterItselfState();
 
   /// Function to show the BottomModalSheetView
   static void show(BuildContext context)
@@ -22,12 +22,12 @@ class BottomModalSheetView extends StatefulWidget
           top: Radius.circular(25.r),
         ),
       ),
-      builder: (BuildContext context) => BottomModalSheetView(),
+      builder: (BuildContext context) => BMSFilterItself(),
     );
   }
 }
 
-class BottomModalSheetViewState extends State<BottomModalSheetView>
+class BMSFilterItselfState extends State<BMSFilterItself>
 {
   @override
   Widget build(BuildContext context)

@@ -41,7 +41,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCXgBCbojDW63Rw_Qso67YkM2L7OjCsjvI',
+    apiKey: 'AIzaSyCXgBCbojDW63Rw_Qso67YkM2L7OjCsjvI', //HERE
     appId: '1:18639900252:web:69945e1e7884bb647ba099',
     messagingSenderId: '18639900252',
     projectId: 'courses-app-688d5',
@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB5nv0NVfy0jZarR1O7Zdi836wWL5HxUR4',
+    apiKey: 'AIzaSyB5nv0NVfy0jZarR1O7Zdi836wWL5HxUR4', //HERE
     appId: '1:18639900252:android:16eafb5ec3917c047ba099',
     messagingSenderId: '18639900252',
     projectId: 'courses-app-688d5',
@@ -59,7 +59,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBE_DALlsWiaQSnKuQ9pC5GlHLjyHeG60Q',
+    apiKey: 'AIzaSyBE_DALlsWiaQSnKuQ9pC5GlHLjyHeG60Q', //HERE
     appId: '1:18639900252:ios:8e2edc69a9973c397ba099',
     messagingSenderId: '18639900252',
     projectId: 'courses-app-688d5',

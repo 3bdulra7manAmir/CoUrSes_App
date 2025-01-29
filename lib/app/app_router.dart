@@ -7,8 +7,9 @@ import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/notifictations_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_view.dart';
 import 'package:courses_app/views/clocking_in/clocking_in_view.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/caller.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/call_in_here.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
+import 'package:courses_app/views/course_preview/called_in_here.dart';
 import 'package:courses_app/views/course_preview/course_preview_view.dart';
 import 'package:courses_app/views/course_preview/pay_now_view.dart';
 import 'package:courses_app/views/no_views/no_products/no_products_view.dart';
@@ -128,11 +129,6 @@ abstract class AppRouter
         ),
 
         GoRoute(
-          path: kBottomModalSheet,
-          builder: (context, state) => const HomeScreen(),
-        ),
-
-        GoRoute(
           path: kCoursesView,
           builder: (context, state) => const CoursesView(),
         ),
@@ -156,10 +152,20 @@ abstract class AppRouter
           path: kSearchView,
           builder: (context, state) => const SearchView(),
         ),
-        
+
         GoRoute(
-          path: '/',
+          path: kPayNowView,
           builder: (context, state) => const PayNowView(),
+        ),
+
+        GoRoute(
+          path: kBottomModalSheet,
+          builder: (context, state) => const BMSFilterView(),
+        ),
+
+        GoRoute(
+          path: kPayNowView,
+          builder: (context, state) => const BMSPayMentView(),
         ),
       ],
     );
