@@ -10,6 +10,7 @@ import 'package:courses_app/views/clocking_in/clocking_in_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/caller.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
 import 'package:courses_app/views/course_preview/course_preview_view.dart';
+import 'package:courses_app/views/course_preview/pay_now_view.dart';
 import 'package:courses_app/views/no_views/no_products/no_products_view.dart';
 import 'package:courses_app/views/no_views/no_videos/no_videos_view.dart';
 import 'package:courses_app/views/no_views/no_network_conn/no_network_conn_view.dart';
@@ -44,6 +45,8 @@ abstract class AppRouter
   static const kCoursePreviewView = '/coursePreviewView';
   static const kBottomNavBar = '/bottomNavBar';
   static const kSplashView = '/splashView';
+  static const kSearchView = '/searchView';
+  static const kPayNowView = '/payNowView';
 
   static final router = GoRouter(
       routes:
@@ -150,8 +153,13 @@ abstract class AppRouter
        ),
 
         GoRoute(
-          path: '/',
+          path: kSearchView,
           builder: (context, state) => const SearchView(),
+        ),
+        
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const PayNowView(),
         ),
       ],
     );
