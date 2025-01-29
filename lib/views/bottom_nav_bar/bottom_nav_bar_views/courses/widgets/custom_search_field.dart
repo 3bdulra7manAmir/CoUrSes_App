@@ -1,5 +1,6 @@
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Core/shared/custom_textfield.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/filter_bms_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,7 +25,7 @@ class CustomSearchField extends StatelessWidget
           onTap: (){print('Search Icon Has been Pressed');},
           child: Image.asset('assets/images/png/search.png',)),
         fieldSuffixIcon: GestureDetector(
-          onTap: (){print('Filtter Icon Has been Pressed');},
+          onTap: (){print('Filtter Icon Has been Pressed'); BMSFilter.show(context);},
           child: Image.asset('assets/images/png/filter.png')),
 
         fieldBoolFilled: true,

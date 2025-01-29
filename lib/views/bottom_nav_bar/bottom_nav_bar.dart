@@ -3,6 +3,7 @@ import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/co
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/home/home_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/notifictations_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/account/user_account_view.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -22,7 +23,7 @@ class _BottomNavBarViewState extends State<BottomNavBarView>
   [
     HomeView(),
     CoursesView(),
-    //SearchView(),
+    SearchView(),
     MainNotifictationsView(),
     UserAccountView(),
   ];
@@ -41,11 +42,11 @@ class _BottomNavBarViewState extends State<BottomNavBarView>
       label: 'Course',
     ),
 
-    // BottomNavigationBarItem(
-    //   icon: SvgPicture.asset('assets/images/svg/Search_nav_bar.svg'),
-    //   activeIcon: SvgPicture.asset('assets/images/svg/Search_nav_bar.svg'),
-    //   label: 'Search',
-    // ),
+    BottomNavigationBarItem(
+      icon: SvgPicture.asset('assets/images/svg/Search_nav_bar.svg'),
+      activeIcon: SvgPicture.asset('assets/images/svg/Search_nav_bar.svg'),
+      label: 'Search',
+    ),
 
     BottomNavigationBarItem(
       icon: SvgPicture.asset('assets/images/svg/Messages_off.svg'),

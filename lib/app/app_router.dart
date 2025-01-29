@@ -9,7 +9,6 @@ import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/notifictations_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_view.dart';
 import 'package:courses_app/views/clocking_in/clocking_in_view.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/call_in_here.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
 import 'package:courses_app/views/course_preview/course_preview_view.dart';
 import 'package:courses_app/views/course_preview/pay_now_view.dart';
@@ -51,119 +50,113 @@ abstract class AppRouter
   static const kPayNowView = '/payNowView';
 
   static final router = GoRouter(
-      routes:
-      [
+    routes:
+    [
+      GoRoute(
+        path: kSplashView,
+        builder: (context, state) => const SplashView(),
+      ),
 
-        GoRoute(
-          path: kSplashView,
-          builder: (context, state) => const SplashView(),
-        ),
+      GoRoute(
+        path: kLoginView,
+        builder: (context, state) => const LoginView(),
+      ),
 
-        GoRoute(
-          path: kLoginView,
-          builder: (context, state) => const LoginView(),
-        ),
+      GoRoute(
+        path: kRegisterView,
+        builder: (context, state) => const RegisterView(),
+      ),
 
-        GoRoute(
-          path: kRegisterView,
-          builder: (context, state) => const RegisterView(),
-        ),
+      GoRoute(
+        path: kConWPhoneView,
+        builder: (context, state) => const ConWPhoneView(),
+      ),
 
-        GoRoute(
-          path: kConWPhoneView,
-          builder: (context, state) => const ConWPhoneView(),
-        ),
+      GoRoute(
+        path: kPhoneOTPView,
+        builder: (context, state) => const PhoneOTPView(),
+      ),
 
-        GoRoute(
-          path: kPhoneOTPView,
-          builder: (context, state) => const PhoneOTPView(),
-        ),
+      GoRoute(
+        path: kSuccessPopUpView,
+        builder: (context, state) => const SuccessPopUpView(),
+      ),
 
-        GoRoute(
-          path: kSuccessPopUpView,
-          builder: (context, state) => const SuccessPopUpView(),
-        ),
+      GoRoute(
+        path: kNoNotifictationsView,
+        builder: (context, state) => const NoNotifictationsView(),
+      ),
 
-        GoRoute(
-          path: kNoNotifictationsView,
-          builder: (context, state) => const NoNotifictationsView(),
-        ),
+      GoRoute(
+        path: kNoNetworkConnectionView,
+        builder: (context, state) => const NoNetworkConnectionView(),
+      ),
 
-        GoRoute(
-          path: kNoNetworkConnectionView,
-          builder: (context, state) => const NoNetworkConnectionView(),
-        ),
+      GoRoute(
+        path: kNoVideosView,
+        builder: (context, state) => const NoVideosView(),
+      ),
 
-        GoRoute(
-          path: kNoVideosView,
-          builder: (context, state) => const NoVideosView(),
-        ),
+      GoRoute(
+        path: kNoProductsView,
+        builder: (context, state) => const NoProductsView(),
+      ),
 
-        GoRoute(
-          path: kNoProductsView,
-          builder: (context, state) => const NoProductsView(),
-        ),
+      GoRoute(
+        path: kUserAccountView,
+        builder: (context, state) => const UserAccountView(),
+      ),
 
-        GoRoute(
-          path: kUserAccountView,
-          builder: (context, state) => const UserAccountView(),
-        ),
+      GoRoute(
+        path: kUserCoursesView,
+        builder: (context, state) => const UserCoursesView(),
+      ),
 
-        GoRoute(
-          path: kUserCoursesView,
-          builder: (context, state) => const UserCoursesView(),
-        ),
+      GoRoute(
+        path: kSuccessPurchaseView,
+        builder: (context, state) => const SuccessPurchaseView(),
+      ),
 
-        GoRoute(
-          path: kSuccessPurchaseView,
-          builder: (context, state) => const SuccessPurchaseView(),
-        ),
+      GoRoute(
+        path: kClockingInView,
+        builder: (context, state) => const ClockingInView(),
+      ),
 
-        GoRoute(
-          path: kClockingInView,
-          builder: (context, state) => const ClockingInView(),
-        ),
+      GoRoute(
+        path: kThe3Screens,
+        builder: (context, state) => const The3Screens(),
+      ),
 
-        GoRoute(
-          path: kThe3Screens,
-          builder: (context, state) => const The3Screens(),
-        ),
+      GoRoute(
+        path: kCoursesView,
+        builder: (context, state) => const CoursesView(),
+      ),
 
-        GoRoute(
-          path: kCoursesView,
-          builder: (context, state) => const CoursesView(),
-        ),
+      GoRoute(
+        path: kMainNotifictationsView,
+        builder: (context, state) => const MainNotifictationsView(),
+      ),
 
-        GoRoute(
-          path: kMainNotifictationsView,
-          builder: (context, state) => const MainNotifictationsView(),
-        ),
+      GoRoute(
+        path: kCoursePreviewView,
+        builder: (context, state) => const CoursePreviewView(),
+      ),
 
-        GoRoute(
-          path: kCoursePreviewView,
-          builder: (context, state) => const CoursePreviewView(),
-       ),
+      GoRoute(
+        path: kBottomNavBar,
+        builder: (context, state) => const BottomNavBarView(),
+      ),
 
-        GoRoute(
-          path: kBottomNavBar,
-          builder: (context, state) => const BottomNavBarView(),
-       ),
+      GoRoute(
+        path: kSearchView,
+        builder: (context, state) => const SearchView(),
+      ),
 
-        GoRoute(
-          path: kSearchView,
-          builder: (context, state) => const SearchView(),
-        ),
+      GoRoute(
+        path: kPayNowView,
+        builder: (context, state) => const PayNowView(),
+      ),
 
-        GoRoute(
-          path: kPayNowView,
-          builder: (context, state) => const PayNowView(),
-        ),
-
-        GoRoute(
-          path: '/',
-          builder: (context, state) => const BMSFilterView(),
-        ),
-
-      ],
-    );
+    ],
+  );
 }

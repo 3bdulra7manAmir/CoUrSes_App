@@ -1,18 +1,20 @@
 import 'package:courses_app/Core/shared/custom_button.dart';
 import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/widgets/bms_categories.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/widgets/bms_duration.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/widgets/bms_header.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/widgets/bms_price.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
-class BMSFilterItself extends StatefulWidget
+class BMSFilter extends StatefulWidget
 {
-  const BMSFilterItself({super.key});
+  const BMSFilter({super.key});
 
   @override
-  State<BMSFilterItself> createState() => BMSFilterItselfState();
+  State<BMSFilter> createState() => BMSFilterState();
 
   /// Function to show the BottomModalSheetView
   static void show(BuildContext context)
@@ -24,12 +26,12 @@ class BMSFilterItself extends StatefulWidget
           top: Radius.circular(25.r),
         ),
       ),
-      builder: (BuildContext context) => BMSFilterItself(),
+      builder: (BuildContext context) => BMSFilter(),
     );
   }
 }
 
-class BMSFilterItselfState extends State<BMSFilterItself>
+class BMSFilterState extends State<BMSFilter>
 {
   @override
   Widget build(BuildContext context)
@@ -85,7 +87,7 @@ class BMSFilterItselfState extends State<BMSFilterItself>
                   child: CustomBlueButton(
                     buttonWidth: 0.7,
                     buttonText: 'Apply Filter',
-                    buttonOnPressed: (){print('Apply Filter Button has been pressed');}
+                    buttonOnPressed: (){print('Apply Filter Button has been pressed'); GoRouter.of(context).push(AppRouter.kSearchView);}
                   ),
                 ),
               ],

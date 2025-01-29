@@ -2,10 +2,12 @@
 
 import 'package:courses_app/Core/shared/custom_button.dart';
 import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/views/course_preview/widgets/lower_part_column.dart';
 import 'package:courses_app/views/course_preview/widgets/upper_part_stack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class CoursePreviewView extends StatefulWidget
 {
@@ -89,7 +91,7 @@ class _CoursePreviewViewState extends State<CoursePreviewView>
                       const SizedBox(width: 20),
 
                       Expanded(flex: 3,
-                        child: CustomBlueButton(buttonWidth: 0.6, buttonText: 'Buy Now', buttonOnPressed: (){})
+                        child: CustomBlueButton(buttonWidth: 0.6, buttonText: 'Buy Now', buttonOnPressed: (){print('Buy Now Button has been Pressed'); GoRouter.of(context).push(AppRouter.kPayNowView);})
                       ),
                     ],
                   ),
