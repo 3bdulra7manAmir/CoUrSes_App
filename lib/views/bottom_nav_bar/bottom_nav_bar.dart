@@ -77,7 +77,7 @@ class _BottomNavBarViewState extends State<BottomNavBarView>
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
           items: _bottomNavBarItems,
-          selectedItemColor: kButtonsBlueColor,
+          selectedItemColor: AppColors().kButtonsBlueColor,
           unselectedItemColor: Colors.grey,
           showSelectedLabels: true,
           showUnselectedLabels: true,

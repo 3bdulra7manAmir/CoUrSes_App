@@ -31,7 +31,7 @@ class MainNotifictationsView extends StatelessWidget
                   dividerColor: Colors.transparent,
                   tabBarWidgetsBoxDecorationColor: Colors.white.withValues(alpha: 0),
                   unselectedLabelColor: Colors.black,
-                  indicatorColor: kButtonsBlueColor,
+                  indicatorColor: AppColors().kButtonsBlueColor,
                   labelColor: Colors.black,
                   tabBarControllerLength: 2,
                   tabBarWidgets:

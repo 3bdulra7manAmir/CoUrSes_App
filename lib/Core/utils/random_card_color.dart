@@ -8,12 +8,12 @@ Color getLinkedValue(Color cardBackgroundColor)
 {
   switch (cardBackgroundColor)
   {
-    case kCardColorPinkCardContainer:
-      return kCardColorPinkLinearLine;
-    case kCardColorBlueCardContainer:
-      return kCardColorBlueLinearLine;
-    case kCardColorGreenCardContainer:
-      return kCardColorGreenLinearLine;
+    case AppColors.kCardColorPinkCardContainer:
+      return AppColors.kCardColorPinkLinearLine;
+    case AppColors.kCardColorBlueCardContainer:
+      return AppColors.kCardColorBlueLinearLine;
+    case AppColors.kCardColorGreenCardContainer:
+      return AppColors.kCardColorGreenLinearLine;
     default:
       throw ArgumentError('Invalid input. Expected a valid card background color.');
   }
@@ -27,9 +27,9 @@ Map<Color, Color> randomFunction()
   // Map integers to corresponding Color values
   final colorOptions =
   [
-    kCardColorPinkCardContainer,
-    kCardColorBlueCardContainer,
-    kCardColorGreenCardContainer,
+    AppColors.kCardColorPinkCardContainer,
+    AppColors.kCardColorBlueCardContainer,
+    AppColors.kCardColorGreenCardContainer,
   ];
 
   // Randomly select a Color from the list

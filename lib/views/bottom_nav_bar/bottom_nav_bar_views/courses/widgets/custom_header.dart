@@ -1,3 +1,4 @@
+import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +17,7 @@ class CoursesHeader extends StatelessWidget
       [
         Text('Courses', style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),),
 
-        SvgPicture.asset('assets/images/svg/Profile_Avatar_Without_Camera.svg', width: 35.w,),
+        SvgPicture.asset(AppAssetsPaths().kProfileAvatarWithoutCameraPath, width: 35.w,),
       ],
     );
   }

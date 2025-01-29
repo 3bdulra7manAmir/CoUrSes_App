@@ -14,19 +14,19 @@ class CustomUserDetailsList extends StatelessWidget
       child: Column(
         children:
         [
-          AccountSections(title: 'Favourite', imagePath: 'assets/images/svg/EyeFlipped.svg', onRowTap: (){},),
+          AccountSections(title: 'Favourite', imagePath: AppAssetsPaths().kFlippedBBIMGPath, onRowTap: (){},),
     
           const SizedBox(height: 40,),
     
-          AccountSections(title: 'Edit Account', imagePath: 'assets/images/svg/EyeFlipped.svg', onRowTap: (){},),
+          AccountSections(title: 'Edit Account', imagePath: AppAssetsPaths().kFlippedBBIMGPath, onRowTap: (){},),
     
           const SizedBox(height: 40,),
     
-          AccountSections(title: 'Settings and Privacy', imagePath: 'assets/images/svg/EyeFlipped.svg', onRowTap: (){},),
+          AccountSections(title: 'Settings and Privacy', imagePath: AppAssetsPaths().kFlippedBBIMGPath, onRowTap: (){},),
     
           const SizedBox(height: 40,),
     
-          AccountSections(title: 'Help', imagePath: 'assets/images/svg/EyeFlipped.svg', onRowTap: (){},),
+          AccountSections(title: 'Help', imagePath: AppAssetsPaths().kFlippedBBIMGPath, onRowTap: (){},),
         ],
       ),
     );

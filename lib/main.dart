@@ -48,10 +48,10 @@ class CoursesApp extends StatelessWidget
         debugShowCheckedModeBanner: false,
 
         theme: ThemeData.light().copyWith(textTheme: GoogleFonts.montserratAlternatesTextTheme(),
-        textSelectionTheme: const TextSelectionThemeData(
-          cursorColor:  kButtonsBlueColor,
-          selectionColor: kButtonsBlueColor,
-          selectionHandleColor: kButtonsBlueColor
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor:  AppColors().kButtonsBlueColor,
+          selectionColor: AppColors().kButtonsBlueColor,
+          selectionHandleColor: AppColors().kButtonsBlueColor
           ),
         ),
 

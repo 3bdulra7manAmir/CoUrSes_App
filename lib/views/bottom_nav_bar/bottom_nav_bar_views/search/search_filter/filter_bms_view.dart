@@ -75,7 +75,7 @@ class BMSFilterState extends State<BMSFilter>
                   child: CustomReversedButton(
                     buttonWidth: 0.3,
                     buttonText: 'Clear',
-                    outerBorderColor: BorderSide(color: kButtonsBlueColor),
+                    outerBorderColor: BorderSide(color: AppColors().kButtonsBlueColor),
                     buttonOnPressed: (){print('Clear Button has been pressed');}
                   ),
                 ),

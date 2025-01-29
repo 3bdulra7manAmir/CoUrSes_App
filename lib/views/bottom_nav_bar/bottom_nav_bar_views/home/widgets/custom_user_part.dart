@@ -16,7 +16,7 @@ class CustomUserPart extends StatelessWidget
       height: 170.h,
 
       decoration: BoxDecoration(
-        color: kButtonsBlueColor,
+        color: AppColors().kButtonsBlueColor,
       ),
 
       child: Padding(

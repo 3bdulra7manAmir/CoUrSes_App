@@ -31,7 +31,7 @@ class ConWPhoneView extends StatelessWidget
                     child: Row(
                       children:
                       [
-                        IconButton(onPressed: (){print('Eye Icon Has Been Pressed');}, icon: SvgPicture.asset('assets/images/svg/Eye.svg')),
+                        IconButton(onPressed: (){print('Eye Icon Has Been Pressed');}, icon: SvgPicture.asset(AppAssetsPaths().kBBIMGPath)),
                               
                         CustomTextWidget(widgetText: 'Continue with Phone',
                         widgetTextStyle: Styles.textStyle16.copyWith(fontWeight: FontWeight.w900),

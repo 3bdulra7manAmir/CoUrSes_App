@@ -44,7 +44,7 @@ class CustomHomeProgressCard extends StatelessWidget
 
                 GestureDetector(
                   onTap: () {},
-                  child: Text('My Courses', style: TextStyle(fontSize: 14.sp, color: kButtonsBlueColor, fontWeight: FontWeight.bold))),
+                  child: Text('My Courses', style: TextStyle(fontSize: 14.sp, color: AppColors().kButtonsBlueColor, fontWeight: FontWeight.bold))),
               ],
             ),
     

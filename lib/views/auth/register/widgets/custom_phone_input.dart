@@ -48,7 +48,7 @@ class PhoneNumberTextFieldAndButtonState extends State<PhoneNumberTextFieldAndBu
               height: 45.h,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: kButtonsBlueColor,
+                  backgroundColor: AppColors().kButtonsBlueColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.r),
                   ),

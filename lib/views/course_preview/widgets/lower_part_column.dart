@@ -23,7 +23,7 @@ class LowerPartColumn extends StatelessWidget
           children:
           [
             Text('Prodcut Design v1.0', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.sp),),
-            Text('\$74.00', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp, color: kButtonsBlueColor),),
+            Text('\$74.00', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp, color: AppColors().kButtonsBlueColor),),
           ],
         ),
     

@@ -22,7 +22,7 @@ class NoNetworkConnectionView extends StatelessWidget
                 padding: EdgeInsets.only(top: KMediaQuery(context).height * 0.04 , left: KMediaQuery(context).width * 0.05),
                 child: GestureDetector(
                   onTap: (){print('Eye IMG Pressed');},
-                  child: SvgPicture.asset('assets/images/svg/Eye.svg')),
+                  child: SvgPicture.asset(AppAssetsPaths().kBBIMGPath)),
               ),
             ),
 

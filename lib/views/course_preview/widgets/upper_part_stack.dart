@@ -22,7 +22,7 @@ class UpperPartStack extends StatelessWidget
     
         Positioned(
           left: KMediaQuery(context).width * 0.05, top: 25.h,
-          child: SvgPicture.asset('assets/images/svg/Eye.svg'),
+          child: SvgPicture.asset(AppAssetsPaths().kBBIMGPath),
         ),
             
         Positioned(

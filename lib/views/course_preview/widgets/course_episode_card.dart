@@ -33,7 +33,7 @@ class CourseEpisodeCard extends StatelessWidget
               children:
               [
                 Text('6:10 mins', style: TextStyle(
-                  color: isEpisodeOpenedAndLocked ? Colors.grey : kButtonsBlueColor, fontSize: 14.sp, fontWeight: FontWeight.bold),),
+                  color: isEpisodeOpenedAndLocked ? Colors.grey : AppColors().kButtonsBlueColor, fontSize: 14.sp, fontWeight: FontWeight.bold),),
                 const SizedBox(width: 4,),
                 isEpisodeOpenedAndLocked ? SizedBox.shrink() : SvgPicture.asset('assets/images/svg/Correct_Icon.svg'),
               ],
@@ -44,7 +44,7 @@ class CourseEpisodeCard extends StatelessWidget
         const Spacer(),
       
         CircleAvatar(
-          backgroundColor: isLockedAndisBlueCorrectIcon ? kButtonsBlueColor.withValues(alpha: 0.5) : kButtonsBlueColor,
+          backgroundColor: isLockedAndisBlueCorrectIcon ? AppColors().kButtonsBlueColor.withValues(alpha: 0.5) : AppColors().kButtonsBlueColor,
           child: IconButton(onPressed: () {print('Play Button Has been Pressed');},
           icon:  isLockedAndisBlueCorrectIcon ? Icon(Icons.lock) : Icon(Icons.play_arrow_rounded),
           color: Colors.white,

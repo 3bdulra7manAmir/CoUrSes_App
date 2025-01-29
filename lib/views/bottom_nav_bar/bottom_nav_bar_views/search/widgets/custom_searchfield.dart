@@ -16,7 +16,7 @@ class CustomSearchFieldForSearchView extends StatelessWidget
       child: CustomTextfield(
         fieldController: SearchController(),
         fieldOnSubmitted: (string ) {},
-        fieldCursorColor: kButtonsBlueColor,
+        fieldCursorColor: AppColors().kButtonsBlueColor,
         fieldTextInputType: TextInputType.text,
         fieldHintText: 'Find Course',
 

@@ -12,15 +12,24 @@ class KMediaQuery
 }
 
 const String kGtSectraFine = 'GT Sectra Fine';
-const Color kButtonsBlueColor = Color.fromRGBO(61, 93, 255, 1);
 
+class AppColors
+{
+  static const Color kCardColorPinkCardContainer = Color(0xffFFE7EE);
+  static const Color kCardColorPinkLinearLine = Color(0xffEC7B9C);
 
+  static const Color kCardColorBlueCardContainer = Color(0xffBAD6FF);
+  static const Color kCardColorBlueLinearLine = Color(0xff3D5CFF);
 
-const Color kCardColorPinkCardContainer = Color(0xffFFE7EE);
-const Color kCardColorPinkLinearLine = Color(0xffEC7B9C);
+  static const Color kCardColorGreenCardContainer = Color(0xffBAE0DB);
+  static const Color kCardColorGreenLinearLine = Color(0xff398A80);
 
-const Color kCardColorBlueCardContainer = Color(0xffBAD6FF);
-const Color kCardColorBlueLinearLine = Color(0xff3D5CFF);
+  Color kButtonsBlueColor = Color.fromRGBO(61, 93, 255, 1);
+}
 
-const Color kCardColorGreenCardContainer = Color(0xffBAE0DB);
-const Color kCardColorGreenLinearLine = Color(0xff398A80);
+class AppAssetsPaths
+{
+  String kBBIMGPath = 'assets/images/svg/Eye.svg';
+  String kFlippedBBIMGPath = 'assets/images/svg/EyeFlipped.svg';
+  String kProfileAvatarWithoutCameraPath = 'assets/images/svg/Profile_Avatar_Without_Camera.svg';
+}

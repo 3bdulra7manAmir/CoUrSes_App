@@ -36,7 +36,7 @@ class CustomCoursesLanguageCard extends StatelessWidget
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(10.r), bottomLeft: Radius.circular(10.r)),
               ),
               child: Center(
-                child: Text('Language', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold, color: kButtonsBlueColor,),))),
+                child: Text('Language', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold, color: AppColors().kButtonsBlueColor,),))),
           ),
         ],
       ),

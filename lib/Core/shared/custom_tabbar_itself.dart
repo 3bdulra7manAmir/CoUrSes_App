@@ -66,7 +66,7 @@ class WholeTabBarState extends State<WholeTabBar> with SingleTickerProviderState
           height: widget.tabBarContainerHeight ?? 40.h,
           
           decoration: BoxDecoration(
-            color: widget.tabBarWidgetsBoxDecorationColor ?? kButtonsBlueColor,
+            color: widget.tabBarWidgetsBoxDecorationColor ?? AppColors().kButtonsBlueColor,
             borderRadius: BorderRadius.circular(10.r),
           ),
 

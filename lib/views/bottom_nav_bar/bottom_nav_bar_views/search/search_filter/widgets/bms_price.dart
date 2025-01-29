@@ -23,7 +23,7 @@ class BMSPriceState extends State<BMSPrice>
       [
         SliderTheme(
           data: SliderTheme.of(context).copyWith(
-            activeTrackColor: kButtonsBlueColor,
+            activeTrackColor: AppColors().kButtonsBlueColor,
             inactiveTrackColor: Colors.grey,
             rangeThumbShape: CustomThumbShape(),
             overlayShape: SliderComponentShape.noOverlay,
@@ -150,7 +150,7 @@ class CustomThumbShape extends RangeSliderThumbShape
   {
     final Canvas canvas = context.canvas;
     final Paint paint = Paint()
-      ..color = kButtonsBlueColor
+      ..color = AppColors().kButtonsBlueColor
       ..style = PaintingStyle.stroke
       ..strokeWidth = _borderWidth;
 
