@@ -4,9 +4,9 @@ import 'package:numeric_keyboard/numeric_keyboard.dart';
 
 class CustomNumOTPKeyboard extends StatefulWidget
 {
-  const CustomNumOTPKeyboard({super.key, required this.otpController});
+  const CustomNumOTPKeyboard({super.key, this.otpController});
 
-  final TextEditingController otpController;
+  final TextEditingController? otpController;
 
   @override
   State<CustomNumOTPKeyboard> createState() => CustomNumOTPKeyboardState();
@@ -19,8 +19,8 @@ class CustomNumOTPKeyboardState extends State<CustomNumOTPKeyboard>
   
   void onKeyboardTap(String value)
   {
-    setState(() {widget.otpController.text += value;});
-    print('Current input: ${widget.otpController.text}');
+    setState(() {widget.otpController!.text += value;});
+    print('Current input: ${widget.otpController!.text}');
   }
 
   @override
@@ -34,9 +34,9 @@ class CustomNumOTPKeyboardState extends State<CustomNumOTPKeyboard>
       rightButtonFn: ()
       {setState(()
       {
-        if (widget.otpController.text.isNotEmpty)
+        if (widget.otpController!.text.isNotEmpty)
         {
-          widget.otpController.text =widget.otpController.text.substring(0, widget.otpController.text.length - 1);
+          widget.otpController!.text =widget.otpController!.text.substring(0, widget.otpController!.text.length - 1);
         }
       }
         );

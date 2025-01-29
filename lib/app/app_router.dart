@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:courses_app/views/auth/login/login_view.dart';
 import 'package:courses_app/views/auth/register/ph_otp_view.dart';
 import 'package:courses_app/views/auth/register/ph_register_view.dart';
@@ -9,7 +11,6 @@ import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/sea
 import 'package:courses_app/views/clocking_in/clocking_in_view.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_filter/call_in_here.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
-import 'package:courses_app/views/course_preview/called_in_here.dart';
 import 'package:courses_app/views/course_preview/course_preview_view.dart';
 import 'package:courses_app/views/course_preview/pay_now_view.dart';
 import 'package:courses_app/views/no_views/no_products/no_products_view.dart';
@@ -158,14 +159,19 @@ abstract class AppRouter
           builder: (context, state) => const PayNowView(),
         ),
 
-        GoRoute(
-          path: kBottomModalSheet,
-          builder: (context, state) => const BMSFilterView(),
-        ),
+        // GoRoute(
+        //   path: kBottomModalSheet,
+        //   builder: (context, state) => const BMSFilterView(),
+        // ),
+
+        // GoRoute(
+        //   path: '/',
+        //   builder: (context, state) => const BMSPayMentView(),
+        // ),
 
         GoRoute(
-          path: kPayNowView,
-          builder: (context, state) => const BMSPayMentView(),
+          path: '/',
+          builder: (context, state) => const PayNowView(),
         ),
       ],
     );

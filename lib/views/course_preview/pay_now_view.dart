@@ -2,6 +2,7 @@ import 'package:courses_app/Core/shared/custom_button.dart';
 import 'package:courses_app/Core/shared/custom_text.dart';
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Core/utils/styles.dart';
+import 'package:courses_app/views/course_preview/widgets/pay_now_bms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -52,7 +53,7 @@ class PayNowView extends StatelessWidget
                     CustomBlueButton(
                       buttonWidth: 0.9,
                       buttonText: 'Pay Now',
-                      buttonOnPressed: (){print('PayNow Button has been clicked');}
+                      buttonOnPressed: (){print('PayNow Button has been clicked'); BMSPayMentItself.show(context);}
                     ),
                   ],
                 ),
