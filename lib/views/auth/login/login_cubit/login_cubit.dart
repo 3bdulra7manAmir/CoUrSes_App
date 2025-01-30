@@ -1,7 +1,8 @@
-// ignore_for_file: unused_local_variable
+// ignore_for_file: unused_local_variable, unnecessary_nullable_for_final_variable_declarations
 
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 
 part 'login_state.dart';
 
@@ -34,6 +35,7 @@ class FirebaseLoginCubit extends Cubit<LoginStates>
       emit(LoginFailureState(errorMessage: 'An error occurred: ${e.toString()}'));
     }
   }
+
 }
 
 
