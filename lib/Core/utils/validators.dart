@@ -100,3 +100,31 @@ class LoginValidator
     }
   }
 }
+
+class NameValidator
+{
+  String? validateName(String? value)
+  {
+    if (value == null || value.trim().isEmpty)
+    {
+      return 'Check First or Last name is required';
+    }
+
+    // Check if the first name contains only alphabetic characters and spaces
+    final nameRegex = RegExp(r'^[a-zA-Z]+$');
+    if (!nameRegex.hasMatch(value))
+    {
+      return 'Name can only contain letters ';
+    }
+
+    // Check if the first name meets the minimum length requirement
+    if (value.length < 2)
+    {
+      return 'Name must be at least 2 characters long';
+    }
+
+    return null;
+  }
+
+
+}
