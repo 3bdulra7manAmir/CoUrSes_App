@@ -30,6 +30,8 @@ class RegisterViewState extends State<RegisterView>
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController firstNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
   
   bool isChecked = false;
   bool obscureText = true;
@@ -41,6 +43,8 @@ class RegisterViewState extends State<RegisterView>
   {
     emailController.dispose();
     passwordController.dispose();
+    firstNameController.dispose();
+    lastNameController.dispose();
     super.dispose();
   }
   
@@ -55,109 +59,133 @@ class RegisterViewState extends State<RegisterView>
           var firebaseRCubit = BlocProvider.of<FirebaseRegisterCubit>(context);
           return SafeArea(
             child: Scaffold(
-              body: Form(
-                key: registerFormKey,
-                child: Stack(
-                  children:
-                  [
-                    //BOTTOM Container
-                    CustomSignUpPart(),
-                
-                    //TOP Container
-                    AfContainerBody(topPercentage: 0.2,
-                      positionedChild: CustomContainerBackGround(
-                        containerDecoration: BoxDecoration(color: Colors.white,
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),),
-                        containerChild: Padding(
-                          padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.04, left: KMediaQuery(context).width * 0.015),
-                          child: Column(
-                            children:
-                            [
-                              const CustomTextWidget(widgetText: 'Your Email',),
-                              CustomTextFormfield(fieldController: emailController, fieldTextInputType: TextInputType.emailAddress,
-                              fieldVaidator: SignUpValidator().validateEmail,
-                              ),
-
-                              const SizedBox(height: 20,),
-                
-                              const CustomTextWidget(widgetText: 'Password',),
-                              CustomTextFormfield(fieldController: passwordController, fieldObscureText: obscureText,
-                                fieldTextInputType: TextInputType.text,
-                                fieldVaidator: SignUpValidator().validatePassword,
-                                fieldSuffixIcon: IconButton(icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility,),
-                                  onPressed: () {setState(() {obscureText = !obscureText;});},
-                                ),
-                              ),
-                
-                              const SizedBox(height: 30,),
-                
-                              CustomBlueButton(buttonText: 'Creat account', buttonWidth: 0.9, buttonOnPressed: () async
-                              {
-                                // print('Create Account Button Pressed');
-                                // print("${emailController.text} \t ${passwordController.text}");
-                                SignUpValidator().submitForm(registerFormKey, isChecked, context);
-
-                                if ((registerFormKey.currentState?.validate()) != false && isChecked != false)
-                                {
-                                  await firebaseRCubit.firebaseRegister(emailController.text, passwordController.text, context);
-                                }
-                              },
-                              ),
-                
-                              const SizedBox(height: 20,),
-                
-                              Padding(
-                                padding: EdgeInsets.only(left: KMediaQuery(context).width * 0.02, right: KMediaQuery(context).width * 0.015),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children:
-                                  [
-                                    Checkbox(
-                                      value: isChecked,
-                                      onChanged: (bool? value)
-                                      {
-                                        setState(() => isChecked = value!);
-                                        print('Checkbox State: $value');
-                                      },
-                                      activeColor: Colors.blue[800],
-                                    ),
-                                    const Flexible(
-                                      child: Text("By creating an account you have to agree with our them & condication.",
-                                        softWrap: true, // Ensures the text will wrap
-                                        overflow: TextOverflow.visible, // Allows text to continue onto the next line
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                
-                              const SizedBox(height: 40,),
-                
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+              backgroundColor: AppColors.kScaffoldBackgoundColorWhite,
+              body: SingleChildScrollView(
+                child: Form(
+                  key: registerFormKey,
+                  child: SizedBox(
+                    height: 745.h,
+                    child: Stack(
+                      children:
+                      [
+                        //BOTTOM Container
+                        CustomSignUpPart(),
+                    
+                        //TOP Container
+                        AfContainerBody(topPercentage: 0.2,
+                          positionedChild: CustomContainerBackGround(
+                            containerDecoration: BoxDecoration(color: Colors.white,
+                              borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),),
+                            containerChild: Padding(
+                              padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.04, left: KMediaQuery(context).width * 0.015),
+                              child: Column(
                                 children:
                                 [
-                                  CustomTextWidget(widgetText: 'Already have an account?', widgetTextStyle: TextStyle(fontSize: 13.sp,),),
-                                  GestureDetector(
-                                    onTap: ()
-                                    {
-                                      GoRouter.of(context).push(AppRouter.kLoginView);
-                                      print('WENT TO\tLOGIN_VIEW');
-                                    },
-                                    child: CustomTextWidget(widgetText: 'Log in', widgetTextStyle: TextStyle(fontSize: 14.sp, color: Color.fromRGBO(61, 93, 255, 1),
-                                        decoration: TextDecoration.underline,
-                                        fontWeight: FontWeight.w900,
-                                      ),
+                                  const CustomTextWidget(widgetText: 'First Name',),
+                                  CustomTextFormfield(
+                                    fieldController: firstNameController,
+                                    //fieldVaidator: ,
+                                  ),
+                                    
+                                  const SizedBox(height: 20,),
+                                    
+                                  const CustomTextWidget(widgetText: 'Last Name',),
+                                  CustomTextFormfield(
+                                    fieldController: lastNameController,
+                                    //fieldVaidator: ,
+                                  ),
+                                    
+                                  const SizedBox(height: 20,),
+                                    
+                                  const CustomTextWidget(widgetText: 'Your Email',),
+                                    
+                                  CustomTextFormfield(fieldController: emailController, fieldTextInputType: TextInputType.emailAddress,
+                                  fieldVaidator: SignUpValidator().validateEmail,
+                                  ),
+                                    
+                                  const SizedBox(height: 20,),
+                    
+                                  const CustomTextWidget(widgetText: 'Password',),
+                                  
+                                  CustomTextFormfield(fieldController: passwordController, fieldObscureText: obscureText,
+                                    fieldTextInputType: TextInputType.text,
+                                    fieldVaidator: SignUpValidator().validatePassword,
+                                    fieldSuffixIcon: IconButton(icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility,),
+                                      onPressed: () {setState(() {obscureText = !obscureText;});},
                                     ),
+                                  ),
+                    
+                                  const SizedBox(height: 30,),
+                    
+                                  CustomBlueButton(buttonText: 'Creat account', buttonWidth: 0.9, buttonOnPressed: () async
+                                  {
+                                    // print('Create Account Button Pressed');
+                                    // print("${emailController.text} \t ${passwordController.text}");
+                                    SignUpValidator().submitForm(registerFormKey, isChecked, context);
+                                    
+                                    if ((registerFormKey.currentState?.validate()) != false && isChecked != false)
+                                    {
+                                      await firebaseRCubit.firebaseRegister(emailController.text, passwordController.text, context);
+                                    }
+                                  },
+                                  ),
+                    
+                                  const SizedBox(height: 20,),
+                    
+                                  Padding(
+                                    padding: EdgeInsets.only(left: KMediaQuery(context).width * 0.02, right: KMediaQuery(context).width * 0.015),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children:
+                                      [
+                                        Checkbox(
+                                          value: isChecked,
+                                          onChanged: (bool? value)
+                                          {
+                                            setState(() => isChecked = value!);
+                                            print('Checkbox State: $value');
+                                          },
+                                          activeColor: Colors.blue[800],
+                                        ),
+                                        const Flexible(
+                                          child: Text("By creating an account you have to agree with our them & condication.",
+                                            softWrap: true, // Ensures the text will wrap
+                                            overflow: TextOverflow.visible, // Allows text to continue onto the next line
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                    
+                                  const SizedBox(height: 40,),
+                    
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children:
+                                    [
+                                      CustomTextWidget(widgetText: 'Already have an account?', widgetTextStyle: TextStyle(fontSize: 13.sp,),),
+                                      GestureDetector(
+                                        onTap: ()
+                                        {
+                                          GoRouter.of(context).push(AppRouter.kLoginView);
+                                          print('WENT TO\tLOGIN_VIEW');
+                                        },
+                                        child: CustomTextWidget(widgetText: 'Log in', widgetTextStyle: TextStyle(fontSize: 14.sp, color: Color.fromRGBO(61, 93, 255, 1),
+                                            decoration: TextDecoration.underline,
+                                            fontWeight: FontWeight.w900,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
-                            ],
+                            ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),
@@ -172,7 +200,7 @@ class RegisterViewState extends State<RegisterView>
   }
 
   void signupButtonOnPressed(RegisterStates state, BuildContext context) {
-    if (state is RegisterSuccessState)
+    if (state is RegisterEmailSuccessState)
     {
       emailController.clear();
       passwordController.clear();
@@ -180,7 +208,7 @@ class RegisterViewState extends State<RegisterView>
       setState(() {isChecked = false;});
       Future.delayed(Duration(seconds: 1), () => GoRouter.of(context).go(AppRouter.kLoginView));
     }
-    if (state is RegisterFailureState)
+    if (state is RegisterEmailFailureState)
     {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('An unexpected error Please Try Again Later!', style: Styles.textStyle16,)),);
     }

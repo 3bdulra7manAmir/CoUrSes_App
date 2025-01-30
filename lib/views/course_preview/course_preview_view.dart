@@ -27,7 +27,7 @@ class _CoursePreviewViewState extends State<CoursePreviewView>
   {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.kScaffoldBackgoundColorWhite,
         body:  SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

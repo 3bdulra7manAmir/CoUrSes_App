@@ -80,7 +80,7 @@ class CustomTextfield extends StatelessWidget
 {
   const CustomTextfield({super.key,
   required this.fieldController,
-  required this.fieldOnSubmitted,
+  this.fieldOnSubmitted,
 
   this.fieldHintText,
   this.fieldObscureText,
@@ -109,7 +109,7 @@ class CustomTextfield extends StatelessWidget
   final String? fieldHintText;
   final bool? fieldObscureText;
 
-  final void Function(String) fieldOnSubmitted;
+  final void Function(String)? fieldOnSubmitted;
 
   final double? fieldCursorHeight;
   

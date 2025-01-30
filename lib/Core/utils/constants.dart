@@ -25,6 +25,8 @@ class AppColors
   static const Color kCardColorGreenLinearLine = Color(0xff398A80);
 
   Color kButtonsBlueColor = Color.fromRGBO(61, 93, 255, 1);
+
+  static const Color kScaffoldBackgoundColorWhite = Colors.white;
 }
 
 class AppAssetsPaths

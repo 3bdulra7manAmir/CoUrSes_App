@@ -3,19 +3,35 @@ part of 'register_cubit.dart';
 abstract class RegisterStates {}
 
 final class RegisterInitialState extends RegisterStates {}
-final class RegisterLoadingState extends RegisterStates {}
+final class RegisterEmailLoadingState extends RegisterStates {}
 
 
-final class RegisterSuccessState extends RegisterStates
+final class RegisterEmailSuccessState extends RegisterStates
 {
-  RegisterSuccessState({required this.userData});
+  RegisterEmailSuccessState({required this.userData});
   final User userData;
 }
 
 
-final class RegisterFailureState extends RegisterStates
+final class RegisterEmailFailureState extends RegisterStates
 {
-  RegisterFailureState({required this.errorMessage});
+  RegisterEmailFailureState({required this.errorMessage});
+  final String errorMessage;
+}
+
+
+
+final class RegisterFirstNameLoadingState extends RegisterStates {}
+
+final class RegisterFirstNameSuccessState extends RegisterStates
+{
+  RegisterFirstNameSuccessState({required this.userFirstName});
+  final String userFirstName;
+}
+
+final class RegisterFirstNameFailureState extends RegisterStates
+{
+  RegisterFirstNameFailureState({required this.errorMessage});
   final String errorMessage;
 }
   
