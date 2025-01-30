@@ -35,6 +35,7 @@ class FirebaseLoginCubit extends Cubit<LoginStates>
       emit(LoginFailureState(errorMessage: 'An error occurred: ${e.toString()}'));
     }
   }
+  
 
 }
 
