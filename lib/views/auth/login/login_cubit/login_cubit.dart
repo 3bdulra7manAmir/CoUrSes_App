@@ -19,12 +19,12 @@ class FirebaseLoginCubit extends Cubit<LoginStates>
 
       if (uCredential.user != null)
       {
-        emit(LoginSuccessState(uData: uCredential));
+        emit(LoginSuccessState());
       }
-      else
-      {
-        emit(LoginFailureState(errorMessage: 'User Login Succeeded but User Details are Unavailable.'));
-      }
+      // else
+      // {
+      //   emit(LoginFailureState(errorMessage: 'User Login Succeeded but User Details are Unavailable.'));
+      // }
     }
     on FirebaseAuthException catch (e)
     {

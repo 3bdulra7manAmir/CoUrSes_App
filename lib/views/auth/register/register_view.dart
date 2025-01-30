@@ -1,9 +1,9 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:courses_app/Core/exceptions/register_failure.dart';
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Core/utils/validators.dart';
 import 'package:courses_app/app/app_router.dart';
-import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Core/shared/custom_button.dart';
 import 'package:courses_app/Core/shared/custom_column.dart';
 import 'package:courses_app/Core/shared/custom_container.dart';
@@ -64,7 +64,7 @@ class RegisterViewState extends State<RegisterView>
                 child: Form(
                   key: registerFormKey,
                   child: SizedBox(
-                    height: 745.h,
+                    height: 790.h,
                     child: Stack(
                       children:
                       [
@@ -84,7 +84,7 @@ class RegisterViewState extends State<RegisterView>
                                   const CustomTextWidget(widgetText: 'First Name',),
                                   CustomTextFormfield(
                                     fieldController: firstNameController,
-                                    //fieldVaidator: ,
+                                    fieldVaidator: SignUpValidator().validateName,
                                   ),
                                     
                                   const SizedBox(height: 20,),
@@ -92,7 +92,7 @@ class RegisterViewState extends State<RegisterView>
                                   const CustomTextWidget(widgetText: 'Last Name',),
                                   CustomTextFormfield(
                                     fieldController: lastNameController,
-                                    //fieldVaidator: ,
+                                    fieldVaidator: SignUpValidator().validateName,
                                   ),
                                     
                                   const SizedBox(height: 20,),
@@ -104,7 +104,7 @@ class RegisterViewState extends State<RegisterView>
                                   ),
                                     
                                   const SizedBox(height: 20,),
-                    
+                                                  
                                   const CustomTextWidget(widgetText: 'Password',),
                                   
                                   CustomTextFormfield(fieldController: passwordController, fieldObscureText: obscureText,
@@ -114,9 +114,9 @@ class RegisterViewState extends State<RegisterView>
                                       onPressed: () {setState(() {obscureText = !obscureText;});},
                                     ),
                                   ),
-                    
+                                                  
                                   const SizedBox(height: 30,),
-                    
+                                                  
                                   CustomBlueButton(buttonText: 'Creat account', buttonWidth: 0.9, buttonOnPressed: () async
                                   {
                                     // print('Create Account Button Pressed');
@@ -126,12 +126,13 @@ class RegisterViewState extends State<RegisterView>
                                     if ((registerFormKey.currentState?.validate()) != false && isChecked != false)
                                     {
                                       await firebaseRCubit.firebaseRegister(emailController.text, passwordController.text, context);
+                                      await firebaseRCubit.addUserFirstNameFireCloud(firstNameController, context);
                                     }
                                   },
                                   ),
-                    
+                                                  
                                   const SizedBox(height: 20,),
-                    
+                                                  
                                   Padding(
                                     padding: EdgeInsets.only(left: KMediaQuery(context).width * 0.02, right: KMediaQuery(context).width * 0.015),
                                     child: Row(
@@ -156,9 +157,9 @@ class RegisterViewState extends State<RegisterView>
                                       ],
                                     ),
                                   ),
-                    
+                                                  
                                   const SizedBox(height: 40,),
-                    
+                                                  
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children:
@@ -199,18 +200,25 @@ class RegisterViewState extends State<RegisterView>
     );
   }
 
-  void signupButtonOnPressed(RegisterStates state, BuildContext context) {
-    if (state is RegisterEmailSuccessState)
+  void signupButtonOnPressed(RegisterStates state, BuildContext context)
+  {
+    if (loginAllower())
     {
       emailController.clear();
       passwordController.clear();
+      firstNameController.clear();
+      lastNameController.clear();
       obscureText = true;
       setState(() {isChecked = false;});
       Future.delayed(Duration(seconds: 1), () => GoRouter.of(context).go(AppRouter.kLoginView));
     }
-    if (state is RegisterEmailFailureState)
+    else if (state is RegisterEmailFailureState)
     {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('An unexpected error Please Try Again Later!', style: Styles.textStyle16,)),);
+      FirebaseEPFailure.showError(context, state.errorMessage.message ?? 'An error occurred.');
+    }
+    else if (state is RegisterFNFailureState)
+    {
+      FirestoreUserFNFailure.showError(context, state.errorMessage);
     }
   }
 }

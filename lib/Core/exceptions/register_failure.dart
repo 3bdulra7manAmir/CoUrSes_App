@@ -1,67 +1,64 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-abstract class Failure
-{
+abstract class Failure {
   final String errorMessage;
   const Failure(this.errorMessage);
 }
 
-class FirebaseRegistionFailure extends Failure
-{
-  FirebaseRegistionFailure(super.errorMessage);
+class FirebaseEPFailure extends Failure {
+  FirebaseEPFailure(super.errorMessage);
 
-  factory FirebaseRegistionFailure.fromFirebaseError(FirebaseAuthException e, context)
-  {
-    switch (e.code)
-    {
+  factory FirebaseEPFailure.fromFirebaseError(FirebaseAuthException e) {
+    switch (e.code) {
       case 'weak-password':
-        return FirebaseRegistionFailure.showError(context, 'The password provided is too weak.');
+        return FirebaseEPFailure('The password provided is too weak.');
       case 'email-already-in-use':
-        return FirebaseRegistionFailure.showError(context, 'The account already exists for that email.');
+        return FirebaseEPFailure('The account already exists for that email.');
       case 'invalid-email':
-        return FirebaseRegistionFailure.showError(context, 'The email address is badly formatted.');
+        return FirebaseEPFailure('The email address is badly formatted.');
       case 'operation-not-allowed':
-        return FirebaseRegistionFailure.showError(context, 'Email & Password Accounts are not enabled.');
+        return FirebaseEPFailure('Email & Password Accounts are not enabled.');
       default:
-        return FirebaseRegistionFailure.showError(context, 'An error occurred. Please try again later.');
+        return FirebaseEPFailure('An error occurred. Please try again later.');
     }
   }
 
-  static FirebaseRegistionFailure showError(context, String message)
-  {
+  static void showError(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
-    return FirebaseRegistionFailure(message);
   }
 }
 
+class FirestoreUserFNFailure extends Failure {
+  FirestoreUserFNFailure(super.errorMessage);
 
-// import 'package:firebase_auth/firebase_auth.dart';
+  factory FirestoreUserFNFailure.fromFirestoreError(dynamic error, BuildContext context) {
+    String errorMessage = 'An error occurred. Please try again later.';
 
-// abstract class Failure
-// {
-//   final String errorMessage;
-//   const Failure(this.errorMessage);
-// }
+    if (error is FirebaseException) {
+      switch (error.code) {
+        case 'permission-denied':
+          errorMessage = 'You do not have permission to perform this operation.';
+          break;
+        case 'not-found':
+          errorMessage = 'The requested document was not found.';
+          break;
+        case 'unavailable':
+          errorMessage = 'The service is currently unavailable. Please try again later.';
+          break;
+        default:
+          errorMessage = 'An error occurred: ${error.message}';
+          break;
+      }
+    } else if (error is String) {
+      errorMessage = error;
+    }
 
-// class FirebaseRegistionFailure extends Failure
-// {
-//   FirebaseRegistionFailure(super.errorMessage);
+    return FirestoreUserFNFailure.showError(context, errorMessage);
+  }
 
-//   factory FirebaseRegistionFailure.fromFirebaseError(FirebaseAuthException e)
-//   {
-//     switch (e.code)
-//     {
-//       case 'weak-password':
-//         return FirebaseRegistionFailure('The password provided is too weak.');
-//       case 'email-already-in-use':
-//         return FirebaseRegistionFailure('The account already exists for that email.');
-//       case 'invalid-email':
-//         return FirebaseRegistionFailure('The email address is badly formatted.');
-//       case 'operation-not-allowed':
-//         return FirebaseRegistionFailure('Email & Password Accounts are not enabled.');
-//       default:
-//         return FirebaseRegistionFailure('An unknown error occurred. Please try again later.');
-//     }
-//   }
-// }
+  static FirestoreUserFNFailure showError(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    return FirestoreUserFNFailure(message);
+  }
+}

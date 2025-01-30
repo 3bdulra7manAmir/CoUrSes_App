@@ -3,6 +3,29 @@ import 'package:flutter/material.dart';
 
 class SignUpValidator
 {
+  String? validateName(String? value)
+  {
+    if (value == null || value.trim().isEmpty)
+    {
+      return 'Check First or Last name is required';
+    }
+
+    // Check if the first name contains only alphabetic characters and spaces
+    final nameRegex = RegExp(r'^[a-zA-Z]+$');
+    if (!nameRegex.hasMatch(value))
+    {
+      return 'Name can only contain letters ';
+    }
+
+    // Check if the first name meets the minimum length requirement
+    if (value.length < 2)
+    {
+      return 'Name must be at least 2 characters long';
+    }
+
+    return null;
+  }
+
   String? validateEmail(String? value)
   {
     if (value == null || value.trim().isEmpty)
@@ -34,19 +57,14 @@ class SignUpValidator
         r'^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$&*~]).{8,}$');
     if (!passwordRegex.hasMatch(value))
     {
-      return 'at least one uppercase letter,\n '
-      'one lowercase letter, one number\nand one special character';
+      return 'Password is not Valid';
     }
     return null;
   }
 
   void submitForm(GlobalKey<FormState> formKey, bool isChecked, context)
   {
-    if (formKey.currentState!.validate() && isChecked)
-    {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Account Created Successfully!', style: Styles.textStyle16,)),);
-    }
-    else if (formKey.currentState!.validate() && !isChecked)
+    if (formKey.currentState!.validate() && !isChecked)
     {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('You Must Accept The Terms & Conditions', style: Styles.textStyle16,)),);
     }
@@ -99,32 +117,4 @@ class LoginValidator
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Wrong Email Or Password', style: Styles.textStyle16,)),);
     }
   }
-}
-
-class NameValidator
-{
-  String? validateName(String? value)
-  {
-    if (value == null || value.trim().isEmpty)
-    {
-      return 'Check First or Last name is required';
-    }
-
-    // Check if the first name contains only alphabetic characters and spaces
-    final nameRegex = RegExp(r'^[a-zA-Z]+$');
-    if (!nameRegex.hasMatch(value))
-    {
-      return 'Name can only contain letters ';
-    }
-
-    // Check if the first name meets the minimum length requirement
-    if (value.length < 2)
-    {
-      return 'Name must be at least 2 characters long';
-    }
-
-    return null;
-  }
-
-
 }

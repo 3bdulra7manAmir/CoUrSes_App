@@ -2,37 +2,24 @@ part of 'register_cubit.dart';
 
 abstract class RegisterStates {}
 
-final class RegisterInitialState extends RegisterStates {}
-final class RegisterEmailLoadingState extends RegisterStates {}
+class RegisterInitialState extends RegisterStates {}
 
+class RegisterEmailLoadingState extends RegisterStates {}
+class RegisterEmailSuccessState extends RegisterStates {}
 
-final class RegisterEmailSuccessState extends RegisterStates
+class RegisterEmailFailureState extends RegisterStates
 {
-  RegisterEmailSuccessState({required this.userData});
-  final User userData;
+  RegisterEmailFailureState(this.errorMessage);
+  final FirebaseAuthException errorMessage;
 }
 
+//--------------------------------------------------//
 
-final class RegisterEmailFailureState extends RegisterStates
+class RegisterFNLoadingState extends RegisterStates {}
+class RegisterFNSuccessState extends RegisterStates {}
+
+class RegisterFNFailureState extends RegisterStates
 {
-  RegisterEmailFailureState({required this.errorMessage});
+  RegisterFNFailureState({required this.errorMessage});
   final String errorMessage;
 }
-
-
-
-final class RegisterFirstNameLoadingState extends RegisterStates {}
-
-final class RegisterFirstNameSuccessState extends RegisterStates
-{
-  RegisterFirstNameSuccessState({required this.userFirstName});
-  final String userFirstName;
-}
-
-final class RegisterFirstNameFailureState extends RegisterStates
-{
-  RegisterFirstNameFailureState({required this.errorMessage});
-  final String errorMessage;
-}
-  
-

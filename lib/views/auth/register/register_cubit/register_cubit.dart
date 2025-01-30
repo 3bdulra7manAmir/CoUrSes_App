@@ -1,4 +1,3 @@
-// ignore_for_file: unused_local_variable
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,75 +5,105 @@ import 'package:flutter/material.dart';
 
 part 'register_state.dart';
 
-class FirebaseRegisterCubit extends Cubit<RegisterStates> 
+class FirebaseRegisterCubit extends Cubit<RegisterStates>
 {
   FirebaseRegisterCubit() : super(RegisterInitialState());
 
-  Future<void> firebaseRegister(String uEmail, String uPassword, context) async
+  static bool isEmailRegistered = false;
+  static bool isFirstNameAdded = false;
+
+  Future<void> firebaseRegister(String uEmail, String uPassword, BuildContext context) async
   {
     try
     {
       emit(RegisterEmailLoadingState());
-      UserCredential uCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: uEmail, password: uPassword);
+      UserCredential uCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: uEmail, password: uPassword,);
+
       if (uCredential.user != null)
       {
-        emit(RegisterEmailSuccessState(userData: uCredential.user!));
+        emit(RegisterEmailSuccessState());
+        isEmailRegistered = true;
       }
-      else
-      {
-        emit(RegisterEmailFailureState(errorMessage: 'User registration succeeded but user details are unavailable.'));
-      }
+
+      // else
+      // {
+      //   emit(RegisterEmailFailureState(
+      //     FirebaseAuthException(
+      //       code: 'unknown-error',
+      //       message: 'User registration succeeded but user details are unavailable.',
+      //     ),
+      //   ));
+      // }
     }
+
     on FirebaseAuthException catch (e)
     {
-      emit(RegisterEmailFailureState(errorMessage: e.toString()));
+      emit(RegisterEmailFailureState(e));
     }
+
     catch (e)
     {
-      emit(RegisterEmailFailureState(errorMessage: 'An unexpected error occurred during registration.'));
+      emit(RegisterEmailFailureState(
+        FirebaseAuthException(
+          code: 'unknown-error',
+          message: 'An unexpected error occurred during registration.',
+        ),
+      ));
     }
   }
 
-  Future<void> addUserFirstName(TextEditingController firstNameController) async
+  Future<void> addUserFirstNameFireCloud(TextEditingController firstNameController, BuildContext context) async
   {
     try
     {
-      // Get the first name from the text field
       String firstName = firstNameController.text.trim();
+      // if (firstName.isEmpty)
+      // {
+      //   FirestoreUserFNFailure.showError(context, 'First name cannot be empty.');
+      //   return;
+      // }
 
-      // Validate if the first name is not empty
-      if (firstName.isEmpty)
-      {
-        throw Exception("First name cannot be empty");
-      }
-
-      // Emit a loading state (assuming you're using a state management approach like Bloc/Cubit)
-      emit(RegisterFirstNameLoadingState());
-
-      // Add the first name to Firestore
-      await FirebaseFirestore.instance.collection('users').add({
-        'firstName': firstName,
-        'timestamp': FieldValue.serverTimestamp(), // Optional: Add a timestamp
+      emit(RegisterFNLoadingState());
+      DocumentReference docRef = await FirebaseFirestore.instance.collection('User FN').add({
+        'First Name': firstName,
+        'Time Stamp': FieldValue.serverTimestamp(),
       });
 
-      // Clear the text field
-      firstNameController.clear();
+      // Verify that the document was successfully added
+      DocumentSnapshot docSnapshot = await docRef.get();
+      if (docSnapshot.exists)
+      {
+        emit(RegisterFNSuccessState());
+        isFirstNameAdded = true;
+      }
 
-      // Emit a success state (optional, depending on your state management)
-      emit(RegisterFirstNameSuccessState(userFirstName: firstName));
-
-      // Show a success message (optional)
-      print('First name added to Firestore!');
+      // else
+      // {
+      //   emit(RegisterFNFailureState(errorMessage: 'Failed to add first name to Firestore.',));
+      // }
     }
+
+    on FirebaseException catch (e)
+    {
+      emit(RegisterFNFailureState(errorMessage: e.toString()));
+    }
+
     catch (e)
     {
-      // Emit an error state with the error message
-      emit(RegisterFirstNameFailureState(errorMessage: e.toString()));
-
-      // Log the error for debugging
-      print('Error adding first name to Firestore: $e');
+      emit(RegisterFNFailureState(errorMessage: e.toString()));
     }
   }
 
 }
 
+bool loginAllower()
+  {
+    if (FirebaseRegisterCubit.isEmailRegistered == true && FirebaseRegisterCubit.isFirstNameAdded == true )
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }

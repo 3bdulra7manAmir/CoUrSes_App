@@ -6,11 +6,7 @@ final class LoginInitialState extends LoginStates {}
 
 final class LoginLoadingState extends LoginStates {}
 
-final class LoginSuccessState extends LoginStates
-{
-  LoginSuccessState({required this.uData });
-  final UserCredential uData;
-}
+final class LoginSuccessState extends LoginStates{}
 
 final class LoginFailureState extends LoginStates
 {

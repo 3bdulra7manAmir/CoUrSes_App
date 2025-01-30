@@ -1,5 +1,6 @@
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormfield extends StatelessWidget
@@ -18,7 +19,7 @@ class CustomTextFormfield extends StatelessWidget
   this.fieldPrefixIcon,
   this.fieldSuffixIconColor,
   this.fieldPrefixIconColor,
-  this.fieldVaidator,
+  this.fieldVaidator, this.fieldWidth, this.fieldHeight,
   
   });
 
@@ -37,12 +38,16 @@ class CustomTextFormfield extends StatelessWidget
   final Widget? fieldPrefixIcon;
   final Color? fieldSuffixIconColor;
   final Color? fieldPrefixIconColor;
+
+  final double? fieldWidth;
+  final double? fieldHeight;
   
   @override
   Widget build(BuildContext context)
   {
     return SizedBox(
-      width: KMediaQuery(context).width * 0.9,
+      width: fieldWidth ?? KMediaQuery(context).width * 0.9,
+      height: fieldHeight ?? 60.h,
       child: TextFormField(
         controller: fieldController,
         //onSubmitted: fieldOnSubmitted,
@@ -54,6 +59,9 @@ class CustomTextFormfield extends StatelessWidget
         keyboardType: fieldTextInputType ?? TextInputType.name,
         cursorColor: fieldCursorColor ?? Colors.black,
         cursorHeight: fieldCursorHeight,
+
+        // Deny spaces in the input
+        inputFormatters: [FilteringTextInputFormatter.deny(RegExp(r'\s')), ], // Deny spaces
 
         decoration: InputDecoration(
           suffixIcon: fieldSuffixIcon,
@@ -139,8 +147,10 @@ class CustomTextfield extends StatelessWidget
         keyboardType: fieldTextInputType ?? TextInputType.name,
         cursorColor: fieldCursorColor ?? Colors.black,
         cursorHeight: fieldCursorHeight,
-        
 
+        // Deny spaces in the input
+        inputFormatters: [FilteringTextInputFormatter.deny(RegExp(r'\s')), ], // Deny spaces
+        
         decoration: InputDecoration(
           suffixIcon: fieldSuffixIcon,
           suffixIconColor: fieldSuffixIconColor,
