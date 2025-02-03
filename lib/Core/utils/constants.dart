@@ -27,7 +27,6 @@ class AppColors
   static const Color kScaffoldBackgoundColorWhite = Colors.white;
   static const Color kCustomContainerBackGroundColor = Color(0xfff0f0f2);
 
-  static const Color kTextStyle14Color = Color(0xfff0f0f2);
   static const Color kSuccessPopUpViewColor = Color(0xff797988);
 
   static const Color kCustomOTPInputFieldColor = Color(0xFF512DA8);

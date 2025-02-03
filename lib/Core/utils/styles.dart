@@ -27,6 +27,6 @@ abstract class Styles
   static TextStyle textStyle14 = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.normal,
-    color: AppColors.kTextStyle14Color,
+    color: AppColors.kSuccessPopUpViewColor,
   );
 }

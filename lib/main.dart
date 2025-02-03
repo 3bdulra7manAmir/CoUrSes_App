@@ -4,6 +4,7 @@ import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/firebase_options.dart';
 import 'package:courses_app/views/auth/login/login_cubit/login_cubit.dart';
+import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/account/account_cubit/user_account_cubit.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,7 @@ void main() async
         providers:
         [
           BlocProvider(create: (context) => FirebaseLoginCubit(),),
+          BlocProvider(create: (context) => FirebaseUserAccountCubit(),),
         ],
         child: const CoursesApp(),
       ),

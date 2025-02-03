@@ -89,6 +89,7 @@ class RegisterViewState extends State<RegisterView>
                                   const CustomTextWidget(widgetText: 'First Name',),
                                   CustomTextFormfield(
                                     fieldController: firstNameController,
+                                    fieldTextInputType: TextInputType.name,
                                     fieldVaidator: SignUpValidator().validateName,
                                   ),
                                     
@@ -97,6 +98,7 @@ class RegisterViewState extends State<RegisterView>
                                   const CustomTextWidget(widgetText: 'Last Name',),
                                   CustomTextFormfield(
                                     fieldController: lastNameController,
+                                    fieldTextInputType: TextInputType.name,
                                     fieldVaidator: SignUpValidator().validateName,
                                   ),
                                     
@@ -104,7 +106,9 @@ class RegisterViewState extends State<RegisterView>
                                     
                                   const CustomTextWidget(widgetText: 'Your Email',),
                                     
-                                  CustomTextFormfield(fieldController: emailController, fieldTextInputType: TextInputType.emailAddress,
+                                  CustomTextFormfield(
+                                  fieldController: emailController,
+                                  fieldTextInputType: TextInputType.emailAddress,
                                   fieldVaidator: SignUpValidator().validateEmail,
                                   ),
                                     
