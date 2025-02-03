@@ -34,7 +34,7 @@ class CustomMiddleCard extends StatelessWidget
                         shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0.r),),),
                       ),
                     onPressed: (){},
-                    child: Text('Get Started', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.sp),)
+                    child: Text('Get Started', style: TextStyle(color: AppColors.kWhiteColor, fontWeight: FontWeight.bold, fontSize: 16.sp),)
                     ),
                 ),
               ),

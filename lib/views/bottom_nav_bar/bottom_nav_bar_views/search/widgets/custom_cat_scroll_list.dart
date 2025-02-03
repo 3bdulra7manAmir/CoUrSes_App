@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:courses_app/Core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -54,11 +55,11 @@ class CategoryItem extends StatelessWidget
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xff3d5cff) : Colors.grey[200],
+          color: isSelected ? const Color(0xff3d5cff) : AppColors.kGreyColor200,
           borderRadius: BorderRadius.circular(20.r),
         ),
 
-        child: Text(title, style: TextStyle(color: isSelected ? Colors.white : Colors.grey[800], fontWeight: FontWeight.w500,),),
+        child: Text(title, style: TextStyle(color: isSelected ? AppColors.kWhiteColor : AppColors.kGreyColor800, fontWeight: FontWeight.w500,),),
       ),
     );
   }

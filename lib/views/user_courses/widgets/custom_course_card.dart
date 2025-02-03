@@ -32,7 +32,7 @@ class CustomCourseCard extends StatelessWidget
                         
               const SizedBox(height: 15,),
                         
-              CustomLinearIndicator(backgroundColor: Colors.white, progressColor: result.values.first, percent: 67 / 100, width: 0.33,),
+              CustomLinearIndicator(backgroundColor: AppColors.kWhiteColor, progressColor: result.values.first, percent: 67 / 100, width: 0.33,),
           
               const SizedBox(height: 10,),
           
@@ -56,7 +56,7 @@ class CustomCourseCard extends StatelessWidget
                     backgroundColor: result.values.first,
                     child: IconButton(onPressed: () {print('Play Button Has been Pressed');},
                       icon: const Icon(Icons.play_arrow_rounded),
-                      color: Colors.white,
+                      color: AppColors.kWhiteColor,
                     ),
                   ),
                 ],

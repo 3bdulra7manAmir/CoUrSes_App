@@ -27,12 +27,20 @@ class RegisterView extends StatefulWidget
 class RegisterViewState extends State<RegisterView>
 {
   final registerFormKey = GlobalKey<FormState>();
-
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final TextEditingController firstNameController = TextEditingController();
-  final TextEditingController lastNameController = TextEditingController();
+  late final TextEditingController emailController;
+  late final TextEditingController passwordController;
+  late final TextEditingController firstNameController;
+  late final TextEditingController lastNameController;
   
+  @override
+  void initState()
+  {
+    super.initState();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    firstNameController = TextEditingController();
+    lastNameController = TextEditingController();
+  }
   
   //TO PREVENT Memory leak //Tharwat Samy...
   @override
@@ -71,7 +79,7 @@ class RegisterViewState extends State<RegisterView>
                         //TOP Container
                         AfContainerBody(topPercentage: 0.2,
                           positionedChild: CustomContainerBackGround(
-                            containerDecoration: BoxDecoration(color: Colors.white,
+                            containerDecoration: BoxDecoration(color: AppColors.kWhiteColor,
                               borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),),
                             containerChild: Padding(
                               padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.04, left: KMediaQuery(context).width * 0.015),
@@ -137,7 +145,7 @@ class RegisterViewState extends State<RegisterView>
                                         Checkbox(
                                           value:firebaseRCubit.isChecked,
                                           onChanged: (value) => firebaseRCubit.toggleCheckbox(),
-                                          activeColor: Colors.blue[800],
+                                          activeColor: AppColors.kBlueColor800,
                                         ),
 
                                         const Flexible(

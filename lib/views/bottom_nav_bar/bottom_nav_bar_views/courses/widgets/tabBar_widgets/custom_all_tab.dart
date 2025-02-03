@@ -20,12 +20,12 @@ class CustomAllTabCard extends StatelessWidget
         height: 95.h,
       
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.kWhiteColor,
           borderRadius: BorderRadius.circular(10.r),
           boxShadow:
           [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
+              color: AppColors.kGreyColor.withOpacity(0.2),
               spreadRadius: 2,
               blurRadius: 3,
               offset: Offset(0, 2), // changes position of shadow

@@ -1,4 +1,5 @@
 import 'package:courses_app/Core/shared/custom_button.dart';
+import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/views/intro_views/widget/custom_stamp.dart';
 import 'package:flutter/material.dart';
@@ -34,8 +35,8 @@ class StudyPlanView extends StatelessWidget
               effect: const WormEffect(
                 dotHeight: 8,
                 dotWidth: 8,
-                activeDotColor: Colors.blue,
-                dotColor: Colors.grey,
+                activeDotColor: AppColors.kBlueColor,
+                dotColor: AppColors.kGreyColor,
               ),
             ),
         

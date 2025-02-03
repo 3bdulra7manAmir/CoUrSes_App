@@ -28,7 +28,7 @@ class CustomUserPart extends StatelessWidget
                 {
                   print("Rendering success state with user: ${state.userName}");
                   return Text('Hi, ${state.userName.isNotEmpty ? state.userName : "User"}',
-                  style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),);
+                  style: TextStyle(color: AppColors.kWhiteColor, fontSize: 25, fontWeight: FontWeight.bold),);
                 }                  
                 else if (state is LoginFailureState)
                 {
@@ -44,7 +44,7 @@ class CustomUserPart extends StatelessWidget
 
             const SizedBox(height: 5,),
 
-            Text('Let\'s start learning', style: TextStyle(color: Colors.white, fontSize: 14.sp, fontWeight: FontWeight.bold,),
+            Text('Let\'s start learning', style: TextStyle(color: AppColors.kWhiteColor, fontSize: 14.sp, fontWeight: FontWeight.bold,),
             ),
           ],
         ),

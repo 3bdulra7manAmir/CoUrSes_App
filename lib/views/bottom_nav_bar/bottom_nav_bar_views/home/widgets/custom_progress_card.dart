@@ -17,12 +17,12 @@ class CustomHomeProgressCard extends StatelessWidget
       height: 100.h,
 
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.kWhiteColor,
         borderRadius: BorderRadius.circular(10.r),
         boxShadow:
         [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
+            color: AppColors.kGreyColor.withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
             offset: Offset(0, 3), // changes position of shadow
@@ -60,7 +60,7 @@ class CustomHomeProgressCard extends StatelessWidget
     
             const SizedBox(height: 10,),
         
-            CustomLinearIndicator(width: 0.8, percent: 72 / 100, backgroundColor: Colors.grey[300]!, progressColor: Colors.orangeAccent)
+            CustomLinearIndicator(width: 0.8, percent: 72 / 100, backgroundColor: AppColors.kGreyColor300, progressColor: Colors.orangeAccent)
     
             
           ],

@@ -32,7 +32,7 @@ class CustomCoursesLanguageCard extends StatelessWidget
             child: Container(
               width: KMediaQuery(context).width * 0.25,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.8),
+                color: AppColors.kWhiteColor.withOpacity(0.8),
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(10.r), bottomLeft: Radius.circular(10.r)),
               ),
               child: Center(

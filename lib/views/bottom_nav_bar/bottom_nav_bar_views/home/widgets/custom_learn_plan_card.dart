@@ -17,12 +17,12 @@ class CustomHomeLearnPlanCard extends StatelessWidget
       height: 95.h,
 
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.kWhiteColor,
         borderRadius: BorderRadius.circular(10.r),
         boxShadow:
         [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
+            color: AppColors.kGreyColor.withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
             offset: Offset(0, 3), // changes position of shadow
@@ -60,7 +60,7 @@ class CustomHomeLearnPlanCard extends StatelessWidget
                   children:
                   [
                     Text('40', style: TextStyle(fontSize: 16.sp, color: Colors.black, fontWeight: FontWeight.bold)),
-                    Text('/48', style: TextStyle(fontSize: 14.sp, color: Colors.grey, fontWeight: FontWeight.bold)),
+                    Text('/48', style: TextStyle(fontSize: 14.sp, color: AppColors.kGreyColor, fontWeight: FontWeight.bold)),
                   ],
                 ),
               ],
@@ -79,7 +79,7 @@ class CustomHomeLearnPlanCard extends StatelessWidget
                       radius: 15.0,
                       lineWidth: 4.0,
                       percent: 0.3,
-                      progressColor: Colors.grey[700],
+                      progressColor: AppColors.kGreyColor700,
                     ),
 
                     const SizedBox(width: 15,),
@@ -92,7 +92,7 @@ class CustomHomeLearnPlanCard extends StatelessWidget
                   children:
                   [
                     Text('6', style: TextStyle(fontSize: 16.sp, color: Colors.black, fontWeight: FontWeight.bold)),
-                    Text('/24', style: TextStyle(fontSize: 14.sp, color: Colors.grey, fontWeight: FontWeight.bold)),
+                    Text('/24', style: TextStyle(fontSize: 14.sp, color: AppColors.kGreyColor, fontWeight: FontWeight.bold)),
                   ],
                 ),
               ],

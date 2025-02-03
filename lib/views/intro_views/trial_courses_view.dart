@@ -1,3 +1,4 @@
+import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/views/intro_views/widget/custom_stamp.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -29,8 +30,8 @@ class TrialCoursesView extends StatelessWidget
           effect: const WormEffect(
             dotHeight: 8,
             dotWidth: 8,
-            activeDotColor: Colors.blue,
-            dotColor: Colors.grey,
+            activeDotColor: AppColors.kBlueColor,
+            dotColor: AppColors.kGreyColor,
           ),
         ),
       ],

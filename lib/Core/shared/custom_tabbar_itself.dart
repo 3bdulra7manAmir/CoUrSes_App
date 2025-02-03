@@ -73,9 +73,9 @@ class WholeTabBarState extends State<WholeTabBar> with SingleTickerProviderState
           child: TabBar(
             dividerColor: widget.dividerColor,
             controller: tabBarController,
-            indicatorColor: widget.indicatorColor ?? Colors.white,                          // Color of the selected tab indicator
-            labelColor: widget.labelColor ?? Colors.white,                             // Color of the selected tab text
-            unselectedLabelColor: widget.unselectedLabelColor ?? Colors.white.withOpacity(0.6), // Color of unselected tab text
+            indicatorColor: widget.indicatorColor ?? AppColors.kWhiteColor,                          // Color of the selected tab indicator
+            labelColor: widget.labelColor ?? AppColors.kWhiteColor,                             // Color of the selected tab text
+            unselectedLabelColor: widget.unselectedLabelColor ?? AppColors.kWhiteColor.withOpacity(0.6), // Color of unselected tab text
             tabs: widget.tabBarWidgets,
           ),
         ),

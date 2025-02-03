@@ -18,7 +18,7 @@ class CourseEpisodeCard extends StatelessWidget
       [
         SizedBox(width: KMediaQuery(context).width * 0.1, height: 60.h,
         //color: Colors.red,
-        child: Center(child: Text('01', style: TextStyle(color: Colors.grey, fontSize: 20.sp, fontWeight: FontWeight.bold),)),
+        child: Center(child: Text('01', style: TextStyle(color: AppColors.kGreyColor, fontSize: 20.sp, fontWeight: FontWeight.bold),)),
         ),
 
         const SizedBox(width: 20,),
@@ -27,13 +27,13 @@ class CourseEpisodeCard extends StatelessWidget
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
           [
-            Text('Welcome to the Course', style: TextStyle(color: Colors.black, fontSize: 14.sp, fontWeight: FontWeight.bold),),
+            Text('Welcome to the Course', style: TextStyle(color: AppColors.kBlackColor, fontSize: 14.sp, fontWeight: FontWeight.bold),),
             SizedBox(height: 10),
             Row(
               children:
               [
                 Text('6:10 mins', style: TextStyle(
-                  color: isEpisodeOpenedAndLocked ? Colors.grey : AppColors().kButtonsBlueColor, fontSize: 14.sp, fontWeight: FontWeight.bold),),
+                  color: isEpisodeOpenedAndLocked ? AppColors.kGreyColor : AppColors().kButtonsBlueColor, fontSize: 14.sp, fontWeight: FontWeight.bold),),
                 const SizedBox(width: 4,),
                 isEpisodeOpenedAndLocked ? SizedBox.shrink() : SvgPicture.asset('assets/images/svg/Correct_Icon.svg'),
               ],
@@ -47,7 +47,7 @@ class CourseEpisodeCard extends StatelessWidget
           backgroundColor: isLockedAndisBlueCorrectIcon ? AppColors().kButtonsBlueColor.withValues(alpha: 0.5) : AppColors().kButtonsBlueColor,
           child: IconButton(onPressed: () {print('Play Button Has been Pressed');},
           icon:  isLockedAndisBlueCorrectIcon ? Icon(Icons.lock) : Icon(Icons.play_arrow_rounded),
-          color: Colors.white,
+          color: AppColors.kWhiteColor,
           ),
         ),
       ],

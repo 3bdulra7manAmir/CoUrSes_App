@@ -26,8 +26,27 @@ class AppColors
 
   Color kButtonsBlueColor = Color.fromRGBO(61, 93, 255, 1);
 
-  static const Color kScaffoldBackgoundColorWhite = Colors.white;
+  static const Color kScaffoldBackgoundColorWhite = AppColors.kWhiteColor;
   static const Color kTest = Colors.red;
+
+  static const Color kGreyColor = Colors.grey;
+  static Color kGreyColor200 = Colors.grey[200]!;
+  static Color kGreyColor300 = Colors.grey[300]!;
+  static Color kGreyColor700 = Colors.grey[700]!;
+  static Color kGreyColor800 = Colors.grey[800]!;
+
+  static const Color kBlueColor = Colors.blue;
+  static Color kBlueColor100 = Colors.blue[100]!;
+  static Color kBlueColor800 = Colors.blue[800]!;
+
+  static const Color kWhiteColor = Colors.white;
+  static const Color kBrownColor = Colors.brown;
+
+  static const Color kOrgangeAccent = Colors.orangeAccent;
+  static const Color kBlackColor = Colors.black;
+
+  
+
 }
 
 class AppAssetsPaths

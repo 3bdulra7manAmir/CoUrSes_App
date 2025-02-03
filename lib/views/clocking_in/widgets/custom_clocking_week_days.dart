@@ -16,7 +16,7 @@ class BlueWeekDays extends StatelessWidget
           width: 25.w,
           child: CircleAvatar(
             backgroundColor: AppColors().kButtonsBlueColor,
-            child: Text('1', style: TextStyle(color: Colors.white)),)
+            child: Text('1', style: TextStyle(color: AppColors.kWhiteColor)),)
           ),
     
         SizedBox(width: 10,),
@@ -25,7 +25,7 @@ class BlueWeekDays extends StatelessWidget
           width: 25.w,
           child: CircleAvatar(
             backgroundColor: AppColors().kButtonsBlueColor,
-            child: Text('2', style: TextStyle(color: Colors.white)),)
+            child: Text('2', style: TextStyle(color: AppColors.kWhiteColor)),)
           ),
         SizedBox(width: 10,),
     
@@ -33,7 +33,7 @@ class BlueWeekDays extends StatelessWidget
           width: 25.w,
           child: CircleAvatar(
             backgroundColor: AppColors().kButtonsBlueColor,
-            child: Text('3', style: TextStyle(color: Colors.white)),)
+            child: Text('3', style: TextStyle(color: AppColors.kWhiteColor)),)
           ),
         SizedBox(width: 10,),
     
@@ -41,7 +41,7 @@ class BlueWeekDays extends StatelessWidget
           width: 25.w,
           child: CircleAvatar(
             backgroundColor: AppColors().kButtonsBlueColor,
-            child: Text('4', style: TextStyle(color: Colors.white)),)
+            child: Text('4', style: TextStyle(color: AppColors.kWhiteColor)),)
           ),
         SizedBox(width: 10,),
         
@@ -49,7 +49,7 @@ class BlueWeekDays extends StatelessWidget
           width: 25.w,
           child: CircleAvatar(
             backgroundColor: AppColors().kButtonsBlueColor,
-            child: Text('5', style: TextStyle(color: Colors.white)),)
+            child: Text('5', style: TextStyle(color: AppColors.kWhiteColor)),)
           ),
         SizedBox(width: 10,),
     
@@ -57,7 +57,7 @@ class BlueWeekDays extends StatelessWidget
           width: 25.w,
           child: CircleAvatar(
             backgroundColor: AppColors().kButtonsBlueColor,
-            child: Text('6', style: TextStyle(color: Colors.white)),)
+            child: Text('6', style: TextStyle(color: AppColors.kWhiteColor)),)
           ),
         SizedBox(width: 10,),
     
@@ -65,7 +65,7 @@ class BlueWeekDays extends StatelessWidget
           width: 25.w,
           child: CircleAvatar(
             backgroundColor: AppColors().kButtonsBlueColor,
-            child: Text('7', style: TextStyle(color: Colors.white)),)
+            child: Text('7', style: TextStyle(color: AppColors.kWhiteColor)),)
           ),
         SizedBox(width: 10,),
       ],

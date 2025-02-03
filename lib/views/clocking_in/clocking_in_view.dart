@@ -17,7 +17,7 @@ class ClockingInView extends StatelessWidget
         child: Container(
           height: 430.h, //0.38
           width: KMediaQuery(context).width * 0.85,
-          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.r),),
+          decoration: BoxDecoration(color: AppColors.kWhiteColor, borderRadius: BorderRadius.circular(10.r),),
           child: Padding(
             padding: EdgeInsets.only(
               left: KMediaQuery(context).width * 0.03,

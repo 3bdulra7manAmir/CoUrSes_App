@@ -56,7 +56,7 @@ class ConWPhoneView extends StatelessWidget
               topPercentage: 0.35,
               positionedChild: CustomContainerBackGround(
                 containerDecoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.kWhiteColor,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
                 ),
                 

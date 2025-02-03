@@ -1,3 +1,4 @@
+import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/image_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +28,7 @@ class UserStatusAndMessageTime extends StatelessWidget
     
             const SizedBox(height: 5,),
     
-            Text('Online', style: TextStyle(fontSize: 12.sp, color: Colors.grey, fontWeight: FontWeight.bold),),
+            Text('Online', style: TextStyle(fontSize: 12.sp, color: AppColors.kGreyColor, fontWeight: FontWeight.bold),),
           ],
         ),
     

@@ -19,7 +19,7 @@ class SuccessPopUpView extends StatelessWidget
         child: Container(
           height: 300.h, //0.38
           width: KMediaQuery(context).width * 0.8,
-          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.r),),
+          decoration: BoxDecoration(color: AppColors.kWhiteColor, borderRadius: BorderRadius.circular(10.r),),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children:

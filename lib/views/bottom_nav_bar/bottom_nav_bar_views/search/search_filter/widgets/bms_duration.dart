@@ -1,3 +1,4 @@
+import 'package:courses_app/Core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -45,14 +46,14 @@ class BmsDurationState extends State<BmsDuration>
   Widget buildCategoryChip(String label, int index)
   {
     return FilterChip(
-      label: Text(label, style: TextStyle(color: isSelectedList[index] ? Colors.white : Colors.grey[800],),),
+      label: Text(label, style: TextStyle(color: isSelectedList[index] ? AppColors.kWhiteColor : AppColors.kGreyColor800,),),
       selected: isSelectedList[index],
       onSelected: (bool selected)
       {
         setState((){isSelectedList[index] = selected;});
       },
       selectedColor: Color(0xff3d5cff),
-      backgroundColor: Colors.grey[200],
+      backgroundColor: AppColors.kGreyColor200,
     );
   }
 }
@@ -65,8 +66,8 @@ Widget buildCategoryChip(String label,)
     {
       // Handle chip selection
     },
-    selectedColor: Colors.blue[100],
-    backgroundColor: Colors.grey[200],
+    selectedColor: AppColors.kBlueColor100,
+    backgroundColor: AppColors.kGreyColor200,
   );
 }
 
@@ -79,7 +80,7 @@ Widget buildDurationChip(String label, bool isSelected)
     {
       // Handle chip selection
     },
-    selectedColor: Colors.blue[100],
-    backgroundColor: Colors.grey[200],
+    selectedColor: AppColors.kBlueColor100,
+    backgroundColor: AppColors.kGreyColor200,
   );
 }

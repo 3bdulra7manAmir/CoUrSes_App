@@ -54,7 +54,7 @@ class PhoneNumberTextFieldAndButtonState extends State<PhoneNumberTextFieldAndBu
                   ),
                 ),
                 onPressed: () {print('Continue Button Pressed');},
-                child: Text('Continue', style: TextStyle(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.bold),
+                child: Text('Continue', style: TextStyle(fontSize: 16.sp, color: AppColors.kWhiteColor, fontWeight: FontWeight.bold),
                 ),
               ),
             ),

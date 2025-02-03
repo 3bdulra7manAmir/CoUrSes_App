@@ -24,7 +24,7 @@ class BMSPriceState extends State<BMSPrice>
         SliderTheme(
           data: SliderTheme.of(context).copyWith(
             activeTrackColor: AppColors().kButtonsBlueColor,
-            inactiveTrackColor: Colors.grey,
+            inactiveTrackColor: AppColors.kGreyColor,
             rangeThumbShape: CustomThumbShape(),
             overlayShape: SliderComponentShape.noOverlay,
             rangeTrackShape: CustomRangeTrackShape(),

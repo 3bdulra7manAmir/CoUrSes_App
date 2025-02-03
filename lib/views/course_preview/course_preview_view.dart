@@ -41,12 +41,12 @@ class _CoursePreviewViewState extends State<CoursePreviewView>
                 height: 100.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.kWhiteColor,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(10.r), topRight: Radius.circular(10.r)),
                   boxShadow:
                   [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
+                      color: AppColors.kGreyColor.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 5,
                       offset: Offset(0, 3), // changes position of shadow

@@ -27,10 +27,19 @@ class LoginView extends StatefulWidget
 
 class LoginViewState extends State<LoginView>
 {
-  static final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
   final loginFormKey = GlobalKey<FormState>();
- 
+  late final TextEditingController emailController;
+  late final TextEditingController passwordController;
+  
+
+  @override
+  void initState()
+  {
+    super.initState();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+  }
+
   //TO PREVENT Memory leak //Tharwat Samy...
   @override
   void dispose()
@@ -62,7 +71,7 @@ class LoginViewState extends State<LoginView>
                     topPercentage: 0.2,
                     positionedChild: CustomContainerBackGround(
                       containerDecoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.kWhiteColor,
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(10.r), topRight: Radius.circular(10.r)),),
                       containerChild: Padding(
                         padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.04, left: KMediaQuery(context).width * 0.015),

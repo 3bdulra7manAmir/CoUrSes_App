@@ -48,7 +48,7 @@ class UpperPartStack extends StatelessWidget
         Positioned(top: 210.h, left: 0, right: 0, // This ensures the width is constrained to the parent's width
           child: Container(height: 180.h, width: double.infinity,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.kWhiteColor,
               borderRadius: BorderRadius.only(topLeft: Radius.circular(20.r), topRight: Radius.circular(20.r),),
             ),
           ),
