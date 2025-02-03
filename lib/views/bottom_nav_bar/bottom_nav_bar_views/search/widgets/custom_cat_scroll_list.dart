@@ -55,7 +55,7 @@ class CategoryItem extends StatelessWidget
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xff3d5cff) : AppColors.kGreyColor200,
+          color: isSelected ? AppColors.kCardColorBlueLinearLine : AppColors.kGreyColor200,
           borderRadius: BorderRadius.circular(20.r),
         ),
 

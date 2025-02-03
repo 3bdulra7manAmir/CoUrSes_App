@@ -17,7 +17,7 @@ class QuickAndEasyLearnView extends StatelessWidget
       [
         TheConnected3Stamp(
           skipText: 'Skip',
-          imagePath: 'assets/images/svg/Easy_Learning.svg',
+          imagePath: AppIMGs().kEasyLearningSVG,
           afterImageText1: 'Quick and easy\nlearning',
           afterImageText2: 'Easy and fast learning at\nany time to help you\nimprove your various skills',
         ),

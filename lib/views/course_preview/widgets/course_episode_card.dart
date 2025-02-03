@@ -35,7 +35,7 @@ class CourseEpisodeCard extends StatelessWidget
                 Text('6:10 mins', style: TextStyle(
                   color: isEpisodeOpenedAndLocked ? AppColors.kGreyColor : AppColors().kButtonsBlueColor, fontSize: 14.sp, fontWeight: FontWeight.bold),),
                 const SizedBox(width: 4,),
-                isEpisodeOpenedAndLocked ? SizedBox.shrink() : SvgPicture.asset('assets/images/svg/Correct_Icon.svg'),
+                isEpisodeOpenedAndLocked ? SizedBox.shrink() : SvgPicture.asset(AppIMGs().kCorrectIconSVG),
               ],
             ),
           ],

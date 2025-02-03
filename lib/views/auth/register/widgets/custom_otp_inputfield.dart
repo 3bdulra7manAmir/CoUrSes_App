@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import
 
+import 'package:courses_app/Core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +18,7 @@ class CustomOTPInputField extends StatelessWidget
   {
     return OtpTextField(
       numberOfFields: numberOfFields,
-      borderColor: const Color(0xFF512DA8),
+      borderColor: AppColors.kCustomOTPInputFieldColor,
       showFieldAsBox: true,
       fieldWidth: 50,
       onCodeChanged: onCodeChanged, // Called when code changes

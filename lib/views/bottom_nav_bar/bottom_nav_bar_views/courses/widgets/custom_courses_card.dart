@@ -15,7 +15,7 @@ class CustomCoursesLanguageCard extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Container(width: KMediaQuery(context).width * 0.45, height: 69.h,
-      decoration: BoxDecoration(color: Color(0xffCEECFE), borderRadius: BorderRadius.circular(15.r),),
+      decoration: BoxDecoration(color: AppColors.kCustomCoursesLanguageCardColor1, borderRadius: BorderRadius.circular(15.r),),
       child: Stack(
         clipBehavior: Clip.none, // Prevents clipping of the image
         children:
@@ -23,7 +23,7 @@ class CustomCoursesLanguageCard extends StatelessWidget
           Positioned(top: -9.h,
             child: Align(
               alignment: Alignment.topLeft,
-              child: SvgPicture.asset('assets/images/svg/ListeningToMusic.svg',)
+              child: SvgPicture.asset(AppIMGs().kListeningToMusicSVG,)
             ),
           ),
 
@@ -55,7 +55,7 @@ class CustomCoursesPaintingCard extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Container(width: KMediaQuery(context).width * 0.45, height: 69.h,
-      decoration: BoxDecoration(color: Color(0xffEFE0FF), borderRadius: BorderRadius.circular(15.r),),
+      decoration: BoxDecoration(color: AppColors.kCustomCoursesLanguageCardColor2, borderRadius: BorderRadius.circular(15.r),),
       child: Stack(
         clipBehavior: Clip.none,
         children:
@@ -63,7 +63,7 @@ class CustomCoursesPaintingCard extends StatelessWidget
           Positioned(top: -9.h,
             child: Align(
               alignment: Alignment.topLeft,
-              child: SvgPicture.asset('assets/images/svg/Drawing.svg',)
+              child: SvgPicture.asset(AppIMGs().kDrawingSVG,)
             ),
           ),
 
@@ -72,11 +72,11 @@ class CustomCoursesPaintingCard extends StatelessWidget
             child: Container(
               width: KMediaQuery(context).width * 0.22,
               decoration: BoxDecoration(
-                color: Color(0xffF8F2FF),
+                color: AppColors.kCustomCoursesLanguageCardColor3,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(10.r), bottomLeft: Radius.circular(10.r)),
               ),
               child: Center(
-                child: Text('Painting', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold, color: Color(0xff9065BE),),))),
+                child: Text('Painting', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold, color: AppColors.kCustomCoursesLanguageCardColor4,),))),
           ),
         ],
       ),
@@ -92,7 +92,7 @@ class CustomCoursesCardRow extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       clipBehavior: Clip.none,
       child: Row(

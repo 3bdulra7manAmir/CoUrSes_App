@@ -1,6 +1,7 @@
 // import 'package:bookly/Features/Home/presentation/views/home_view.dart';
 
 
+import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/views/splash/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class _SplashViewState extends State<SplashView>
           [
             ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(20)),
-              child: Image.asset('assets/images/png/splash.png', width: 300.w, height: 300.h,)),
+              child: Image.asset(AppIMGs().kSplashPNG, width: 300.w, height: 300.h,)),
             SizedBox(height: 10,),
             SlidingText(textSildingAnim: textSildingAnim),
           ],

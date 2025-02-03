@@ -15,8 +15,8 @@ class UserNotifictationContainer extends StatelessWidget
       child: SizedBox(
         height: 45.h,
         width: KMediaQuery(context).width * 0.12,
-        child: Container(color: Color(0xffFFEBF0),
-        child: Center(child: SvgPicture.asset('assets/images/svg/Visa.svg'),),
+        child: Container(color: AppColors.kCustomAllTabCardColor2,
+        child: Center(child: SvgPicture.asset(AppIMGs().kVisaSVG),),
         ),
       ),
     );

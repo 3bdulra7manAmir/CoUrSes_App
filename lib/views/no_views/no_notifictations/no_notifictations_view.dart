@@ -30,7 +30,7 @@ class NoNotifictationsView extends StatelessWidget
               child: Column(
                 children:
                 [
-                  SvgPicture.asset('assets/images/svg/No_Notifications.svg'),
+                  SvgPicture.asset(AppIMGs().kNoNotificationsSVG),
                   const SizedBox(height: 10,),
                   Text('No Notifictations yet!', style: Styles.textStyle18.copyWith(fontWeight: FontWeight.bold), ),
                   const SizedBox(height: 10,),

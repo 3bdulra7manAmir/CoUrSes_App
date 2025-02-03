@@ -15,7 +15,7 @@ class UpperPartStack extends StatelessWidget
       children:
       [
         Container(
-          color: Color(0xffFFE7EE),
+          color: AppColors.kCardColorPinkCardContainer,
           height: 220.h,
           width: double.infinity,
         ),
@@ -27,12 +27,12 @@ class UpperPartStack extends StatelessWidget
             
         Positioned(
           left: KMediaQuery(context).width * 0.05, top: 70.h,
-          child: SvgPicture.asset('assets/images/svg/Best_Seller.svg'),
+          child: SvgPicture.asset(AppIMGs().kBestSellerSVG),
         ),
             
         Positioned(
           left: KMediaQuery(context).width * 0.01, top: 50.h,
-          child: SvgPicture.asset('assets/images/svg/Flying_Paper.svg'),
+          child: SvgPicture.asset(AppIMGs().kFlyingPaperSVG),
         ),
             
         Positioned(
@@ -42,7 +42,7 @@ class UpperPartStack extends StatelessWidget
             
         Positioned(
           right: KMediaQuery(context).width * 0.05, top: 15.h,
-          child: SvgPicture.asset('assets/images/svg/Speaker_Holder.svg'),
+          child: SvgPicture.asset(AppIMGs().kSpeakerHolderSVG),
         ),
     
         Positioned(top: 210.h, left: 0, right: 0, // This ensures the width is constrained to the parent's width

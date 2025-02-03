@@ -64,7 +64,7 @@ class _CoursePreviewViewState extends State<CoursePreviewView>
                           height: 49.h,
                           width: KMediaQuery(context).width * 0.05,
                           decoration: BoxDecoration(
-                            color: Color(0xffFFEBF0),
+                            color: AppColors.kCustomAllTabCardColor2,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                           ),
                           child: Center(
@@ -83,7 +83,7 @@ class _CoursePreviewViewState extends State<CoursePreviewView>
                                     favoriteIcon = Icons.star;
                                   }
                               },);
-                            }, icon: Icon(favoriteIcon, color: Color(0xffFF6905),)),
+                            }, icon: Icon(favoriteIcon, color: AppColors.kCustomAllTabCardColor3,)),
                           ),
                         ),
                       ),

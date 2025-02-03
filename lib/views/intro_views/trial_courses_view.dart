@@ -17,7 +17,7 @@ class TrialCoursesView extends StatelessWidget
       [
         TheConnected3Stamp(
           skipText: 'Skip',
-          imagePath: 'assets/images/svg/Trial_Course.svg',
+          imagePath: AppIMGs().kTrialCourseSVG,
           afterImageText1: 'Numerous free\ntrial courses',
           afterImageText2: 'Free courses for you to\nfind your way to learning',
         ),

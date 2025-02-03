@@ -45,7 +45,7 @@ class CustomAllTabCard extends StatelessWidget
                   height: 100.h,
                   width: KMediaQuery(context).width * 0.2,
                   //Container will be Replaced with a SvgPicture.assets or Image.assets
-                  child: Container(color: Color(0xffC4C4C4),),
+                  child: Container(color: AppColors.kCustomAllTabCardColor1,),
                 ),
               ),
       
@@ -55,14 +55,14 @@ class CustomAllTabCard extends StatelessWidget
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:
                 [
-                  Text('Product Design v1.0', style: Styles.textStyle14.copyWith(color: Colors.black, fontWeight: FontWeight.bold),),
+                  Text('Product Design v1.0', style: Styles.textStyle14.copyWith(color: AppColors().kBlackColor, fontWeight: FontWeight.bold),),
       
                   const SizedBox(height: 5,),
       
                   Row(
                     children:
                     [
-                      Image.asset('assets/images/png/person.png'),
+                      Image.asset(AppIMGs().kPersonPNG),
                       const SizedBox(width: 5,),
                       Text('Robertson Connie', style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),)
                     ],
@@ -73,17 +73,17 @@ class CustomAllTabCard extends StatelessWidget
                   Row(
                     children:
                     [
-                      Text('\$190', style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold, color: Color(0xff3D5CFF)),),
+                      Text('\$190', style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold, color: AppColors.kCardColorBlueLinearLine),),
       
                       const SizedBox(width: 5),
       
                       Container(
                         width: KMediaQuery(context).width * 0.15,
                         decoration: BoxDecoration(
-                          color: Color(0xffFFEBF0),
+                          color: AppColors.kCustomAllTabCardColor2,
                           borderRadius: BorderRadius.circular(10.r)
                         ),
-                        child: Center(child: Text('16 hours', style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold, color: Color(0xffFF6905)),))),
+                        child: Center(child: Text('16 hours', style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold, color: AppColors.kCustomAllTabCardColor3),))),
                     ],
                   ),
                 ],

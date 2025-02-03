@@ -22,7 +22,7 @@ class CustomSearchFieldForSearchView extends StatelessWidget
 
         fieldPrefixIcon: GestureDetector(
           onTap: (){print('Search Icon Has been Pressed');},
-          child: Image.asset('assets/images/png/search.png',)),
+          child: Image.asset(AppIMGs().kSearchPNG,)),
         fieldSuffixIcon: Padding(
           padding: EdgeInsets.only(right: KMediaQuery(context).width * 0.03),
           child: SizedBox(
@@ -33,20 +33,20 @@ class CustomSearchFieldForSearchView extends StatelessWidget
               [
                 GestureDetector(
                   onTap: (){},
-                  child: Image.asset('assets/images/png/close.png')),
+                  child: Image.asset(AppIMGs().kClosePNG)),
           
                 const SizedBox(width: 10),
           
                 GestureDetector(
                   onTap: (){},
-                  child: Image.asset('assets/images/png/filter.png')),
+                  child: Image.asset(AppIMGs().kFilterPNG)),
               ],
             ),
           ),
         ),
 
         fieldBoolFilled: true,
-        fieldfFillColor: Color(0xffF4F3FD),
+        fieldfFillColor: AppColors.kCustomSearchFieldColor,
       ),
     );
   }

@@ -17,7 +17,7 @@ class UserImageContainer extends StatelessWidget
         height: 55.h,
         width: KMediaQuery(context).width * 0.15,
         //Container will be Replaced with a SvgPicture.assets or Image.assets
-        child: Container(color: Color(0xffD8FFEF),),
+        child: Container(color: AppColors.kUserImageContainerColor,),
       ),
     );
   }

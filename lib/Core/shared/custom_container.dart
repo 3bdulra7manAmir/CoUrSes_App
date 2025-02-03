@@ -19,7 +19,7 @@ class CustomContainerBackGround extends StatelessWidget
       width: containerWidthPercent ?? KMediaQuery(context).width, //Buttom Container Will Take Full Screen Width
     
       decoration: containerDecoration ?? BoxDecoration(
-        color: const Color(0xfff0f0f2),
+        color: AppColors.kCustomContainerBackGroundColor,
         borderRadius: BorderRadius.only(topLeft: Radius.circular(15.r), topRight: Radius.circular(15.r)),
       ),
       child: containerChild,

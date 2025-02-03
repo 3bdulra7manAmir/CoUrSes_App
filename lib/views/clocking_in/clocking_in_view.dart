@@ -12,7 +12,7 @@ class ClockingInView extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Material(
-      color: Color(0xff797988),
+      color: AppColors.kSuccessPopUpViewColor,
       child: Center(
         child: Container(
           height: 430.h, //0.38

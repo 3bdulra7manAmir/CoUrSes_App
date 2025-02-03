@@ -15,7 +15,7 @@ class CustomMeetupCard extends StatelessWidget
   {
     return Container(
       width: KMediaQuery(context).width * 0.9, height: 140.h,
-      decoration: BoxDecoration(color: Color(0xffEFE0FF), borderRadius: BorderRadius.circular(10.r),),
+      decoration: BoxDecoration(color: AppColors.kCustomCoursesLanguageCardColor2, borderRadius: BorderRadius.circular(10.r),),
       child: Stack(
         children:
         [
@@ -25,47 +25,28 @@ class CustomMeetupCard extends StatelessWidget
               crossAxisAlignment: CrossAxisAlignment.start,
               children:
               [
-                Text('Meetup', style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold, color: Color(0xff440687)),),
-                Text('off-line exchange of\nlearning experience', style: Styles.textStyle16.copyWith(color: Color(0xff440687)),)
+                Text('Meetup', style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold, color: AppColors.kCustomMeetupCardColor),),
+                Text('off-line exchange of\nlearning experience', style: Styles.textStyle16.copyWith(color: AppColors.kCustomMeetupCardColor),)
               ],
             ),
           ),
 
-          // Positioned(top: 40.h, left: KMediaQuery(context).width * 0.65,
-          //   child: Container(
-          //     width: 46.w,
-          //     height: 40.h,
-          //     decoration: BoxDecoration(
-          //       //color: AppColors.kWhiteColor,
-          //       borderRadius: BorderRadius.circular(25.r),
-          //       boxShadow: [
-          //         BoxShadow(
-          //           color: AppColors.kWhiteColor.withOpacity(0.5),
-          //           spreadRadius: 2,
-          //           blurRadius: 5,
-          //           offset: Offset(0, 3), // changes position of shadow
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
-
           Positioned(
             top: 40.h,
             left: KMediaQuery(context).width * 0.65,
-            child: SvgPicture.asset('assets/images/svg/boy1.svg')
+            child: SvgPicture.asset(AppIMGs().kBoy1SVG)
           ),
 
           Positioned(
             top: 65.h,
             left: KMediaQuery(context).width * 0.62,
-            child: SvgPicture.asset('assets/images/svg/boy2.svg')
+            child: SvgPicture.asset(AppIMGs().kBoy2SVG)
           ),
 
           Positioned(
             top: 64.h,
             left: KMediaQuery(context).width * 0.72,
-            child: SvgPicture.asset('assets/images/svg/boy3.svg')
+            child: SvgPicture.asset(AppIMGs().kBoy3SVG)
           ),
         ],
       ),

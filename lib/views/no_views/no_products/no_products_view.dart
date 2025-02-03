@@ -30,7 +30,7 @@ class NoProductsView extends StatelessWidget
               child: Column(
                 children:
                 [
-                  SvgPicture.asset('assets/images/svg/No_Products.svg'),
+                  SvgPicture.asset(AppIMGs().kNoProductsSVG),
                   const SizedBox(height: 10,),
                   Text('No Products', style: Styles.textStyle18.copyWith(fontWeight: FontWeight.bold), ),
                   const SizedBox(height: 10,),

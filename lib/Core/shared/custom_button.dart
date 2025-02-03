@@ -20,9 +20,9 @@ class CustomBlueButton extends StatelessWidget
       height: KMediaQuery(context).height * (buttonHeight ?? 0.06),
       child: ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: WidgetStateProperty.all(Color((0xff3d5cff))),
+          backgroundColor: WidgetStateProperty.all(AppColors.kCardColorBlueLinearLine),
           shape: WidgetStateProperty.all(RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.0.r),
+            borderRadius: BorderRadius.circular(12.r),
           ),
         ),
       ),
@@ -59,7 +59,7 @@ class CustomReversedButton extends StatelessWidget
         ),
       ),
       onPressed: buttonOnPressed,
-      child: Center(child: Text(buttonText, style: Styles.textStyle16.copyWith(color: Color(0xff3d5cff), fontWeight: FontWeight.bold),)),
+      child: Center(child: Text(buttonText, style: Styles.textStyle16.copyWith(color: AppColors.kCardColorBlueLinearLine, fontWeight: FontWeight.bold),)),
       ),
     );
   }

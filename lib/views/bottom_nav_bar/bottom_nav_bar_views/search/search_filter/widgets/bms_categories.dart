@@ -53,8 +53,8 @@ class BMSCategoriesState extends State<BMSCategories>
       {
         setState((){isSelectedList[index] = selected;});
       },
-      selectedColor: Color(0xff3d5cff),
-      backgroundColor: Colors.grey[200],
+      selectedColor: AppColors.kCardColorBlueLinearLine,
+      backgroundColor: AppColors.kGreyColor200,
     );
   }
 }

@@ -31,32 +31,32 @@ class _BottomNavBarViewState extends State<BottomNavBarView>
   final List<BottomNavigationBarItem> _bottomNavBarItems =
   [
     BottomNavigationBarItem(
-      icon: SvgPicture.asset('assets/images/svg/Home_off.svg'),
-      activeIcon: SvgPicture.asset('assets/images/svg/Home_on.svg'),
+      icon: SvgPicture.asset(AppIMGs().kHomeOffIconSVG),
+      activeIcon: SvgPicture.asset(AppIMGs().kHomeOnIconSVG),
       label: 'Home',
     ),
 
     BottomNavigationBarItem(
-      icon: SvgPicture.asset('assets/images/svg/Course_off.svg'),
-      activeIcon: SvgPicture.asset('assets/images/svg/Course_on.svg'),
+      icon: SvgPicture.asset(AppIMGs().kCourseOffIconSVG),
+      activeIcon: SvgPicture.asset(AppIMGs().kCourseOnIconSVG),
       label: 'Course',
     ),
 
     BottomNavigationBarItem(
-      icon: SvgPicture.asset('assets/images/svg/Search_off.svg'),
-      activeIcon: SvgPicture.asset('assets/images/svg/Search_on.svg'),
+      icon: SvgPicture.asset(AppIMGs().kSearchOffIconSVG),
+      activeIcon: SvgPicture.asset(AppIMGs().kSearchOnIconSVG),
       label: 'Search',
     ),
 
     BottomNavigationBarItem(
-      icon: SvgPicture.asset('assets/images/svg/Messages_off.svg'),
-      activeIcon: SvgPicture.asset('assets/images/svg/Messages_on.svg'),
+      icon: SvgPicture.asset(AppIMGs().kMessagesOffIconSVG),
+      activeIcon: SvgPicture.asset(AppIMGs().kMessagesOnIconSVG),
       label: 'Message',
     ),
 
     BottomNavigationBarItem(
-      icon: SvgPicture.asset('assets/images/svg/User_account_off.svg'),
-      activeIcon: SvgPicture.asset('assets/images/svg/User_account_on.svg'),
+      icon: SvgPicture.asset(AppIMGs().kUseraccountOffIconSVG),
+      activeIcon: SvgPicture.asset(AppIMGs().kUseraccountOnIconSVG),
       label: 'Account',
     ),
   ];

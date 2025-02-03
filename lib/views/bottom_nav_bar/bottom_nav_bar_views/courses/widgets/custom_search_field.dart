@@ -23,13 +23,13 @@ class CustomSearchField extends StatelessWidget
 
         fieldPrefixIcon: GestureDetector(
           onTap: (){print('Search Icon Has been Pressed');},
-          child: Image.asset('assets/images/png/search.png',)),
+          child: Image.asset(AppIMGs().kSearchPNG,)),
         fieldSuffixIcon: GestureDetector(
           onTap: (){print('Filtter Icon Has been Pressed'); BMSFilter.show(context);},
-          child: Image.asset('assets/images/png/filter.png')),
+          child: Image.asset(AppIMGs().kFilterPNG)),
 
         fieldBoolFilled: true,
-        fieldfFillColor: Color(0xffF4F3FD),
+        fieldfFillColor: AppColors.kCustomSearchFieldColor,
       ),
     );
   }

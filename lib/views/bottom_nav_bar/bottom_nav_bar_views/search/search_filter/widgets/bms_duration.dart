@@ -52,7 +52,7 @@ class BmsDurationState extends State<BmsDuration>
       {
         setState((){isSelectedList[index] = selected;});
       },
-      selectedColor: Color(0xff3d5cff),
+      selectedColor: AppColors.kCardColorBlueLinearLine,
       backgroundColor: AppColors.kGreyColor200,
     );
   }

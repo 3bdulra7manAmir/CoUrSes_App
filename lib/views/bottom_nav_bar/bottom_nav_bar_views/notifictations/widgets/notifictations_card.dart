@@ -46,7 +46,7 @@ class CustomNotifictations extends StatelessWidget
                 Row(
                   children:
                   [
-                    SvgPicture.asset('assets/images/svg/Clock.svg'),
+                    SvgPicture.asset(AppIMGs().kClockSVG),
 
                     const SizedBox(width: 5,),
 

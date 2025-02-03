@@ -48,7 +48,7 @@ class CustomMessageCard extends StatelessWidget
               child: Container(
                 height: 145.h,
                 width: double.infinity,
-                color: Color(0xffFFE7EE),
+                color: AppColors.kCardColorPinkCardContainer,
               ),
             )
             : SizedBox.shrink()

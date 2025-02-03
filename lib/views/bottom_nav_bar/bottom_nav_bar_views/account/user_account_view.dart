@@ -28,7 +28,7 @@ class UserAccountView extends StatelessWidget
 
             Align(
               alignment: Alignment.center,
-              child: SvgPicture.asset('assets/images/svg/Profile_Avatar.svg')
+              child: SvgPicture.asset(AppIMGs().kProfileAvatarSVG)
             ),
 
             const SizedBox(height: 30,),

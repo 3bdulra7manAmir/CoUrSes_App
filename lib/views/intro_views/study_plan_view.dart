@@ -22,7 +22,7 @@ class StudyPlanView extends StatelessWidget
         children:
         [
           TheConnected3Stamp(
-            imagePath: 'assets/images/svg/Study_Plan.svg',
+            imagePath: AppIMGs().kStudyPlanSVG,
             afterImageText1: 'Create your own\nstudy plan',
             afterImageText2: 'Study according to the\nstudy plan, make study\nmore motivated',
             ),

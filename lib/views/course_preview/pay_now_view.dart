@@ -45,7 +45,7 @@ class PayNowView extends StatelessWidget
                   [
                     SizedBox(
                       height: 180.h,
-                      child: SvgPicture.asset('assets/images/svg/Payment_Card.svg'),
+                      child: SvgPicture.asset(AppIMGs().kPaymentCardSVG),
                     ),
                 
                     const SizedBox(height: 60),

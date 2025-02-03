@@ -45,7 +45,7 @@ class LowerPartColumn extends StatelessWidget
           alignment: Alignment.center,
           child: GestureDetector(
             onTap: (){print('Down Arrow Button Has been Pressed');},
-            child: SvgPicture.asset('assets/images/svg/down_arrow.svg', width: 25.w,),
+            child: SvgPicture.asset(AppIMGs().kDownArrowSVG, width: 25.w,),
           ),
         ),
 
