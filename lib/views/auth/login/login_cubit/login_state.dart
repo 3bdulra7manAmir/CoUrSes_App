@@ -6,12 +6,15 @@ final class LoginInitialState extends LoginStates {}
 
 final class LoginLoadingState extends LoginStates {}
 
-final class LoginSuccessState extends LoginStates{}
+class LoginSuccessState extends LoginStates
+{
+  final String userName;
+  LoginSuccessState({required this.userName});
+}
 
 final class LoginFailureState extends LoginStates
 {
   final String errorMessage;
-
   LoginFailureState({required this.errorMessage });
 }
 

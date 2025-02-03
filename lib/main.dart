@@ -3,9 +3,11 @@
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/firebase_options.dart';
+import 'package:courses_app/views/auth/login/login_cubit/login_cubit.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,9 +27,15 @@ void main() async
   runApp(
     ScreenUtilInit(
       designSize: Size(375, 812),
-      builder: (context, child) => const CoursesApp()
+      builder: (context, child) => MultiBlocProvider(
+        providers:
+        [
+          BlocProvider(create: (context) => FirebaseLoginCubit(),),
+        ],
+        child: const CoursesApp(),
       ),
-    );
+    ),
+  );
 }
 
 class CoursesApp extends StatelessWidget

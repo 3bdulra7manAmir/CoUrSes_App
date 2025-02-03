@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +11,7 @@ class FirebaseRegisterCubit extends Cubit<RegisterStates>
   static bool isEmailRegistered = false;
   static bool isFirstNameAdded = false;
 
-  Future<void> firebaseRegister(String uEmail, String uPassword, BuildContext context) async
+  Future<void> addUserEPFirebaseAuth(String uEmail, String uPassword, BuildContext context) async
   {
     try
     {
@@ -52,35 +51,31 @@ class FirebaseRegisterCubit extends Cubit<RegisterStates>
     }
   }
 
-  Future<void> addUserFirstNameFireCloud(TextEditingController firstNameController, BuildContext context) async
+  Future<void> addUserFNFirebaseAuth(String firstNameController) async
   {
     try
     {
-      String firstName = firstNameController.text.trim();
-      // if (firstName.isEmpty)
-      // {
-      //   FirestoreUserFNFailure.showError(context, 'First name cannot be empty.');
-      //   return;
-      // }
+      String firstName = firstNameController.trim();
 
-      emit(RegisterFNLoadingState());
-      DocumentReference docRef = await FirebaseFirestore.instance.collection('User FN').add({
-        'First Name': firstName,
-        'Time Stamp': FieldValue.serverTimestamp(),
-      });
+      User? user = FirebaseAuth.instance.currentUser;
+      
+      await user?.updateDisplayName(firstName); // Update FirebaseAuth user profile with the first name
+      await user?.reload(); // Refresh user info
+      user = FirebaseAuth.instance.currentUser; // Fetch updated user
 
-      // Verify that the document was successfully added
-      DocumentSnapshot docSnapshot = await docRef.get();
-      if (docSnapshot.exists)
+      if (firstName.isNotEmpty)
       {
-        emit(RegisterFNSuccessState());
+        // User has a display name (first name) set
+        print("User's first name: $firstName");
         isFirstNameAdded = true;
+        emit(RegisterFNSuccessState());
       }
-
-      // else
-      // {
-      //   emit(RegisterFNFailureState(errorMessage: 'Failed to add first name to Firestore.',));
-      // }
+      else
+      {
+        // Display name is not set
+        print("User does not have a first name set.");
+        emit(RegisterFNFailureState(errorMessage: 'User does not have a first name set.'));
+      }
     }
 
     on FirebaseException catch (e)
@@ -93,17 +88,16 @@ class FirebaseRegisterCubit extends Cubit<RegisterStates>
       emit(RegisterFNFailureState(errorMessage: e.toString()));
     }
   }
-
 }
 
 bool loginAllower()
+{
+  if (FirebaseRegisterCubit.isEmailRegistered == true && FirebaseRegisterCubit.isFirstNameAdded == true )
   {
-    if (FirebaseRegisterCubit.isEmailRegistered == true && FirebaseRegisterCubit.isFirstNameAdded == true )
-    {
-      return true;
-    }
-    else
-    {
-      return false;
-    }
+    return true;
   }
+  else
+  {
+    return false;
+  }
+}

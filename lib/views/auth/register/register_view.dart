@@ -125,8 +125,8 @@ class RegisterViewState extends State<RegisterView>
                                     
                                     if ((registerFormKey.currentState?.validate()) != false && isChecked != false)
                                     {
-                                      await firebaseRCubit.firebaseRegister(emailController.text, passwordController.text, context);
-                                      await firebaseRCubit.addUserFirstNameFireCloud(firstNameController, context);
+                                      await firebaseRCubit.addUserEPFirebaseAuth(emailController.text, passwordController.text, context);
+                                      await firebaseRCubit.addUserFNFirebaseAuth(firstNameController.text);
                                     }
                                   },
                                   ),
@@ -218,7 +218,7 @@ class RegisterViewState extends State<RegisterView>
     }
     else if (state is RegisterFNFailureState)
     {
-      FirestoreUserFNFailure.showError(context, state.errorMessage);
+      FirebaseUFNFailure.showError(context, state.errorMessage);
     }
   }
 }

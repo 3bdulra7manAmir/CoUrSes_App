@@ -54,7 +54,7 @@ abstract class AppRouter
     [
       GoRoute(
         path: '/',
-        builder: (context, state) => const RegisterView(),
+        builder: (context, state) => const LoginView(),
       ),
 
       GoRoute(

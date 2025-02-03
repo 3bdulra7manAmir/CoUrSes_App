@@ -29,10 +29,10 @@ class FirebaseEPFailure extends Failure {
   }
 }
 
-class FirestoreUserFNFailure extends Failure {
-  FirestoreUserFNFailure(super.errorMessage);
+class FirebaseUFNFailure extends Failure {
+  FirebaseUFNFailure(super.errorMessage);
 
-  factory FirestoreUserFNFailure.fromFirestoreError(dynamic error, BuildContext context) {
+  factory FirebaseUFNFailure.fromFirestoreError(dynamic error, BuildContext context) {
     String errorMessage = 'An error occurred. Please try again later.';
 
     if (error is FirebaseException) {
@@ -54,11 +54,11 @@ class FirestoreUserFNFailure extends Failure {
       errorMessage = error;
     }
 
-    return FirestoreUserFNFailure.showError(context, errorMessage);
+    return FirebaseUFNFailure.showError(context, errorMessage);
   }
 
-  static FirestoreUserFNFailure showError(BuildContext context, String message) {
+  static FirebaseUFNFailure showError(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
-    return FirestoreUserFNFailure(message);
+    return FirebaseUFNFailure(message);
   }
 }

@@ -19,24 +19,26 @@ class FirebaseLoginCubit extends Cubit<LoginStates>
 
       if (uCredential.user != null)
       {
-        emit(LoginSuccessState());
+        String? userName = uCredential.user?.displayName;
+        print("Login successful! User's name: ${userName ?? 'No Name'}");
+
+        emit(LoginSuccessState(userName: userName ?? ''));
       }
-      // else
-      // {
-      //   emit(LoginFailureState(errorMessage: 'User Login Succeeded but User Details are Unavailable.'));
-      // }
+      else
+      {
+        print("Login successful, but no user details found.");
+        emit(LoginFailureState(errorMessage: 'User details unavailable.'));
+      }
     }
     on FirebaseAuthException catch (e)
     {
-      emit(LoginFailureState(errorMessage: e.toString()));
+      print("FirebaseAuthException: ${e.message}");
+      emit(LoginFailureState(errorMessage: e.message ?? 'Authentication Error'));
     }
     catch (e)
     {
+      print("General Exception: ${e.toString()}");
       emit(LoginFailureState(errorMessage: 'An error occurred: ${e.toString()}'));
     }
   }
-  
-
 }
-
-
