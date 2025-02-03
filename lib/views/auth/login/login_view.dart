@@ -30,7 +30,6 @@ class LoginViewState extends State<LoginView>
   static final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final loginFormKey = GlobalKey<FormState>();
-  bool obscureText = true;
  
   //TO PREVENT Memory leak //Tharwat Samy...
   @override
@@ -85,11 +84,12 @@ class LoginViewState extends State<LoginView>
                             CustomTextFormfield(
                               fieldVaidator: LoginValidator().validatePassword,
                               fieldController: passwordController,
-                              fieldObscureText: obscureText,
-                              fieldSuffixIcon: IconButton(icon: Icon(obscureText? Icons.visibility_off: Icons.visibility,),
-                                onPressed: () {setState(() {obscureText = !obscureText;});},
+                              fieldObscureText: firebaseLCubit.isPasswordObscured,
+                              fieldSuffixIcon: IconButton(icon: Icon(firebaseLCubit.isPasswordObscured ? Icons.visibility_off : Icons.visibility),
+                              onPressed: firebaseLCubit.togglePasswordVisibility,
+                                ),
                               ),
-                            ),
+                            
     
                             const SizedBox(height: 20,),
     

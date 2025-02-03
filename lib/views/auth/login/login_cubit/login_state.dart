@@ -18,3 +18,9 @@ final class LoginFailureState extends LoginStates
   LoginFailureState({required this.errorMessage });
 }
 
+final class LoginPasswordVisibilityToggledState extends LoginStates
+{
+  final bool isPasswordObscured;
+  LoginPasswordVisibilityToggledState({required this.isPasswordObscured});
+}
+

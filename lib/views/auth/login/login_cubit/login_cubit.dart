@@ -10,6 +10,13 @@ class FirebaseLoginCubit extends Cubit<LoginStates>
 {
   FirebaseLoginCubit() : super(LoginInitialState());
 
+  bool isPasswordObscured = true;
+  void togglePasswordVisibility()
+  {
+    isPasswordObscured = !isPasswordObscured;
+    emit(LoginPasswordVisibilityToggledState(isPasswordObscured: isPasswordObscured));
+  }
+
   Future<void> firebaseLogin(String uEmail, String uPassword) async
   {
     try

@@ -37,7 +37,7 @@ class CustomUserPart extends StatelessWidget
                 }
                 else
                 {
-                  return Text('Login to continue', style: TextStyle(color: Colors.white));
+                  return CircularProgressIndicator.adaptive();
                 }
               },
             ),
