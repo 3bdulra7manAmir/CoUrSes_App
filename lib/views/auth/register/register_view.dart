@@ -33,7 +33,6 @@ class RegisterViewState extends State<RegisterView>
   final TextEditingController firstNameController = TextEditingController();
   final TextEditingController lastNameController = TextEditingController();
   
-  bool isChecked = false;
   
   //TO PREVENT Memory leak //Tharwat Samy...
   @override
@@ -119,11 +118,7 @@ class RegisterViewState extends State<RegisterView>
                                                   
                                   CustomBlueButton(buttonText: 'Creat account', buttonWidth: 0.9, buttonOnPressed: () async
                                   {
-                                    // print('Create Account Button Pressed');
-                                    // print("${emailController.text} \t ${passwordController.text}");
-                                    SignUpValidator().submitForm(registerFormKey, isChecked, context);
-                                    
-                                    if ((registerFormKey.currentState?.validate()) != false && isChecked != false)
+                                    if (registerFormKey.currentState?.validate() == true && firebaseRCubit.isChecked)
                                     {
                                       await firebaseRCubit.addUserEPFirebaseAuth(emailController.text, passwordController.text, context);
                                       await firebaseRCubit.addUserFNFirebaseAuth(firstNameController.text);
@@ -151,7 +146,7 @@ class RegisterViewState extends State<RegisterView>
                                             overflow: TextOverflow.visible, // Allows text to continue onto the next line
                                           ),
                                         ),
-                                        
+
                                       ],
                                     ),
                                   ),
