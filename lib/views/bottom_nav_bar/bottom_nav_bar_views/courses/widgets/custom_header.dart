@@ -17,7 +17,7 @@ class CoursesHeader extends StatelessWidget
       [
         Text('Courses', style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),),
 
-        SvgPicture.asset(AppAssetsPaths().kProfileAvatarWithoutCameraPath, width: 35.w,),
+        SvgPicture.asset(AppIMGs().kProfileAvatarWithoutCameraSVG, width: 35.w,),
       ],
     );
   }

@@ -24,7 +24,7 @@ class SearchView extends StatelessWidget
             [
               Padding(
                 padding:  EdgeInsets.only(left: KMediaQuery(context).width * 0.05, top: 25.h),
-                child: SvgPicture.asset(AppAssetsPaths().kBBIMGPath),
+                child: SvgPicture.asset(AppIMGs().kBBIMGSVG),
               ),
           
               Padding(padding: EdgeInsets.only(top: 25.h, left: KMediaQuery(context).width * 0.05, right: KMediaQuery(context).width * 0.05, bottom: 20.h),

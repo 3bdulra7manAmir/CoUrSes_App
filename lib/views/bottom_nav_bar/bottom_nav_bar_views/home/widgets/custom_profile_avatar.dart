@@ -14,7 +14,7 @@ class CustomProfileAvatarImage extends StatelessWidget
       padding: EdgeInsets.only(right: KMediaQuery(context).width * 0.05, top: KMediaQuery(context).height * 0.02),
       child: Align(
         alignment: Alignment.topRight,
-        child: SvgPicture.asset(AppAssetsPaths().kProfileAvatarWithoutCameraPath, width: 40.w,),
+        child: SvgPicture.asset(AppIMGs().kProfileAvatarWithoutCameraSVG, width: 40.w,),
       ),
     );
   }

@@ -48,7 +48,7 @@ class CustomCoursesProgressCard extends StatelessWidget
     
             const SizedBox(height: 10,),
         
-            CustomLinearIndicator(width: 0.8, percent: 72 / 100, backgroundColor: AppColors.kGreyColor300, progressColor: AppColors.kOrgangeAccent)
+            CustomLinearIndicator(width: 0.8, percent: 72 / 100, backgroundColor: AppColors.kGreyColor300, progressColor: AppColors().kOrgangeAccent)
     
             
           ],

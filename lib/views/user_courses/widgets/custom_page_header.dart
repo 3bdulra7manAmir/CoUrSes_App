@@ -12,7 +12,7 @@ class CustomCoursesHeader extends StatelessWidget {
     return Row(
       children:
       [
-        SvgPicture.asset(AppAssetsPaths().kBBIMGPath),
+        SvgPicture.asset(AppIMGs().kBBIMGSVG),
     
         CustomTextWidget(widgetText: 'My Courses', widgetTextStyle: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
         widgetPadding: EdgeInsets.only(top: KMediaQuery(context).height * 0.05, left: KMediaQuery(context).width * 0.29),

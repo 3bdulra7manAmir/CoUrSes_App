@@ -26,7 +26,7 @@ class SuccessPopUpView extends StatelessWidget
             [
               const SizedBox(height: 30,),
         
-              SvgPicture.asset('assets/images/svg/Success.svg', width: 65.w,),
+              SvgPicture.asset(AppIMGs().kSuccessSVG, width: 65.w,),
         
               const SizedBox(height: 20,),
         

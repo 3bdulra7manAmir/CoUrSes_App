@@ -27,7 +27,7 @@ class CourseEpisodeCard extends StatelessWidget
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
           [
-            Text('Welcome to the Course', style: TextStyle(color: AppColors.kBlackColor, fontSize: 14.sp, fontWeight: FontWeight.bold),),
+            Text('Welcome to the Course', style: TextStyle(color: AppColors().kBlackColor, fontSize: 14.sp, fontWeight: FontWeight.bold),),
             SizedBox(height: 10),
             Row(
               children:

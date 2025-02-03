@@ -166,13 +166,13 @@ class LoginViewState extends State<LoginView>
                               [
                                 GestureDetector(
                                     onTap: () {print('Google IMG Pressed');},
-                                    child: SvgPicture.asset('assets/images/svg/Google_Platform.svg')),
+                                    child: SvgPicture.asset(AppIMGs().kGooglePlatFormSVG)),
     
                                 const SizedBox(width: 50,),
     
                                 GestureDetector(
                                     onTap: () {print('Facebook IMG Pressed');},
-                                    child: SvgPicture.asset('assets/images/svg/Facebook_Platform.svg')),
+                                    child: SvgPicture.asset(AppIMGs().kFacebookPlatFormSVG)),
                               ],
                             ),
                           ],
