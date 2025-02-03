@@ -34,8 +34,6 @@ class RegisterViewState extends State<RegisterView>
   final TextEditingController lastNameController = TextEditingController();
   
   bool isChecked = false;
-  bool obscureText = true;
-
   
   //TO PREVENT Memory leak //Tharwat Samy...
   @override
@@ -107,11 +105,13 @@ class RegisterViewState extends State<RegisterView>
                                                   
                                   const CustomTextWidget(widgetText: 'Password',),
                                   
-                                  CustomTextFormfield(fieldController: passwordController, fieldObscureText: obscureText,
+                                  CustomTextFormfield(
+                                    fieldController: passwordController,
+                                    fieldObscureText: firebaseRCubit.isPasswordObscured,
                                     fieldTextInputType: TextInputType.text,
                                     fieldVaidator: SignUpValidator().validatePassword,
-                                    fieldSuffixIcon: IconButton(icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility,),
-                                      onPressed: () {setState(() {obscureText = !obscureText;});},
+                                    fieldSuffixIcon: IconButton(icon: Icon(firebaseRCubit.isPasswordObscured ? Icons.visibility_off : Icons.visibility),
+                                    onPressed: firebaseRCubit.togglePasswordVisibility,
                                     ),
                                   ),
                                                   
@@ -140,20 +140,18 @@ class RegisterViewState extends State<RegisterView>
                                       children:
                                       [
                                         Checkbox(
-                                          value: isChecked,
-                                          onChanged: (bool? value)
-                                          {
-                                            setState(() => isChecked = value!);
-                                            print('Checkbox State: $value');
-                                          },
+                                          value:firebaseRCubit.isChecked,
+                                          onChanged: (value) => firebaseRCubit.toggleCheckbox(),
                                           activeColor: Colors.blue[800],
                                         ),
+
                                         const Flexible(
                                           child: Text("By creating an account you have to agree with our them & condication.",
                                             softWrap: true, // Ensures the text will wrap
                                             overflow: TextOverflow.visible, // Allows text to continue onto the next line
                                           ),
                                         ),
+                                        
                                       ],
                                     ),
                                   ),
@@ -208,8 +206,6 @@ class RegisterViewState extends State<RegisterView>
       passwordController.clear();
       firstNameController.clear();
       lastNameController.clear();
-      obscureText = true;
-      setState(() {isChecked = false;});
       Future.delayed(Duration(seconds: 1), () => GoRouter.of(context).go(AppRouter.kLoginView));
     }
     else if (state is RegisterEmailFailureState)

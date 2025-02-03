@@ -10,6 +10,20 @@ class FirebaseRegisterCubit extends Cubit<RegisterStates>
 
   static bool isEmailRegistered = false;
   static bool isFirstNameAdded = false;
+  bool isPasswordObscured = true;
+  bool isChecked = false;
+
+  void toggleCheckbox()
+  {
+    isChecked = !isChecked;
+    emit(RegisterCheckboxToggledState(isChecked: isChecked));
+  }
+
+  void togglePasswordVisibility()
+  {
+    isPasswordObscured = !isPasswordObscured;
+    emit(RegisterPasswordVisibilityToggledState(isPasswordObscured: isPasswordObscured));
+  }
 
   Future<void> addUserEPFirebaseAuth(String uEmail, String uPassword, BuildContext context) async
   {
@@ -51,11 +65,13 @@ class FirebaseRegisterCubit extends Cubit<RegisterStates>
     }
   }
 
+
   Future<void> addUserFNFirebaseAuth(String firstNameController) async
   {
     try
     {
       String firstName = firstNameController.trim();
+      emit(RegisterEmailLoadingState());
 
       User? user = FirebaseAuth.instance.currentUser;
       
@@ -89,6 +105,10 @@ class FirebaseRegisterCubit extends Cubit<RegisterStates>
     }
   }
 }
+
+
+
+
 
 bool loginAllower()
 {
