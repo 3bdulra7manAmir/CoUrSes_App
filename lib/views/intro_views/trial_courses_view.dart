@@ -1,7 +1,6 @@
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/views/intro_views/widget/custom_stamp.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class TrialCoursesView extends StatelessWidget
 {
@@ -23,17 +22,6 @@ class TrialCoursesView extends StatelessWidget
         ),
 
         const SizedBox(height: 50,),
-
-        SmoothPageIndicator(
-          controller: pageController!,
-          count: 3,
-          effect: const WormEffect(
-            dotHeight: 8,
-            dotWidth: 8,
-            activeDotColor: AppColors.kBlueColor,
-            dotColor: AppColors.kGreyColor,
-          ),
-        ),
       ],
     );
     

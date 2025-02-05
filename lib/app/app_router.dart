@@ -54,7 +54,7 @@ abstract class AppRouter
     [
       GoRoute(
         path: '/',
-        builder: (context, state) => const LoginView(),
+        builder: (context, state) => const SplashView(),
       ),
 
       GoRoute(
@@ -124,7 +124,7 @@ abstract class AppRouter
 
       GoRoute(
         path: kThe3Screens,
-        builder: (context, state) => const The3Screens(),
+        builder: (context, state) => The3Screens(),
       ),
 
       GoRoute(

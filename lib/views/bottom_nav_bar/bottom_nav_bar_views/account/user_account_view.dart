@@ -8,15 +8,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class UserAccountView extends StatelessWidget {
+class UserAccountView extends StatelessWidget
+{
   const UserAccountView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return SafeArea(
       child: Scaffold(
         body: Column(
-          children: [
+          children:
+          [
             CustomTextWidget(
               widgetText: 'Account', widgetTextStyle: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold, fontSize: 24.sp),
               widgetPadding: EdgeInsets.only(top: KMediaQuery(context).height * 0.02, left: KMediaQuery(context).width * 0.04),
@@ -36,11 +39,11 @@ class UserAccountView extends StatelessWidget {
                       onTap: () async
                       {
                         await firebaseUACubit.uploadImageToFirebase();
-                        await firebaseUACubit.getUserProfileImage(); // ✅ Call to retrieve image after upload
+                        await firebaseUACubit.getUserProfileImage();
                       },
                       child: state is UserAccountSuccessState
-                          ? SvgPicture.asset(state.imageUrl) // ✅ Extract `imageUrl` properly
-                          : SvgPicture.asset(AppIMGs().kBoy1SVG), // ✅ Provide a default image
+                          ? SvgPicture.asset(state.imageUrl)
+                          : SvgPicture.asset(AppIMGs().kProfileAvatarSVG),
                     );
                   },
                 ),

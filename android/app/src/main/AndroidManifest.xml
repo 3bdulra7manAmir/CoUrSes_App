@@ -1,4 +1,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- Permissions for Firebase & Flutter Debugging -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Permissions for Android 13+ (API level 33) to access media files -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <!-- Permissions for Android 12 (API level 32) and below to access external storage -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"/>
+
+    <!-- Write external storage permission (Optional, if you're writing to storage) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29"/>
+
     <application
         android:label="CourSector"
         android:name="${applicationName}"

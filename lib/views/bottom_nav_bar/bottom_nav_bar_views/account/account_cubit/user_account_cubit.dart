@@ -15,7 +15,7 @@ class FirebaseUserAccountCubit extends Cubit<FirebaseUserAccountStates>
 {
   FirebaseUserAccountCubit() : super(UserAccountInitialState());
 
-  /// Upload Image to Firebase Storage
+  /// Upload Image to Firebase Storage (Handles PNG, JPG, etc.)
   Future<void> uploadImageToFirebase() async
   {
     emit(UserAccountLoadingState()); // Emit loading state
@@ -39,24 +39,26 @@ class FirebaseUserAccountCubit extends Cubit<FirebaseUserAccountStates>
         return;
       }
 
-      Reference storageRef = FirebaseStorage.instance.ref().child("profile_images/$userId.jpg");
+      // Extract the file extension (e.g., png, jpg, jpeg)
+      String fileExtension = pickedFile.path.split('.').last.toLowerCase();
+      Reference storageRef = FirebaseStorage.instance.ref().child("profile_images/$userId.$fileExtension");
 
       UploadTask uploadTask = storageRef.putFile(imageFile);
       TaskSnapshot snapshot = await uploadTask;
 
+      // Get the download URL after upload
       String imageUrl = await snapshot.ref.getDownloadURL();
 
       // Update Firestore with the new image URL
       await FirebaseFirestore.instance.collection("users").doc(userId).update({"imageUrl": imageUrl,});
 
       emit(UserAccountSuccessState(imageUrl)); // Emit success with image URL
-      print("Image uploaded successfully: $imageUrl");
+      print("✅ Image uploaded successfully: $imageUrl");
     }
-
     catch (e)
     {
       emit(UserAccountFailureState("Error uploading image: $e"));
-      print("Error uploading image: $e");
+      print("❌ Error uploading image: $e");
     }
   }
 
@@ -83,13 +85,13 @@ class FirebaseUserAccountCubit extends Cubit<FirebaseUserAccountStates>
 
       String imageUrl = userDoc["imageUrl"];
       emit(UserAccountSuccessState(imageUrl)); // Emit success with image URL
-      print("Profile image retrieved: $imageUrl");
+      print("✅ Profile image retrieved: $imageUrl");
     }
-
     catch (e)
     {
       emit(UserAccountFailureState("Error retrieving image: $e"));
-      print("Error retrieving image: $e");
+      print("❌ Error retrieving image: $e");
     }
   }
+
 }

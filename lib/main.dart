@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/Core/utils/permissions.dart';
 import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/firebase_options.dart';
 import 'package:courses_app/views/auth/login/login_cubit/login_cubit.dart';
@@ -24,6 +25,7 @@ void main() async
   
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
+  await requestStoragePermission();
   
   runApp(
     ScreenUtilInit(
