@@ -74,12 +74,12 @@ class RegisterViewState extends State<RegisterView>
                       children:
                       [
                         //BOTTOM Container
-                        CustomSignUpPart(),
+                        const CustomSignUpPart(),
                     
                         //TOP Container
                         AfContainerBody(topPercentage: 0.2,
                           positionedChild: CustomContainerBackGround(
-                            containerDecoration: BoxDecoration(color: AppColors.kWhiteColor,
+                            containerDecoration: const BoxDecoration(color: AppColors.kWhiteColor,
                               borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),),
                             containerChild: Padding(
                               padding: EdgeInsets.only(top: (KMediaQuery(context).height) * 0.04, left: KMediaQuery(context).width * 0.015),
@@ -176,7 +176,7 @@ class RegisterViewState extends State<RegisterView>
                                           GoRouter.of(context).push(AppRouter.kLoginView);
                                           print('WENT TO\tLOGIN_VIEW');
                                         },
-                                        child: CustomTextWidget(widgetText: 'Log in', widgetTextStyle: TextStyle(fontSize: 14.sp, color: Color.fromRGBO(61, 93, 255, 1),
+                                        child: CustomTextWidget(widgetText: 'Log in', widgetTextStyle: TextStyle(fontSize: 14.sp, color: const Color.fromRGBO(61, 93, 255, 1),
                                             decoration: TextDecoration.underline,
                                             fontWeight: FontWeight.w900,
                                           ),
@@ -213,7 +213,7 @@ class RegisterViewState extends State<RegisterView>
       passwordController.clear();
       firstNameController.clear();
       lastNameController.clear();
-      Future.delayed(Duration(seconds: 1), () => GoRouter.of(context).go(AppRouter.kLoginView));
+      Future.delayed(const Duration(seconds: 1), () => GoRouter.of(context).go(AppRouter.kLoginView));
     }
     else if (state is RegisterEmailFailureState)
     {

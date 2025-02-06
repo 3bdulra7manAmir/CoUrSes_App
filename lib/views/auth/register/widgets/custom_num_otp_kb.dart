@@ -41,10 +41,10 @@ class CustomNumOTPKeyboardState extends State<CustomNumOTPKeyboard>
       }
         );
       },
-      rightIcon: Icon(Icons.backspace, color: Colors.black,),
+      rightIcon: const Icon(Icons.backspace, color: Colors.black,),
 
       leftButtonFn: () {print('left button clicked');},
-      leftIcon: Icon(Icons.check, color: Colors.black,),
+      leftIcon: const Icon(Icons.check, color: Colors.black,),
     );
   }
 }

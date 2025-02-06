@@ -18,7 +18,7 @@ class BMSPayMentItself extends StatefulWidget
       context: context,
       shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(25.r),),),
-      builder: (BuildContext context) => BMSPayMentItself(),
+      builder: (BuildContext context) => const BMSPayMentItself(),
     );
   }
 }
@@ -30,7 +30,7 @@ class BMSPayMentItselfState extends State<BMSPayMentItself>
   {
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.only(top: 20),
+        padding: const EdgeInsets.only(top: 20),
         child: Column(
           children:
           [

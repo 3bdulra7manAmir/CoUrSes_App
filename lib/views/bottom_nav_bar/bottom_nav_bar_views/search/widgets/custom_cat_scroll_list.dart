@@ -25,7 +25,7 @@ class CategorySelectorState extends State<CategorySelector>
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
-        separatorBuilder: (context, index) => SizedBox(width: 8),
+        separatorBuilder: (context, index) => const SizedBox(width: 8),
         itemBuilder: (context, index)
         {
           return CategoryItem(
@@ -53,7 +53,7 @@ class CategoryItem extends StatelessWidget
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
           color: isSelected ? AppColors.kCardColorBlueLinearLine : AppColors.kGreyColor200,
           borderRadius: BorderRadius.circular(20.r),

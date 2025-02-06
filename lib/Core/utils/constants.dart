@@ -61,7 +61,7 @@ class AppColors
 
   Color kOrgangeAccent = Colors.orangeAccent;
   Color kBlackColor = Colors.black;
-  Color kButtonsBlueColor = Color.fromRGBO(61, 93, 255, 1);
+  Color kButtonsBlueColor = const Color.fromRGBO(61, 93, 255, 1);
 }
 
 class AppIMGs

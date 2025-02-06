@@ -55,7 +55,7 @@ class ConWPhoneView extends StatelessWidget
             AfContainerBody(
               topPercentage: 0.35,
               positionedChild: CustomContainerBackGround(
-                containerDecoration: BoxDecoration(
+                containerDecoration: const BoxDecoration(
                   color: AppColors.kWhiteColor,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
                 ),
@@ -70,7 +70,7 @@ class ConWPhoneView extends StatelessWidget
 
                     const SizedBox(height: 30),
 
-                    PhoneNumberTextFieldAndButton(),
+                    const PhoneNumberTextFieldAndButton(),
                   ],
                 ),
               ),

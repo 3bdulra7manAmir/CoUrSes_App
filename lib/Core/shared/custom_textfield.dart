@@ -75,7 +75,7 @@ class CustomTextFormfield extends StatelessWidget
           
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10.r)),
-            borderSide: BorderSide(color: AppColors.kGreyColor),
+            borderSide: const BorderSide(color: AppColors.kGreyColor),
           ),
         ),
       ),
@@ -165,7 +165,7 @@ class CustomTextfield extends StatelessWidget
           
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(12.r)),
-            borderSide: BorderSide(color: AppColors.kGreyColor, style: BorderStyle.solid),
+            borderSide: const BorderSide(color: AppColors.kGreyColor, style: BorderStyle.solid),
           ),
         ),
       ),

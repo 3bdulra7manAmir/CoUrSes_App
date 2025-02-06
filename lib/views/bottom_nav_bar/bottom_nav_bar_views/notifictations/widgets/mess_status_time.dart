@@ -36,7 +36,7 @@ class UserStatusAndMessageTime extends StatelessWidget
     
         Padding(
           padding:  EdgeInsets.only(top: 11.h),
-          child: Text('04:32 pm'),
+          child: const Text('04:32 pm'),
         ),
       ],
     );

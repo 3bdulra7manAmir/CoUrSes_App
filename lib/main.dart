@@ -29,7 +29,7 @@ void main() async
   
   runApp(
     ScreenUtilInit(
-      designSize: Size(375, 812),
+      designSize: const Size(375, 812),
       builder: (context, child) => MultiBlocProvider(
         providers:
         [

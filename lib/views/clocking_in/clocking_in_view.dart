@@ -96,7 +96,7 @@ class ClockingInView extends StatelessWidget
                   children:
                   [
                     Text('554', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18.sp),),
-                    SizedBox(width: 2,),
+                    const SizedBox(width: 2,),
                     const Text('days',),
                   ],
                 ),
@@ -109,7 +109,7 @@ class ClockingInView extends StatelessWidget
 
                 const SizedBox(height: 20,),
 
-                BlueWeekDays(),
+                const BlueWeekDays(),
 
                 SizedBox(height: 50.h,),
 

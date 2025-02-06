@@ -18,7 +18,7 @@ class BMSHeader extends StatelessWidget
         {
           GoRouter.of(context).pop();
         }
-        , icon: Icon(Icons.close),
+        , icon: const Icon(Icons.close),
         ),
         CustomTextWidget(
           widgetText: 'Search Filter',

@@ -18,7 +18,7 @@ class PhoneNumberTextFieldAndButtonState extends State<PhoneNumberTextFieldAndBu
   Widget build(BuildContext context)
   {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Container(
         padding: EdgeInsets.only(left: 15.w),
         decoration: BoxDecoration(
@@ -42,7 +42,7 @@ class PhoneNumberTextFieldAndButtonState extends State<PhoneNumberTextFieldAndBu
               ),
             ),
             
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
       
             SizedBox(
               height: 45.h,

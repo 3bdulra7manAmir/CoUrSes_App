@@ -37,7 +37,7 @@ class _PhoneOTPViewState extends State<PhoneOTPView>
             Row(
               children:
               [
-                IconButton(onPressed: (){}, icon: Icon(Icons.close,)),
+                IconButton(onPressed: (){}, icon: const Icon(Icons.close,)),
                 CustomTextWidget(widgetText: 'Verify Phone', widgetTextStyle: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
                 widgetPadding: EdgeInsets.only(top: KMediaQuery(context).height * 0.05, left: KMediaQuery(context).width * 0.26),
                 widgetAlignment: Alignment.center,

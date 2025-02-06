@@ -28,16 +28,16 @@ class CustomUserPart extends StatelessWidget
                 {
                   print("Rendering success state with user: ${state.userName}");
                   return Text('Hi, ${state.userName.isNotEmpty ? state.userName : "User"}',
-                  style: TextStyle(color: AppColors.kWhiteColor, fontSize: 25, fontWeight: FontWeight.bold),);
+                  style: const TextStyle(color: AppColors.kWhiteColor, fontSize: 25, fontWeight: FontWeight.bold),);
                 }                  
                 else if (state is LoginFailureState)
                 {
                   return Text("Error: ${state.errorMessage}",
-                  style: TextStyle(color: Colors.red),);
+                  style: const TextStyle(color: Colors.red),);
                 }
                 else
                 {
-                  return CircularProgressIndicator.adaptive();
+                  return const CircularProgressIndicator.adaptive();
                 }
               },
             ),

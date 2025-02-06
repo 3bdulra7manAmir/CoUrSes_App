@@ -39,11 +39,11 @@ class SuccessPopUpView extends StatelessWidget
               widgetPadding: EdgeInsets.only(left: KMediaQuery(context).width * 0),
               ),
         
-              Spacer(),
+              const Spacer(),
         
               CustomBlueButton(buttonWidth: 0.7, buttonText: 'Done', buttonOnPressed: (){}),
 
-              SizedBox(height: 25,),
+              const SizedBox(height: 25,),
         
               
             ],

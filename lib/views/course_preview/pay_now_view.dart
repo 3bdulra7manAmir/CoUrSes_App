@@ -25,7 +25,7 @@ class PayNowView extends StatelessWidget
                 children:
                 [
                   IconButton(onPressed: () {print('Eye Icon Has Been Pressed');},
-                  icon: Icon(Icons.close)
+                  icon: const Icon(Icons.close)
                   ),
                   
                   CustomTextWidget(
@@ -36,7 +36,7 @@ class PayNowView extends StatelessWidget
                 ],
               ),
 
-              SizedBox(height: 100,),
+              const SizedBox(height: 100,),
               
               Align(
                 alignment: Alignment.center,

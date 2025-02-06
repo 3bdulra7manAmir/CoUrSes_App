@@ -64,7 +64,7 @@ class LoginViewState extends State<LoginView>
                 children:
                 [
                   //BOTTOM Container
-                  CustomWordLoginPart(),
+                  const CustomWordLoginPart(),
     
                   //TOP Container
                   AfContainerBody(
@@ -125,7 +125,7 @@ class LoginViewState extends State<LoginView>
                               mainAxisAlignment: MainAxisAlignment.center,
                               children:
                               [
-                                CustomTextWidget(widgetText: "Don't have an account?",),
+                                const CustomTextWidget(widgetText: "Don't have an account?",),
     
                                 const SizedBox(width: 5,),
     
@@ -135,7 +135,7 @@ class LoginViewState extends State<LoginView>
                                     GoRouter.of(context).push(AppRouter.kRegisterView);
                                     print('WENT TO\tREGISTER_VIEW');
                                   },
-                                  child: CustomTextWidget(widgetText: "Sign Up", widgetTextStyle: TextStyle(color: Color.fromRGBO(61, 93, 255, 1)),),
+                                  child: const CustomTextWidget(widgetText: "Sign Up", widgetTextStyle: TextStyle(color: Color.fromRGBO(61, 93, 255, 1)),),
                                 ),
                               ],
                             ),
@@ -144,7 +144,7 @@ class LoginViewState extends State<LoginView>
     
                             SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
-                              physics: NeverScrollableScrollPhysics(),
+                              physics: const NeverScrollableScrollPhysics(),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children:

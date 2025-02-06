@@ -23,7 +23,7 @@ class CustomMessageCard extends StatelessWidget
             color: AppColors.kGreyColor.withOpacity(0.2),
             spreadRadius: 2,
             blurRadius: 3,
-            offset: Offset(0, 2), // changes position of shadow
+            offset: const Offset(0, 2), // changes position of shadow
           ),
         ],
       ),
@@ -38,9 +38,9 @@ class CustomMessageCard extends StatelessWidget
 
             const SizedBox(height: 5,),
 
-            Text('Congratulations on completing the first lesson, keep up the good work!',),
+            const Text('Congratulations on completing the first lesson, keep up the good work!',),
 
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
 
             withImageMessage ?
             ClipRRect(
@@ -51,7 +51,7 @@ class CustomMessageCard extends StatelessWidget
                 color: AppColors.kCardColorPinkCardContainer,
               ),
             )
-            : SizedBox.shrink()
+            : const SizedBox.shrink()
           ],
         )
       ),

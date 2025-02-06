@@ -26,7 +26,7 @@ class BMSFilter extends StatefulWidget
           top: Radius.circular(25.r),
         ),
       ),
-      builder: (BuildContext context) => BMSFilter(),
+      builder: (BuildContext context) => const BMSFilter(),
     );
   }
 }
@@ -58,7 +58,7 @@ class BMSFilterState extends State<BMSFilter>
       
             Padding(
               padding: EdgeInsets.only(left: KMediaQuery(context).width * 0.02, right: KMediaQuery(context).width * 0.05,),
-              child: BMSPrice(),
+              child: const BMSPrice(),
             ),
       
             const SizedBox(height: 60,),
@@ -80,7 +80,7 @@ class BMSFilterState extends State<BMSFilter>
                   ),
                 ),
 
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
                 
                 Expanded(
                   flex: 3,

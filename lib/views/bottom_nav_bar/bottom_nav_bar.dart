@@ -21,11 +21,11 @@ class _BottomNavBarViewState extends State<BottomNavBarView>
 
   final List<Widget> _pages =
   [
-    HomeView(),
-    CoursesView(),
-    SearchView(),
-    MainNotifictationsView(),
-    UserAccountView(),
+    const HomeView(),
+    const CoursesView(),
+    const SearchView(),
+    const MainNotifictationsView(),
+    const UserAccountView(),
   ];
 
   final List<BottomNavigationBarItem> _bottomNavBarItems =

@@ -21,7 +21,7 @@ class CustomNotifictations extends StatelessWidget
             color: AppColors.kGreyColor.withOpacity(0.2),
             spreadRadius: 2,
             blurRadius: 3,
-            offset: Offset(0, 2), // changes position of shadow
+            offset: const Offset(0, 2), // changes position of shadow
           ),
         ],
       ),

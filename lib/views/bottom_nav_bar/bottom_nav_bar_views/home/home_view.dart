@@ -31,7 +31,7 @@ class HomeView extends StatelessWidget
                     const CustomProfileAvatarImage(),
 
                     Positioned(top: 120.h, left: KMediaQuery(context).width * 0.05,
-                    child: CustomHomeProgressCard()),
+                    child: const CustomHomeProgressCard()),
                   ]
                 ),
               ),
@@ -43,7 +43,7 @@ class HomeView extends StatelessWidget
                 children:
                 [
                   SizedBox(width: KMediaQuery(context).width * 0.9, height: 140.h,
-                  child: CustomMiddleCardListViewBuilder(),
+                  child: const CustomMiddleCardListViewBuilder(),
                   ),
 
                   const SizedBox(height: 20,),

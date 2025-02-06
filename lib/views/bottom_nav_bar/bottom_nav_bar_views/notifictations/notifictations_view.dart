@@ -48,18 +48,18 @@ class MainNotifictationsView extends StatelessWidget
                     //     Text('messages', style: TextStyle(fontWeight: FontWeight.bold),),
                     //   ],
                     // ),
-                    Text('messages', style: TextStyle(fontWeight: FontWeight.bold),),
-                    Text('notifictations', style: TextStyle(fontWeight: FontWeight.bold),)
+                    const Text('messages', style: TextStyle(fontWeight: FontWeight.bold),),
+                    const Text('notifictations', style: TextStyle(fontWeight: FontWeight.bold),)
                   ],
                   tabBarViewWidgets:
                   [
-                    SeparatorListViewBuilder(
+                    const SeparatorListViewBuilder(
                       returnedWidget: CustomMessageCard(withImageMessage: false,),
                       returneditemCount: 9,
                       separatorBuilderWidget: SizedBox(height: 10,),
                     ),
 
-                    SeparatorListViewBuilder(
+                    const SeparatorListViewBuilder(
                       returnedWidget: CustomNotifictations(),
                       returneditemCount: 7,
                       separatorBuilderWidget: SizedBox(height: 10,),

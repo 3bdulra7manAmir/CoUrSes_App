@@ -9,7 +9,7 @@ class CustomCardsGridViewBuilder extends StatelessWidget
   Widget build(BuildContext context)
   {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // Number of columns
         crossAxisSpacing: 4.0, // Space between columns
         mainAxisSpacing: 8.0, // Space between rows

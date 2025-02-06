@@ -63,7 +63,7 @@ class CustomRangeTrackShape extends RangeSliderTrackShape
   })
   {
     final double overlayWidth = parentBox.size.width;
-    final double trackHeight = activeTrackHeight;
+    const double trackHeight = activeTrackHeight;
     final double trackLeft = offset.dx;
     final double trackTop = offset.dy + (parentBox.size.height - trackHeight) / 2;
     final double trackWidth = overlayWidth;
@@ -129,7 +129,7 @@ class CustomThumbShape extends RangeSliderThumbShape
   @override
   Size getPreferredSize(bool isEnabled, bool isDiscrete)
   {
-    return Size.fromRadius(_thumbSize / 2);
+    return const Size.fromRadius(_thumbSize / 2);
   }
 
   @override

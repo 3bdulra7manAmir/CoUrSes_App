@@ -33,9 +33,9 @@ class _CoursePreviewViewState extends State<CoursePreviewView>
             crossAxisAlignment: CrossAxisAlignment.start,
             children:
             [
-              UpperPartStack(),
+              const UpperPartStack(),
           
-              LowerPartColumn(),
+              const LowerPartColumn(),
 
               Container(
                 height: 100.h,
@@ -49,7 +49,7 @@ class _CoursePreviewViewState extends State<CoursePreviewView>
                       color: AppColors.kGreyColor.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 5,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ],
                 ),
@@ -63,7 +63,7 @@ class _CoursePreviewViewState extends State<CoursePreviewView>
                         child: Container(
                           height: 49.h,
                           width: KMediaQuery(context).width * 0.05,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: AppColors.kCustomAllTabCardColor2,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                           ),

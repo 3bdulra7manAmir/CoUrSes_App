@@ -49,9 +49,9 @@ class _SplashViewState extends State<SplashView>
           children:
           [
             ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
               child: Image.asset(AppIMGs().kSplashPNG, width: 300.w, height: 300.h,)),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             SlidingText(textSildingAnim: textSildingAnim),
           ],
         ),
@@ -62,7 +62,7 @@ class _SplashViewState extends State<SplashView>
   void initSlidingAnimation()
   {
     animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
 
     textSildingAnim =
         Tween<Offset>(begin: const Offset(0, 10), end: Offset.zero)

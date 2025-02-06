@@ -44,7 +44,7 @@ class CustomCourseCard extends StatelessWidget
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children:
                     [
-                      Text('Completed'),
+                      const Text('Completed'),
               
                       Text('14/24', style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold,
                       //foreground: Paint()..style = PaintingStyle.stroke..strokeWidth = 1..color = Colors.black,

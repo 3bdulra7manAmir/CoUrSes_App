@@ -17,7 +17,7 @@ class CustomMiddleCardListViewBuilder extends StatelessWidget
       {
         return Padding(
           padding: EdgeInsets.only(right: 10.w),
-          child: CustomMiddleCard(),
+          child: const CustomMiddleCard(),
         );
       },
       );
