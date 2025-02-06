@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/courses/widgets/custom_courses_card.dart';

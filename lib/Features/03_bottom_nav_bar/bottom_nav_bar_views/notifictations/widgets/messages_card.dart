@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/mess_status_time.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +18,7 @@ class CustomMessageCard extends StatelessWidget
         boxShadow:
         [
           BoxShadow(
-            color: AppColors.kGreyColor.withOpacity(0.2),
+            color: AppColors.kGreyColor.withAlpha((0.2 * 255).round()),
             spreadRadius: 2,
             blurRadius: 3,
             offset: const Offset(0, 2), // changes position of shadow

@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Core/utils/permissions.dart';
 import 'package:courses_app/app/app_router.dart';
@@ -11,7 +9,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() async
 {
@@ -52,20 +49,27 @@ class CoursesApp extends StatelessWidget
     return DevicePreview(
       enabled: true,
       builder: (context) => MaterialApp.router(
-        useInheritedMediaQuery: true, // deprecated_member_use
+        useInheritedMediaQuery: true,
 
         builder: DevicePreview.appBuilder,
         locale: DevicePreview.locale(context),
         routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,
 
-        theme: ThemeData.light().copyWith(textTheme: GoogleFonts.montserratAlternatesTextTheme(),
-        textSelectionTheme: TextSelectionThemeData(
+        theme: ThemeData.light().copyWith(textSelectionTheme: TextSelectionThemeData(
           cursorColor:  AppColors().kButtonsBlueColor,
           selectionColor: AppColors().kButtonsBlueColor,
           selectionHandleColor: AppColors().kButtonsBlueColor
           ),
         ),
+
+        // theme: ThemeData.light().copyWith(textTheme: GoogleFonts.montserratAlternatesTextTheme(),
+        // textSelectionTheme: TextSelectionThemeData(
+        //   cursorColor:  AppColors().kButtonsBlueColor,
+        //   selectionColor: AppColors().kButtonsBlueColor,
+        //   selectionHandleColor: AppColors().kButtonsBlueColor
+        //   ),
+        // ),
 
         // theme: ThemeData.dark().copyWith(
         //   textTheme: GoogleFonts.montserratAlternatesTextTheme(

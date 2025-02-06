@@ -36,18 +36,6 @@ class MainNotifictationsView extends StatelessWidget
                   tabBarControllerLength: 2,
                   tabBarWidgets:
                   [
-                    // Column(
-                    //   children:
-                    //   [
-                    //     Padding(
-                    //       padding: EdgeInsets.only(left: 80),
-                    //       child: SizedBox(
-                    //         height: 5,
-                    //         child: CircleAvatar(backgroundColor: Colors.orange, )),
-                    //     ),
-                    //     Text('messages', style: TextStyle(fontWeight: FontWeight.bold),),
-                    //   ],
-                    // ),
                     const Text('messages', style: TextStyle(fontWeight: FontWeight.bold),),
                     const Text('notifictations', style: TextStyle(fontWeight: FontWeight.bold),)
                   ],

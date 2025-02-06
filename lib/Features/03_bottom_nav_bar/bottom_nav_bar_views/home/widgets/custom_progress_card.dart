@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Core/shared/custom_linear_indicator.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +20,7 @@ class CustomHomeProgressCard extends StatelessWidget
         boxShadow:
         [
           BoxShadow(
-            color: AppColors.kGreyColor.withOpacity(0.5),
+            color: AppColors.kGreyColor.withAlpha((0.5 * 255).round()),
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3), // changes position of shadow

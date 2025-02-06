@@ -41,7 +41,6 @@ class BMSFilterState extends State<BMSFilter>
         padding: EdgeInsets.only(top: KMediaQuery(context).height * 0.01, left: KMediaQuery(context).width * 0.05, right: KMediaQuery(context).width * 0.04),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          //mainAxisSize: MainAxisSize.min,
           children:
           [
             const BMSHeader(),

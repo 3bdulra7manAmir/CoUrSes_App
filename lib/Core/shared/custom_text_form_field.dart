@@ -7,7 +7,6 @@ class CustomTextFormfield extends StatelessWidget
 {
   const CustomTextFormfield({super.key,
   required this.fieldController,
-  //required this.fieldOnSubmitted,
 
   this.fieldObscureText,
   this.fieldTextAlign,
@@ -25,7 +24,6 @@ class CustomTextFormfield extends StatelessWidget
 
   final TextEditingController fieldController;
   final String? Function(String?)? fieldVaidator;
-  //final void Function(String) fieldOnSubmitted;
 
   final TextInputType? fieldTextInputType;
   final bool? fieldObscureText;
@@ -50,7 +48,6 @@ class CustomTextFormfield extends StatelessWidget
       height: fieldHeight ?? 60.h,
       child: TextFormField(
         controller: fieldController,
-        //onSubmitted: fieldOnSubmitted,
         validator: fieldVaidator,
         obscureText: fieldObscureText ?? false,
         

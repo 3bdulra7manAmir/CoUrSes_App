@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,7 +30,7 @@ class CustomCoursesLanguageCard extends StatelessWidget
             child: Container(
               width: KMediaQuery(context).width * 0.25,
               decoration: BoxDecoration(
-                color: AppColors.kWhiteColor.withOpacity(0.8),
+                color: AppColors.kWhiteColor.withAlpha((0.8 * 255).round()),
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(10.r), bottomLeft: Radius.circular(10.r)),
               ),
               child: Center(

@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:courses_app/Core/shared/custom_button.dart';
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/app/app_router.dart';
@@ -11,15 +9,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class The3Screens extends StatefulWidget
+class The3IntroScreens extends StatefulWidget
 {
-  const The3Screens({super.key});
+  const The3IntroScreens({super.key});
 
   @override
-  State<The3Screens> createState() => _The3ScreensState();
+  State<The3IntroScreens> createState() => _The3IntroScreensState();
 }
 
-class _The3ScreensState extends State<The3Screens>
+class _The3IntroScreensState extends State<The3IntroScreens>
 {
   final PageController pageController = PageController();
   int currentPage = 0;

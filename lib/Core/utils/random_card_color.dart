@@ -1,4 +1,3 @@
-// Function to return a linked value based on the input
 import 'dart:math';
 
 import 'package:courses_app/Core/utils/constants.dart';

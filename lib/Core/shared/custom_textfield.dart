@@ -59,7 +59,6 @@ class CustomTextfield extends StatelessWidget
       child: TextField(
         controller: fieldController,
         onSubmitted: fieldOnSubmitted,
-        //validator: fieldVaidator,
         obscureText: fieldObscureText ?? false,
         
         textAlign: fieldTextAlign ?? TextAlign.start,

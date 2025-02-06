@@ -1,4 +1,3 @@
-// ignore_for_file: deprecated_member_use,
 
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +74,7 @@ class WholeTabBarState extends State<WholeTabBar> with SingleTickerProviderState
             controller: tabBarController,
             indicatorColor: widget.indicatorColor ?? AppColors.kWhiteColor,                                // Color of the selected tab indicator
             labelColor: widget.labelColor ?? AppColors.kWhiteColor,                                       // Color of the selected tab text
-            unselectedLabelColor: widget.unselectedLabelColor ?? AppColors.kWhiteColor.withOpacity(0.6), // Color of unselected tab text
+            unselectedLabelColor: widget.unselectedLabelColor ?? AppColors.kWhiteColor.withAlpha((0.6 * 255).round()), // Color of unselected tab text
             tabs: widget.tabBarWidgets,
           ),
         ),

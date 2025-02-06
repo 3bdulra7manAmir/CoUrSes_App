@@ -16,7 +16,7 @@ import 'package:courses_app/Features/no_views/no_products/no_products_view.dart'
 import 'package:courses_app/Features/no_views/no_videos/no_videos_view.dart';
 import 'package:courses_app/Features/no_views/no_network_conn/no_network_conn_view.dart';
 import 'package:courses_app/Features/no_views/no_notifictations/no_notifictations_view.dart';
-import 'package:courses_app/Features/00_splash/splash_view_body.dart';
+import 'package:courses_app/Features/00_splash/splash_view.dart';
 import 'package:courses_app/Features/04_course_preview/success_purchase_view.dart';
 import 'package:courses_app/Features/01_intro_views/widget/custom_screen_indicator.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/account/user_account_view.dart';
@@ -124,7 +124,7 @@ abstract class AppRouter
 
       GoRoute(
         path: kThe3Screens,
-        builder: (context, state) => const The3Screens(),
+        builder: (context, state) => const The3IntroScreens(),
       ),
 
       GoRoute(

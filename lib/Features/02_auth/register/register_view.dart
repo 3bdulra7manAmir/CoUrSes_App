@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:courses_app/Core/Exceptions/register_failure.dart';
 import 'package:courses_app/Core/shared/custom_text_form_field.dart';
 import 'package:courses_app/Core/utils/constants.dart';

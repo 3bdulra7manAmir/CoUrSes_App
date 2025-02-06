@@ -10,7 +10,7 @@ class CustomMiddleCardListViewBuilder extends StatelessWidget
   Widget build(BuildContext context)
   {
     return ListView.builder(
-      //shrinkWrap: true,
+      shrinkWrap: true,
       scrollDirection: Axis.horizontal,
       itemCount: 3,
       itemBuilder: (context, index)

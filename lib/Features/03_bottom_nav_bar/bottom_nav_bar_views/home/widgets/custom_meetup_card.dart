@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
