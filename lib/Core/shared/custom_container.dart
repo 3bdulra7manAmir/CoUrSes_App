@@ -16,7 +16,7 @@ class CustomContainerBackGround extends StatelessWidget
   {
     return Container(
       height: containerHeightPercent ?? KMediaQuery(context).height, //Buttom Container Will Take Full Screen Height
-      width: containerWidthPercent ?? KMediaQuery(context).width, //Buttom Container Will Take Full Screen Width
+      width: containerWidthPercent ?? KMediaQuery(context).width,    //Buttom Container Will Take Full Screen Width
     
       decoration: containerDecoration ?? BoxDecoration(
         color: AppColors.kCustomContainerBackGroundColor,

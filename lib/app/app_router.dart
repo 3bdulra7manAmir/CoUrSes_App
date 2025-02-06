@@ -1,26 +1,26 @@
 // ignore_for_file: unused_import
 
-import 'package:courses_app/views/auth/login/login_view.dart';
-import 'package:courses_app/views/auth/register/ph_otp_view.dart';
-import 'package:courses_app/views/auth/register/ph_register_view.dart';
-import 'package:courses_app/views/auth/register/register_success_view.dart';
-import 'package:courses_app/views/auth/register/register_view.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/notifictations/notifictations_view.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/search/search_view.dart';
-import 'package:courses_app/views/clocking_in/clocking_in_view.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
-import 'package:courses_app/views/course_preview/course_preview_view.dart';
-import 'package:courses_app/views/course_preview/pay_now_view.dart';
-import 'package:courses_app/views/no_views/no_products/no_products_view.dart';
-import 'package:courses_app/views/no_views/no_videos/no_videos_view.dart';
-import 'package:courses_app/views/no_views/no_network_conn/no_network_conn_view.dart';
-import 'package:courses_app/views/no_views/no_notifictations/no_notifictations_view.dart';
-import 'package:courses_app/views/splash/splash_view_body.dart';
-import 'package:courses_app/views/success_purchase/success_purchase_view.dart';
-import 'package:courses_app/views/intro_views/widget/custom_screen_indicator.dart';
-import 'package:courses_app/views/bottom_nav_bar/bottom_nav_bar_views/account/user_account_view.dart';
-import 'package:courses_app/views/user_courses/courses_view.dart';
+import 'package:courses_app/Features/02_auth/login/login_view.dart';
+import 'package:courses_app/Features/02_auth/register/ph_otp_view.dart';
+import 'package:courses_app/Features/02_auth/register/ph_register_view.dart';
+import 'package:courses_app/Features/02_auth/register/register_success_view.dart';
+import 'package:courses_app/Features/02_auth/register/register_view.dart';
+import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar.dart';
+import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/notifictations/notifictations_view.dart';
+import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/search/search_view.dart';
+import 'package:courses_app/Features/clocking_in/clocking_in_view.dart';
+import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
+import 'package:courses_app/Features/04_course_preview/course_preview_view.dart';
+import 'package:courses_app/Features/04_course_preview/pay_now_view.dart';
+import 'package:courses_app/Features/no_views/no_products/no_products_view.dart';
+import 'package:courses_app/Features/no_views/no_videos/no_videos_view.dart';
+import 'package:courses_app/Features/no_views/no_network_conn/no_network_conn_view.dart';
+import 'package:courses_app/Features/no_views/no_notifictations/no_notifictations_view.dart';
+import 'package:courses_app/Features/00_splash/splash_view_body.dart';
+import 'package:courses_app/Features/04_course_preview/success_purchase_view.dart';
+import 'package:courses_app/Features/01_intro_views/widget/custom_screen_indicator.dart';
+import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/account/user_account_view.dart';
+import 'package:courses_app/Features/05_user_courses_list/courses_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter
@@ -109,7 +109,7 @@ abstract class AppRouter
 
       GoRoute(
         path: kUserCoursesView,
-        builder: (context, state) => const UserCoursesView(),
+        builder: (context, state) => const UserCoursesListView(),
       ),
 
       GoRoute(
