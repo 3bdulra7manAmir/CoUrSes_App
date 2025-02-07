@@ -1,6 +1,8 @@
 import 'dart:convert';
 
-import 'package:courses_app/Core/utils/constants.dart';
+
+import 'package:courses_app/Core/utils/constants/app_images.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Core/shared/custom_text_widget.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/account/account_cubit/user_account_cubit.dart';

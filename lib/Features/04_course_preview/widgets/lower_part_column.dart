@@ -1,5 +1,6 @@
 import 'package:courses_app/Core/shared/custom_listviewbuilder.dart';
-import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
+import 'package:courses_app/Core/utils/constants/app_images.dart';
 import 'package:courses_app/Features/04_course_preview/widgets/course_episode_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

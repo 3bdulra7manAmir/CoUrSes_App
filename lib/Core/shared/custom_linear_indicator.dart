@@ -1,4 +1,5 @@
-import 'package:courses_app/Core/utils/constants.dart';
+
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';

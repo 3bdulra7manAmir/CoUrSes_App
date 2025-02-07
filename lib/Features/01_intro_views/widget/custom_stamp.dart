@@ -1,5 +1,6 @@
-import 'package:courses_app/Core/utils/constants.dart';
+
 import 'package:courses_app/Core/shared/custom_text_widget.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/app/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

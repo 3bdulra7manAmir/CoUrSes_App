@@ -1,5 +1,6 @@
 import 'package:courses_app/Core/shared/custom_blue_button.dart';
-import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/Features/04_course_preview/widgets/lower_part_column.dart';
 import 'package:courses_app/Features/04_course_preview/widgets/upper_part_stack.dart';

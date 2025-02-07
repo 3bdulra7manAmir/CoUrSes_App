@@ -1,4 +1,5 @@
-import 'package:courses_app/Core/utils/constants.dart';
+
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/home/widgets/custom_learn_plan_card.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/home/widgets/custom_listview_builder.dart';

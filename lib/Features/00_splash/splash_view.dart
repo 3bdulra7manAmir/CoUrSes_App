@@ -1,4 +1,5 @@
-import 'package:courses_app/Core/utils/constants.dart';
+
+import 'package:courses_app/Core/utils/constants/app_images.dart';
 import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/Features/00_splash/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';

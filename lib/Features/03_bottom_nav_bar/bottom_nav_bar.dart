@@ -1,4 +1,5 @@
-import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
+import 'package:courses_app/Core/utils/constants/app_images.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/courses/courses_view.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/home/home_view.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/notifictations/notifictations_view.dart';

@@ -1,4 +1,6 @@
-import 'package:courses_app/Core/utils/constants.dart';
+
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
+import 'package:courses_app/Core/utils/constants/app_images.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/notifictation_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

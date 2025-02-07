@@ -1,4 +1,7 @@
-import 'package:courses_app/Core/utils/constants.dart';
+
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
+import 'package:courses_app/Core/utils/constants/app_images.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Core/shared/custom_column.dart';
 import 'package:courses_app/Core/shared/custom_container.dart';

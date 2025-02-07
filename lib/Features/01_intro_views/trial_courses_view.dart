@@ -1,4 +1,5 @@
-import 'package:courses_app/Core/utils/constants.dart';
+
+import 'package:courses_app/Core/utils/constants/app_images.dart';
 import 'package:courses_app/Features/01_intro_views/widget/custom_stamp.dart';
 import 'package:flutter/material.dart';
 

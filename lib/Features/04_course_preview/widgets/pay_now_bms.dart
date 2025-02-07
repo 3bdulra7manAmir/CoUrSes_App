@@ -1,4 +1,4 @@
-import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Features/02_auth/register/widgets/custom_num_otp_kb.dart';
 import 'package:courses_app/Features/02_auth/register/widgets/custom_otp_inputfield.dart';

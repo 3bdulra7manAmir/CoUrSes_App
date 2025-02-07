@@ -1,5 +1,6 @@
 import 'package:courses_app/Core/shared/custom_listviewbuilder.dart';
-import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/Core/utils/constants/app_images.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/courses/widgets/tabBar_widgets/custom_all_tab.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/search/widgets/custom_cat_scroll_list.dart';

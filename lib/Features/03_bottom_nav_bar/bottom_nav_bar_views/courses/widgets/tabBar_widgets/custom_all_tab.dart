@@ -1,4 +1,7 @@
-import 'package:courses_app/Core/utils/constants.dart';
+
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
+import 'package:courses_app/Core/utils/constants/app_images.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';

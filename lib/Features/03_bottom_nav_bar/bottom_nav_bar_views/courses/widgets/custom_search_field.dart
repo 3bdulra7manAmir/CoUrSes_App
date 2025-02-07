@@ -1,5 +1,8 @@
-import 'package:courses_app/Core/utils/constants.dart';
+
 import 'package:courses_app/Core/shared/custom_textfield.dart';
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
+import 'package:courses_app/Core/utils/constants/app_images.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/search/search_filter/filter_bms_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

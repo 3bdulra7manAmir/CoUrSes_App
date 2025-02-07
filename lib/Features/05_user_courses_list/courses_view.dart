@@ -1,4 +1,4 @@
-import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/Features/05_user_courses_list/widgets/custom_gridview_builder.dart';
 import 'package:courses_app/Features/05_user_courses_list/widgets/custom_page_header.dart';
 import 'package:courses_app/Features/05_user_courses_list/widgets/custom_progress_container.dart';

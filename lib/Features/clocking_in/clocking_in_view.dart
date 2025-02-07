@@ -1,5 +1,7 @@
-import 'package:courses_app/Core/utils/constants.dart';
+
 import 'package:courses_app/Core/shared/custom_blue_button.dart';
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/Features/clocking_in/widgets/custom_clocking_week_days.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,6 +1,7 @@
 import 'dart:math';
 
-import 'package:courses_app/Core/utils/constants.dart';
+
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 Color getLinkedValue(Color cardBackgroundColor)

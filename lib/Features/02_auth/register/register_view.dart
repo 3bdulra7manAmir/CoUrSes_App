@@ -1,6 +1,8 @@
 import 'package:courses_app/Core/Exceptions/register_failure.dart';
 import 'package:courses_app/Core/shared/custom_text_form_field.dart';
-import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
+
 import 'package:courses_app/Core/utils/validators.dart';
 import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/Core/shared/custom_blue_button.dart';

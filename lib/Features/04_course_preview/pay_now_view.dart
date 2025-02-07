@@ -1,6 +1,7 @@
 import 'package:courses_app/Core/shared/custom_blue_button.dart';
 import 'package:courses_app/Core/shared/custom_text_widget.dart';
-import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/Core/utils/constants/app_images.dart';
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Features/04_course_preview/widgets/pay_now_bms.dart';
 import 'package:flutter/material.dart';

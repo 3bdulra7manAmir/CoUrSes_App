@@ -1,4 +1,5 @@
-import 'package:courses_app/Core/utils/constants.dart';
+
+import 'package:courses_app/Core/utils/constants/app_responsive.dart';
 import 'package:flutter/material.dart';
 
 class AfContainerBody extends StatelessWidget

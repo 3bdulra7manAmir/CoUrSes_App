@@ -1,6 +1,6 @@
 import 'package:courses_app/Core/shared/custom_listviewbuilder.dart';
 import 'package:courses_app/Core/shared/custom_tabbar_itself.dart';
-import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
 import 'package:courses_app/core/utils/styles.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/messages_card.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/notifictations/widgets/notifictations_card.dart';

@@ -1,6 +1,7 @@
 import 'package:courses_app/Core/shared/custom_blue_button.dart';
 import 'package:courses_app/Core/shared/custom_white_button.dart';
-import 'package:courses_app/Core/utils/constants.dart';
+import 'package:courses_app/Core/utils/constants/app_colors.dart';
+
 import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/Features/01_intro_views/easy_learn_view.dart';
 import 'package:courses_app/Features/01_intro_views/study_plan_view.dart';
