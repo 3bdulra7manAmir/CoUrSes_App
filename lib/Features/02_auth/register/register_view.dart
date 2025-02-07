@@ -3,7 +3,7 @@ import 'package:courses_app/Core/shared/custom_text_form_field.dart';
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Core/utils/validators.dart';
 import 'package:courses_app/app/app_router.dart';
-import 'package:courses_app/Core/shared/custom_button.dart';
+import 'package:courses_app/Core/shared/custom_blue_button.dart';
 import 'package:courses_app/Core/shared/custom_column.dart';
 import 'package:courses_app/Core/shared/custom_container.dart';
 import 'package:courses_app/Core/shared/custom_text_widget.dart';

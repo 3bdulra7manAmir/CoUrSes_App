@@ -34,16 +34,9 @@ class UserAccountView extends StatelessWidget
                   {},
                   builder: (context, state)
                   {
-                    var firebaseUACubit = BlocProvider.of<FirebaseUserAccountCubit>(context);
                     return GestureDetector(
-                      onTap: () async
-                      {
-                        await firebaseUACubit.uploadImageToFirebase();
-                        await firebaseUACubit.getUserProfileImage();
-                      },
-                      child: state is UserAccountSuccessState
-                          ? SvgPicture.asset(state.imageUrl)
-                          : SvgPicture.asset(AppIMGs().kProfileAvatarSVG),
+                      onTap: () async {},
+                      child: SvgPicture.asset(AppIMGs().kProfileAvatarSVG),
                     );
                   },
                 ),

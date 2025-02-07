@@ -1,4 +1,4 @@
-import 'package:courses_app/Core/shared/custom_button.dart';
+import 'package:courses_app/Core/shared/custom_blue_button.dart';
 import 'package:courses_app/Core/shared/custom_text_widget.dart';
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Core/utils/styles.dart';

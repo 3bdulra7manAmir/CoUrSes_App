@@ -1,4 +1,4 @@
-import 'package:courses_app/Core/shared/custom_button.dart';
+import 'package:courses_app/Core/shared/custom_blue_button.dart';
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

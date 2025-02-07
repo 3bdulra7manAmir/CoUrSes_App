@@ -1,4 +1,5 @@
-import 'package:courses_app/Core/shared/custom_button.dart';
+import 'package:courses_app/Core/shared/custom_blue_button.dart';
+import 'package:courses_app/Core/shared/custom_white_button.dart';
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/app/app_router.dart';
 import 'package:courses_app/Features/01_intro_views/easy_learn_view.dart';
@@ -68,7 +69,7 @@ class _The3IntroScreensState extends State<The3IntroScreens>
               ),
             ),
 
-            SizedBox(height: 60.h),
+            SizedBox(height: 45.h),
 
             currentPage == 2
                 ? Row(
@@ -81,7 +82,7 @@ class _The3IntroScreensState extends State<The3IntroScreens>
                     ],
                   )
                 : const SizedBox.shrink(),
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
           ],
         ),
       ),
