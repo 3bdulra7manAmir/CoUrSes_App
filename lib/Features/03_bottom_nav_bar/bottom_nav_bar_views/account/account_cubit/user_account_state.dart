@@ -1,20 +1,18 @@
-part of 'user_account_cubit.dart';
+abstract class FirebaseUserAccountStates {}
 
-@immutable
-sealed class FirebaseUserAccountStates {}
+class FirebaseUserAccountInitial extends FirebaseUserAccountStates {}
+class FirebaseUserAccountLoading extends FirebaseUserAccountStates {}
 
-final class UserAccountInitialState extends FirebaseUserAccountStates {}
 
-final class UserAccountLoadingState extends FirebaseUserAccountStates {}
-
-final class UserAccountSuccessState extends FirebaseUserAccountStates
+class FirebaseUserAccountSuccess extends FirebaseUserAccountStates
 {
-  final String imageUrl;
-  UserAccountSuccessState(this.imageUrl);
+  final String imageBase64; // Base64 encoded image
+  FirebaseUserAccountSuccess(this.imageBase64);
 }
 
-final class UserAccountFailureState extends FirebaseUserAccountStates
+
+class FirebaseUserAccountFailure extends FirebaseUserAccountStates
 {
   final String errorMessage;
-  UserAccountFailureState(this.errorMessage);
+  FirebaseUserAccountFailure(this.errorMessage);
 }

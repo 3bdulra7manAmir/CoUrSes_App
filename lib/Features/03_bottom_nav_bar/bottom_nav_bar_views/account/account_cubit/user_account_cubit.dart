@@ -1,21 +1,20 @@
 import 'dart:io';
+import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/account/account_cubit/user_account_state.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:meta/meta.dart';
 
-part 'user_account_state.dart';
 
 class FirebaseUserAccountCubit extends Cubit<FirebaseUserAccountStates>
 {
-  FirebaseUserAccountCubit() : super(UserAccountInitialState());
+  FirebaseUserAccountCubit() : super(FirebaseUserAccountInitial());
 
-  /// Upload Image to Firebase Storage (Handles PNG, JPG, etc.)
-  Future<void> uploadImageToFirebase() async
+  /// Uploads the user's profile image as a Base64 encoded string to Firestore.
+  Future<void> uploadUserImage() async
   {
-    emit(UserAccountLoadingState()); // Emit loading state
+    emit(FirebaseUserAccountLoading());
     try
     {
       final picker = ImagePicker();
@@ -23,7 +22,7 @@ class FirebaseUserAccountCubit extends Cubit<FirebaseUserAccountStates>
 
       if (pickedFile == null)
       {
-        emit(UserAccountFailureState("No image selected"));
+        emit(FirebaseUserAccountFailure("No image selected."));
         return;
       }
 
@@ -32,63 +31,73 @@ class FirebaseUserAccountCubit extends Cubit<FirebaseUserAccountStates>
 
       if (userId.isEmpty)
       {
-        emit(UserAccountFailureState("User not logged in"));
+        emit(FirebaseUserAccountFailure("User not logged in."));
         return;
       }
 
-      // Extract the file extension (e.g., png, jpg, jpeg)
-      String fileExtension = pickedFile.path.split('.').last.toLowerCase();
-      Reference storageRef = FirebaseStorage.instance.ref().child("profile_images/$userId.$fileExtension");
+      // Read the image file and convert it to a Base64 encoded string
+      List<int> imageBytes = await imageFile.readAsBytes();
+      String base64Image = base64Encode(imageBytes);
 
-      UploadTask uploadTask = storageRef.putFile(imageFile);
-      TaskSnapshot snapshot = await uploadTask;
+      // Store the Base64 encoded image in Firestore
+      await FirebaseFirestore.instance.collection("users").doc(userId).update({"imageBase64": base64Image});
 
-      // Get the download URL after upload
-      String imageUrl = await snapshot.ref.getDownloadURL();
-
-      // Update Firestore with the new image URL
-      await FirebaseFirestore.instance.collection("users").doc(userId).update({"imageUrl": imageUrl,});
-
-      emit(UserAccountSuccessState(imageUrl)); // Emit success with image URL
-      print("✅ Image uploaded successfully: $imageUrl");
+      emit(FirebaseUserAccountSuccess(base64Image));
+      print("✅ Image uploaded successfully as Base64.");
     }
+
+    on FirebaseException catch (e)
+    {
+      emit(FirebaseUserAccountFailure("Firebase error: ${e.message}"));
+      print("❌ Firebase error: ${e.message}");
+    }
+    
     catch (e)
     {
-      emit(UserAccountFailureState("Error uploading image: $e"));
+      emit(FirebaseUserAccountFailure("Error uploading image: $e"));
       print("❌ Error uploading image: $e");
     }
   }
 
-  /// Retrieve User Profile Image from Firestore
-  Future<void> getUserProfileImage() async
+  /// Fetches the user's profile image (Base64 encoded) from Firestore.
+  Future<void> fetchUserImage() async
   {
-    emit(UserAccountLoadingState()); // Emit loading state
+    emit(FirebaseUserAccountLoading());
     try
     {
       User? user = FirebaseAuth.instance.currentUser;
       if (user == null)
       {
-        emit(UserAccountFailureState("User not logged in"));
+        emit(FirebaseUserAccountFailure("User not logged in."));
         return;
       }
 
+      // Fetch the user document from Firestore
       DocumentSnapshot userDoc = await FirebaseFirestore.instance.collection("users").doc(user.uid).get();
 
-      if (!userDoc.exists || !userDoc.data().toString().contains("imageUrl"))
+      // Check if the document exists and contains the imageBase64 field
+      if (!userDoc.exists || !userDoc.data().toString().contains("imageBase64"))
       {
-        emit(UserAccountFailureState("No profile image found"));
+        emit(FirebaseUserAccountFailure("No profile image found."));
         return;
       }
 
-      String imageUrl = userDoc["imageUrl"];
-      emit(UserAccountSuccessState(imageUrl)); // Emit success with image URL
-      print("✅ Profile image retrieved: $imageUrl");
+      // Get the Base64 encoded image from Firestore
+      String base64Image = userDoc["imageBase64"];
+      emit(FirebaseUserAccountSuccess(base64Image));
+      print("✅ Profile image retrieved as Base64.");
     }
+    
+    on FirebaseException catch (e)
+    {
+      emit(FirebaseUserAccountFailure("Firebase error: ${e.message}"));
+      print("❌ Firebase error: ${e.message}");
+    }
+    
     catch (e)
     {
-      emit(UserAccountFailureState("Error retrieving image: $e"));
+      emit(FirebaseUserAccountFailure("Error retrieving image: $e"));
       print("❌ Error retrieving image: $e");
     }
   }
-
 }

@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:courses_app/Core/utils/constants.dart';
 import 'package:courses_app/Core/utils/styles.dart';
 import 'package:courses_app/Core/shared/custom_text_widget.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/account/account_cubit/user_account_cubit.dart';
+import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/account/account_cubit/user_account_state.dart';
 import 'package:courses_app/Features/03_bottom_nav_bar/bottom_nav_bar_views/account/widgets/custom_details_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,17 +33,33 @@ class UserAccountView extends StatelessWidget
             Align(
                 alignment: Alignment.center,
                 child: BlocConsumer<FirebaseUserAccountCubit, FirebaseUserAccountStates>(
-                  listener: (context, state)
-                  {},
-                  builder: (context, state)
+                listener: (context, state)
+                {
+                  if (state is FirebaseUserAccountFailure)
+                  {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.errorMessage)),);
+                  }
+                },
+                builder: (context, state)
+                {
+                  if (state is FirebaseUserAccountSuccess)
                   {
                     return GestureDetector(
-                      onTap: () async {},
+                      onTap: () async {await context.read<FirebaseUserAccountCubit>().uploadUserImage();},
+                      child: CircleAvatar(backgroundImage:MemoryImage(base64Decode(state.imageBase64)), radius: 50,),
+                    );
+                  }
+
+                  else
+                  {
+                    return GestureDetector(
+                      onTap: () async {await context.read<FirebaseUserAccountCubit>().uploadUserImage();},
                       child: SvgPicture.asset(AppIMGs().kProfileAvatarSVG),
                     );
-                  },
-                ),
+                  }
+                },
               ),
+            ),
 
             const SizedBox(height: 30,),
 
